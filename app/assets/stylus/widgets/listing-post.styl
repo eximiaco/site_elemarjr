@@ -45,15 +45,21 @@
 
     &__header
         bottom 0
+        height 100%
         left 0
         padding 20px 15px
         position absolute
         transition bottom $transition-default
         width 100%
 
+    &__header-meta
+        bottom 70px
+        position absolute
+        transition bottom $transition-default
+
         .has-touch &,
         ^[0]:hover &
-            bottom 40px
+            bottom 100px
 
     &__categories
         list-style none
@@ -70,9 +76,10 @@
             font-size 12px
             font-weight bold
             padding 5px 20px
+            position relative
             text-decoration none
             text-transform uppercase
-
+            z-index 20
 
             &:hover
                 background darken($tiffany, 10%)
@@ -90,8 +97,13 @@
 
     &__title
         font-size 12px
+        height 100%
+        left 0
         margin 0
+        position absolute
         text-transform uppercase
+        top 0
+        width 100%
 
         a
             -webkit-box-orient vertical
@@ -99,21 +111,29 @@
             color $white
             display block
             display -webkit-box // @stylint ignore
-            height 50px
+            height 100%
             overflow hidden
             text-decoration none
             text-overflow ellipsis
+            width 100%
 
             &:hover
                 color rgba( $white, .7 )
                 text-decoration none
 
+        span
+            bottom 0
+            display block
+            padding 20px 15px
+            position absolute
+            transition bottom $transition-default
+
+            .has-touch &,
+            ^[0]:hover &
+                bottom 40px
+
         @media screen and ( min-width $screen-md )
             font-size 14px
-
-            a
-                height 58px
-
 
     &__footer
         clearfix()
@@ -154,7 +174,9 @@
 
     a&--comments
         color $tiffany
+        position relative
         text-decoration none
+        z-index 20
 
         &:hover
             color $red

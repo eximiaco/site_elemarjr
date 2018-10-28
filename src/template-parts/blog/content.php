@@ -16,10 +16,14 @@
 			<div class="listing-post__bg__overlay"></div>
 			<div class="listing-post__overlay">
 				<header class="listing-post__header">
+					<div class="listing-post__header-meta">
+						<?php
+							get_template_part( 'template-parts/blog/content-parts/category' );
+							get_template_part( 'template-parts/blog/content-parts/serie' );
+						?>
+					</div>
 					<?php
-						get_template_part( 'template-parts/blog/content-parts/category' );
-						get_template_part( 'template-parts/blog/content-parts/serie' );
-						the_title( '<h2 class="listing-post__title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+						the_title( '<h2 class="listing-post__title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><span>', '</span></a></h2>' );
 					?>
 				</header><!-- .listing-post__header -->
 				<footer class="listing-post__footer">
