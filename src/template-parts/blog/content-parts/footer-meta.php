@@ -19,8 +19,8 @@ use Bookworm\Bookworm;
 		<?php echo esc_html( Bookworm::estimate( get_the_content(), 'M' ) ); ?>
 		<i class="i-time"></i>
 	</span>
-	<a class="listing-post--comments" href="<?php comments_link(); ?>">
+	<span class="listing-post--comments">
 			<?php echo esc_html( get_comments_number() ); ?>
 		<i class="i-comments"></i>
-	</a>
+	</span>
 </div>
