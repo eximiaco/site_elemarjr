@@ -27,13 +27,13 @@
 
     &--date
         left $box-padding
-        max-width 45%
+        max-width "calc( 45% - %s )" % $box-padding
         position absolute
         top $box-padding
 
     &--image
         height 80px
-        max-width 50%
+        max-width "calc( 50% - %s )" % $box-padding
         position absolute
         right $box-padding
         top $box-padding
