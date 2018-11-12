@@ -87,7 +87,7 @@ class Blog extends Base {
 	 * @return boolean True, if is the home of the blog. False, otherwise.
 	 */
 	public function display_hero() {
-		return is_front_page() || is_page_template( 'page-templates/about.php' ) || is_page_template( 'page-templates/events.php' );
+		return is_front_page() || is_page_template( 'page-templates/about.php' );
 	}
 
 	/**
