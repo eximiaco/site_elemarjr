@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2.
 msgid ""
 msgstr ""
-"Project-Id-Version: Elemar Jr Blog Theme 0.2.2\n"
+"Project-Id-Version: Elemar Jr Blog Theme 1.0.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/src\n"
-"POT-Creation-Date: 2018-10-11 21:10:14+00:00\n"
+"POT-Creation-Date: 2018-11-12 11:44:30+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -81,7 +81,7 @@ msgid "Title - (%s)"
 msgstr ""
 
 #: includes/Customize/Newsletter.php:88
-#: includes/Integration/ACF/Pages/HomePage.php:160
+#: includes/Integration/ACF/Pages/HomePage.php:166
 msgid "Background"
 msgstr ""
 
@@ -98,7 +98,7 @@ msgstr ""
 msgid "Your Message"
 msgstr ""
 
-#. #-#-#-#-#  elemarjr.pot (Elemar Jr Blog Theme 0.2.2)  #-#-#-#-#
+#. #-#-#-#-#  elemarjr.pot (Elemar Jr Blog Theme 1.0.2)  #-#-#-#-#
 #. Template Name of the plugin/theme
 #: includes/Form/Contact.php:65
 msgid "Contact"
@@ -144,7 +144,7 @@ msgstr ""
 #: includes/Integration/ACF/Pages/Contact.php:59
 #: includes/Integration/ACF/Pages/Event.php:99
 #: includes/Integration/ACF/Pages/HomePage.php:61
-#: includes/Integration/ACF/Pages/HomePage.php:211
+#: includes/Integration/ACF/Pages/HomePage.php:217
 #: includes/Integration/ACF/Pages/Page.php:57
 msgid "Title"
 msgstr ""
@@ -159,13 +159,13 @@ msgstr ""
 #: includes/Integration/ACF/Pages/Event.php:59
 #: includes/Integration/ACF/Pages/Event.php:105
 #: includes/Integration/ACF/Pages/HomePage.php:67
-#: includes/Integration/ACF/Pages/HomePage.php:188
+#: includes/Integration/ACF/Pages/HomePage.php:194
 #: includes/Integration/ACF/Pages/Page.php:69
 msgid "Text"
 msgstr ""
 
 #: includes/Integration/ACF/Pages/About.php:126
-#: includes/Integration/ACF/Pages/HomePage.php:138
+#: includes/Integration/ACF/Pages/HomePage.php:144
 msgid "Image"
 msgstr ""
 
@@ -282,7 +282,7 @@ msgstr ""
 msgid "Error Message: Not sent"
 msgstr ""
 
-#. #-#-#-#-#  elemarjr.pot (Elemar Jr Blog Theme 0.2.2)  #-#-#-#-#
+#. #-#-#-#-#  elemarjr.pot (Elemar Jr Blog Theme 1.0.2)  #-#-#-#-#
 #. Template Name of the plugin/theme
 #: includes/Integration/ACF/Pages/Event.php:52
 msgid "About"
@@ -293,6 +293,7 @@ msgid "Label"
 msgstr ""
 
 #: includes/Integration/ACF/Pages/Event.php:74
+#: includes/Integration/ACF/PostType/Event.php:96
 msgid "URL"
 msgstr ""
 
@@ -328,25 +329,29 @@ msgstr ""
 msgid "Title 2"
 msgstr ""
 
-#: includes/Integration/ACF/Pages/HomePage.php:153
-#: includes/Integration/ACF/Pages/HomePage.php:166
+#: includes/Integration/ACF/Pages/HomePage.php:138
+msgid "Text 2"
+msgstr ""
+
+#: includes/Integration/ACF/Pages/HomePage.php:159
+#: includes/Integration/ACF/Pages/HomePage.php:172
 msgid "Quote"
 msgstr ""
 
-#: includes/Integration/ACF/Pages/HomePage.php:181 page-templates/home.php:37
+#: includes/Integration/ACF/Pages/HomePage.php:187 page-templates/home.php:37
 msgid "Blog"
 msgstr ""
 
-#: includes/Integration/ACF/Pages/HomePage.php:189
+#: includes/Integration/ACF/Pages/HomePage.php:195
 msgid "Text after the section title"
 msgstr ""
 
-#: includes/Integration/ACF/Pages/HomePage.php:204
+#: includes/Integration/ACF/Pages/HomePage.php:210
 #: includes/PostType/Testimonial.php:36
 msgid "Testimonials"
 msgstr ""
 
-#. #-#-#-#-#  elemarjr.pot (Elemar Jr Blog Theme 0.2.2)  #-#-#-#-#
+#. #-#-#-#-#  elemarjr.pot (Elemar Jr Blog Theme 1.0.2)  #-#-#-#-#
 #. Template Name of the plugin/theme
 #: includes/Integration/ACF/Pages/NewsletterForm.php:51
 msgid "Newsletter Form"
@@ -601,6 +606,10 @@ msgstr ""
 
 #: template-parts/blog/single/tags.php:14
 msgid "Tags"
+msgstr ""
+
+#: template-parts/event/event.php:22
+msgid "and"
 msgstr ""
 
 #: template-parts/newsletter/form.php:47

@@ -19,7 +19,7 @@ $diff_in_days = $end->diff( $start )->days;
 
 $current_day = clone $start;
 for ( $i = 1; $i <= $diff_in_days; ++$i ) {
-	$division = $i === $diff_in_days ? ' e ' : ', ';
+	$division = $i === $diff_in_days ? ' ' . __( 'and', 'elemarjr' ) . ' ' : ', ';
 	$current_day->modify( '+1 day' );
 	$event_days .= $division . ( sprintf( '%02d', $current_day->format( 'd' ) ) );
 }

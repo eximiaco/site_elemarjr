@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/src\n"
-"POT-Creation-Date: 2018-09-22 20:17:31+00:00\n"
-"PO-Revision-Date: 2018-09-27 22:51-0300\n"
+"POT-Creation-Date: 2018-11-12 11:44:30+00:00\n"
+"PO-Revision-Date: 2018-11-12 09:50-0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Domain: elemarjr\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
 
 #: 404.php:17
 msgid "Page not found"
@@ -46,6 +46,38 @@ msgstr "Comentários estão fechados."
 msgid "Skip to content"
 msgstr "Pular para o conteúdo"
 
+#: includes/Customize/Banner/Banner.php:55
+msgid "Text - (%s)"
+msgstr "Texto - (%s)"
+
+#: includes/Customize/Banner/Banner.php:73
+msgid "Label - (%s)"
+msgstr "Rótulo - (%s)"
+
+#: includes/Customize/Banner/Banner.php:87
+msgid "URL - (%s)"
+msgstr "URL - (%s)"
+
+#: includes/Customize/Banner/Banner.php:104
+msgid "Background Image - (%s)"
+msgstr "Imagem de fundo - (%s)"
+
+#: includes/Customize/Banner/Footer/Promotion.php:25
+msgid "Footer promotion banner"
+msgstr ""
+
+#: includes/Customize/Banner/SinglePost/Contact.php:25
+#, fuzzy
+#| msgid "Single Post Banner"
+msgid "Single post contact banner"
+msgstr "Banner na Página do Post"
+
+#: includes/Customize/Banner/SinglePost/Promotion.php:25
+#, fuzzy
+#| msgid "Single Post Banner"
+msgid "Single post promotion banner"
+msgstr "Banner na Página do Post"
+
 #: includes/Customize/Newsletter.php:47
 msgid "Newletter Form"
 msgstr "Formulário de Newsletter"
@@ -55,29 +87,9 @@ msgid "Title - (%s)"
 msgstr "Título - (%s)"
 
 #: includes/Customize/Newsletter.php:88
-#: includes/Integration/ACF/Pages/HomePage.php:160
+#: includes/Integration/ACF/Pages/HomePage.php:166
 msgid "Background"
 msgstr "Fundo"
-
-#: includes/Customize/SinglePostBanner.php:47
-msgid "Single Post Banner"
-msgstr "Banner na Página do Post"
-
-#: includes/Customize/SinglePostBanner.php:62
-msgid "Text - (%s)"
-msgstr "Texto - (%s)"
-
-#: includes/Customize/SinglePostBanner.php:80
-msgid "Label - (%s)"
-msgstr "Rótulo - (%s)"
-
-#: includes/Customize/SinglePostBanner.php:94
-msgid "URL - (%s)"
-msgstr "URL - (%s)"
-
-#: includes/Customize/SinglePostBanner.php:111
-msgid "Background Image - (%s)"
-msgstr "Imagem de fundo - (%s)"
 
 #: includes/Form/Contact.php:42 includes/Integration/ACF/PostType/Event.php:62
 #: template-parts/newsletter/form.php:46
@@ -113,129 +125,129 @@ msgstr "Mensagem enviada pelo site %s"
 msgid "Sent from: <a href=\"%1$s\">%1$s</a>"
 msgstr "Enviada por <a href=“%1$s”>%1$s</a>"
 
-#: includes/Integration/ACF/Pages/About.php:74
+#: includes/Integration/ACF/Pages/About.php:85
 msgid "Page Sections"
 msgstr "Seções da Página"
 
-#: includes/Integration/ACF/Pages/About.php:86
+#: includes/Integration/ACF/Pages/About.php:97
 msgid "Template"
 msgstr "Modelo"
 
-#: includes/Integration/ACF/Pages/About.php:90
+#: includes/Integration/ACF/Pages/About.php:101
 msgid "Default"
 msgstr "Padrão"
 
-#: includes/Integration/ACF/Pages/About.php:91
+#: includes/Integration/ACF/Pages/About.php:102
 msgid "Customers"
 msgstr "Clientes"
 
-#: includes/Integration/ACF/Pages/About.php:92
+#: includes/Integration/ACF/Pages/About.php:103
 msgid "MVP"
 msgstr "MVP"
 
-#: includes/Integration/ACF/Pages/About.php:102
+#: includes/Integration/ACF/Pages/About.php:113
 #: includes/Integration/ACF/Pages/Contact.php:59
 #: includes/Integration/ACF/Pages/Event.php:99
 #: includes/Integration/ACF/Pages/HomePage.php:61
-#: includes/Integration/ACF/Pages/HomePage.php:211
+#: includes/Integration/ACF/Pages/HomePage.php:217
 #: includes/Integration/ACF/Pages/Page.php:57
 msgid "Title"
 msgstr "Título"
 
-#: includes/Integration/ACF/Pages/About.php:103
+#: includes/Integration/ACF/Pages/About.php:114
 #: includes/Integration/ACF/Pages/Contact.php:60
 msgid "Use * to bold"
 msgstr "Use * para negrito"
 
-#: includes/Integration/ACF/Pages/About.php:109
-#: includes/Integration/ACF/Pages/About.php:229
+#: includes/Integration/ACF/Pages/About.php:120
+#: includes/Integration/ACF/Pages/About.php:245
 #: includes/Integration/ACF/Pages/Event.php:59
 #: includes/Integration/ACF/Pages/Event.php:105
 #: includes/Integration/ACF/Pages/HomePage.php:67
-#: includes/Integration/ACF/Pages/HomePage.php:188
+#: includes/Integration/ACF/Pages/HomePage.php:194
 #: includes/Integration/ACF/Pages/Page.php:69
 msgid "Text"
 msgstr "Texto"
 
-#: includes/Integration/ACF/Pages/About.php:115
-#: includes/Integration/ACF/Pages/HomePage.php:138
+#: includes/Integration/ACF/Pages/About.php:126
+#: includes/Integration/ACF/Pages/HomePage.php:144
 msgid "Image"
 msgstr "Imagem"
 
-#: includes/Integration/ACF/Pages/About.php:122
+#: includes/Integration/ACF/Pages/About.php:133
 msgid "Image Position"
 msgstr "Posição da imagem"
 
-#: includes/Integration/ACF/Pages/About.php:124
+#: includes/Integration/ACF/Pages/About.php:135
 msgid "Left"
 msgstr "Esquerda"
 
-#: includes/Integration/ACF/Pages/About.php:125
+#: includes/Integration/ACF/Pages/About.php:136
 msgid "Right"
 msgstr "Direita"
 
-#: includes/Integration/ACF/Pages/About.php:132
+#: includes/Integration/ACF/Pages/About.php:143
 msgid "Image Align"
 msgstr "Alinhamento da imagem"
 
-#: includes/Integration/ACF/Pages/About.php:134
+#: includes/Integration/ACF/Pages/About.php:145
 msgid "None"
 msgstr "Nenhum"
 
-#: includes/Integration/ACF/Pages/About.php:135
+#: includes/Integration/ACF/Pages/About.php:146
 msgid "Overlap top"
 msgstr "Sobreposição para cima"
 
-#: includes/Integration/ACF/Pages/About.php:136
+#: includes/Integration/ACF/Pages/About.php:147
 msgid "Stick on top"
 msgstr "Grudar acima"
 
-#: includes/Integration/ACF/Pages/About.php:137
+#: includes/Integration/ACF/Pages/About.php:148
 msgid "Stick on bottom"
 msgstr "Grudar abaixo"
 
-#: includes/Integration/ACF/Pages/About.php:138
+#: includes/Integration/ACF/Pages/About.php:149
 msgid "Overlap bottom"
 msgstr "Sobreposição para baixo"
 
-#: includes/Integration/ACF/Pages/About.php:145
+#: includes/Integration/ACF/Pages/About.php:161
 msgid "Color Scheme"
 msgstr "Esquema de cores"
 
-#: includes/Integration/ACF/Pages/About.php:147
+#: includes/Integration/ACF/Pages/About.php:163
 msgid "Background White and Title Black"
 msgstr "Fundo Branco e Título Preto"
 
-#: includes/Integration/ACF/Pages/About.php:148
+#: includes/Integration/ACF/Pages/About.php:164
 msgid "Background Gray and Title Black"
 msgstr "Fundo Cinza e Título Preto"
 
-#: includes/Integration/ACF/Pages/About.php:149
+#: includes/Integration/ACF/Pages/About.php:165
 msgid "Background Black and Title White"
 msgstr "Fundo Preto e Título Branco"
 
-#: includes/Integration/ACF/Pages/About.php:150
+#: includes/Integration/ACF/Pages/About.php:166
 msgid "Background Dusky and Title White"
 msgstr "Fundo Escuro e Título Branco"
 
-#: includes/Integration/ACF/Pages/About.php:156
+#: includes/Integration/ACF/Pages/About.php:172
 msgid "Items"
 msgstr "Itens"
 
-#: includes/Integration/ACF/Pages/About.php:168
+#: includes/Integration/ACF/Pages/About.php:184
 msgid "Item"
 msgstr "Item"
 
-#: includes/Integration/ACF/Pages/About.php:176
+#: includes/Integration/ACF/Pages/About.php:192
 msgid "Button label"
 msgstr "Rótulo do botão"
 
-#: includes/Integration/ACF/Pages/About.php:192
+#: includes/Integration/ACF/Pages/About.php:208
 #: includes/Integration/ACF/Pages/HomePage.php:79
 msgid "Button URL"
 msgstr "URL do botão"
 
-#: includes/Integration/ACF/Pages/About.php:222
+#: includes/Integration/ACF/Pages/About.php:238
 #: includes/Integration/ACF/Pages/Event.php:92
 #: includes/Integration/ACF/Pages/HomePage.php:54
 #: includes/Integration/ACF/Pages/Page.php:51
@@ -285,6 +297,7 @@ msgid "Label"
 msgstr "Rótulo"
 
 #: includes/Integration/ACF/Pages/Event.php:74
+#: includes/Integration/ACF/PostType/Event.php:96
 msgid "URL"
 msgstr "URL"
 
@@ -320,20 +333,24 @@ msgstr "Classe do ícone 2"
 msgid "Title 2"
 msgstr "Título 2"
 
-#: includes/Integration/ACF/Pages/HomePage.php:153
-#: includes/Integration/ACF/Pages/HomePage.php:166
+#: includes/Integration/ACF/Pages/HomePage.php:138
+msgid "Text 2"
+msgstr "Texto 2"
+
+#: includes/Integration/ACF/Pages/HomePage.php:159
+#: includes/Integration/ACF/Pages/HomePage.php:172
 msgid "Quote"
 msgstr "Citação"
 
-#: includes/Integration/ACF/Pages/HomePage.php:181 page-templates/home.php:37
+#: includes/Integration/ACF/Pages/HomePage.php:187 page-templates/home.php:37
 msgid "Blog"
 msgstr "Blog"
 
-#: includes/Integration/ACF/Pages/HomePage.php:189
+#: includes/Integration/ACF/Pages/HomePage.php:195
 msgid "Text after the section title"
 msgstr "Texto após o título da seção"
 
-#: includes/Integration/ACF/Pages/HomePage.php:204
+#: includes/Integration/ACF/Pages/HomePage.php:210
 #: includes/PostType/Testimonial.php:36
 msgid "Testimonials"
 msgstr "Recomendações"
@@ -577,12 +594,12 @@ msgid "reading time:"
 msgstr "tempo de leitura:"
 
 #: template-parts/blog/single/post-nav.php:27
-#: template-parts/blog/single/post-nav.php:32
+#: template-parts/blog/single/post-nav.php:36
 msgid "Previous"
 msgstr "Anterior"
 
-#: template-parts/blog/single/post-nav.php:51
-#: template-parts/blog/single/post-nav.php:57
+#: template-parts/blog/single/post-nav.php:62
+#: template-parts/blog/single/post-nav.php:76
 msgid "Next"
 msgstr "Próximo"
 
@@ -593,6 +610,10 @@ msgstr "Mais posts da série %s"
 #: template-parts/blog/single/tags.php:14
 msgid "Tags"
 msgstr "Etiquetas"
+
+#: template-parts/event/event.php:22
+msgid "and"
+msgstr "e"
 
 #: template-parts/newsletter/form.php:47
 msgid "Surname"
@@ -676,9 +697,6 @@ msgstr "Página Inicial"
 
 #~ msgid "Destination URL"
 #~ msgstr "URL de destino"
-
-#~ msgid "Text 2"
-#~ msgstr "Texto 2"
 
 #~ msgid "Category: %s"
 #~ msgstr "Categoria: %s"
