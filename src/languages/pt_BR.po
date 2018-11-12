@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/src\n"
-"POT-Creation-Date: 2018-11-12 11:44:30+00:00\n"
-"PO-Revision-Date: 2018-11-12 09:50-0200\n"
+"POT-Creation-Date: 2018-11-12 12:02:48+00:00\n"
+"PO-Revision-Date: 2018-11-12 10:03-0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -45,6 +45,10 @@ msgstr "Comentários estão fechados."
 #: header.php:28
 msgid "Skip to content"
 msgstr "Pular para o conteúdo"
+
+#: header.php:60
+msgid "Search"
+msgstr "Buscar"
 
 #: includes/Customize/Banner/Banner.php:55
 msgid "Text - (%s)"
@@ -147,7 +151,6 @@ msgstr "MVP"
 
 #: includes/Integration/ACF/Pages/About.php:113
 #: includes/Integration/ACF/Pages/Contact.php:59
-#: includes/Integration/ACF/Pages/Event.php:99
 #: includes/Integration/ACF/Pages/HomePage.php:61
 #: includes/Integration/ACF/Pages/HomePage.php:217
 #: includes/Integration/ACF/Pages/Page.php:57
@@ -161,8 +164,7 @@ msgstr "Use * para negrito"
 
 #: includes/Integration/ACF/Pages/About.php:120
 #: includes/Integration/ACF/Pages/About.php:245
-#: includes/Integration/ACF/Pages/Event.php:59
-#: includes/Integration/ACF/Pages/Event.php:105
+#: includes/Integration/ACF/Pages/Event.php:58
 #: includes/Integration/ACF/Pages/HomePage.php:67
 #: includes/Integration/ACF/Pages/HomePage.php:194
 #: includes/Integration/ACF/Pages/Page.php:69
@@ -248,7 +250,6 @@ msgid "Button URL"
 msgstr "URL do botão"
 
 #: includes/Integration/ACF/Pages/About.php:238
-#: includes/Integration/ACF/Pages/Event.php:92
 #: includes/Integration/ACF/Pages/HomePage.php:54
 #: includes/Integration/ACF/Pages/Page.php:51
 msgid "Hero"
@@ -288,15 +289,15 @@ msgid "Error Message: Not sent"
 msgstr "Mensagem de erro: Não enviado"
 
 #. Template Name of the plugin/theme
-#: includes/Integration/ACF/Pages/Event.php:52
+#: includes/Integration/ACF/Pages/Event.php:51
 msgid "About"
 msgstr "Sobre"
 
-#: includes/Integration/ACF/Pages/Event.php:65
+#: includes/Integration/ACF/Pages/Event.php:64
 msgid "Label"
 msgstr "Rótulo"
 
-#: includes/Integration/ACF/Pages/Event.php:74
+#: includes/Integration/ACF/Pages/Event.php:73
 #: includes/Integration/ACF/PostType/Event.php:96
 msgid "URL"
 msgstr "URL"

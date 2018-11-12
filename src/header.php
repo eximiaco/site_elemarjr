@@ -57,7 +57,7 @@ $display_hero = $container->get( 'display_hero' );
 						<button type="submit" class="search-submit">
 							<i class="i-search"></i>
 						</button>
-						<input type="search" name="s" placeholder="Buscar">
+						<input type="search" name="s" placeholder="<?php echo esc_attr( __( 'Search', 'elemarjr' ) ); ?>">
 						<span class="search-close"></span>
 					</form>
 				</div><!-- #site-search -->
