@@ -30,7 +30,7 @@ elemar-ssh << EOF
 	unzip elemarjr.zip
 	sed -i -r 's/(\/..\/..\/..\/vendor)/\/..\/..\/..\1/g' src/includes/WP_CLI/bootstrap.php
 	sed -i -r 's/src(\/includes)/html\/wp-content\/themes\/elemarjr\1/g' composer.json
-	../vendor/bin/composer install --prefer-dist --no-progress --no-interaction --no-dev --optimize-autoloader
+	php ../vendor/bin/composer install --prefer-dist --no-progress --no-interaction --no-dev --optimize-autoloader
 	cd ..
 	cp -R ${deployDir}/composer.* .
 	cp -R ${deployDir}/src/* html/wp-content/themes/elemarjr
