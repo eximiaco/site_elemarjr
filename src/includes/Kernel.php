@@ -52,6 +52,7 @@ class Kernel {
 			\Aztec\Integration\ACF\Pages\NewsletterForm::class,
 			\Aztec\Integration\ACF\Pages\Page::class,
 			\Aztec\Integration\ACF\Pages\Event::class,
+			\Aztec\Integration\ACF\PostType\Lab::class,
 			\Aztec\Integration\ACF\PostType\Event::class,
 			\Aztec\Integration\ACF\PostType\Testimonial::class,
 
@@ -70,6 +71,7 @@ class Kernel {
 
 			\Aztec\Performance\Css::class,
 
+			\Aztec\PostType\Lab::class,
 			\Aztec\PostType\Event::class,
 			\Aztec\PostType\Testimonial::class,
 
