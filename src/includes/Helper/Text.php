@@ -16,10 +16,10 @@ namespace Aztec\Helper;
 class Text {
 
 	/**
-	 * Replace text between asterisk to `strong` tag
+	 * Replace text between asterisk to `strong` tag.
 	 *
-	 * @param string $text The text
-	 * @return string The text with
+	 * @param  string $text The text.
+	 * @return string
 	 */
 	public function asterisk_to_strong( $text ) {
 		return preg_replace( '/(.*)\*(.*)\*(.*)/', '$1<strong>$2</strong>$3', $text );

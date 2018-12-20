@@ -22,11 +22,19 @@ use Aztec\Pages\Contact;
 
 global $container;
 
-/** @var ContactForm $form */
+/**
+ * Get contact form class
+ *
+ * @var ContactForm
+ */
 $form   = $container->get( ContactForm::class );
 $values = $form->get_flash();
 
-/** @var Contact $contact */
+/**
+ * Get contact class
+ *
+ * @var Contact
+ */
 $contact = $container->get( Contact::class );
 
 get_header(); ?>

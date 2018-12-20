@@ -1,11 +1,16 @@
 <?php
+/**
+ * Promotion banner class.
+ *
+ * @package Aztec
+ */
 
 namespace Aztec\Customize\Banner\SinglePost;
 
 use Aztec\Customize\Banner\Banner;
 
 /**
- * Customers banner class.
+ * Promotion banner class.
  */
 class Promotion extends Banner {
 

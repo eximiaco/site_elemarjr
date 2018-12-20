@@ -30,14 +30,14 @@ $text         = get_theme_mod( $spb->get_theme_mod_control_id( $lang, 'text' ) )
 $button_url   = get_theme_mod( $spb->get_theme_mod_control_id( $lang, 'url' ) );
 $button_label = get_theme_mod( $spb->get_theme_mod_control_id( $lang, 'label' ) );
 
-if ( $text  ) :
-?>
+if ( $text ) :
+	?>
 <div class="banner-contact"
-<?php
-foreach ( $bg_images as $size => $url ) :
-	echo ' data-bg-' . esc_attr( $size ) . '="' . esc_url( $url ) . '"';
+	<?php
+	foreach ( $bg_images as $size => $url ) :
+		echo ' data-bg-' . esc_attr( $size ) . '="' . esc_url( $url ) . '"';
 endforeach;
-?>
+	?>
 >
 	<div class="banner-contact--text">
 		<?php echo wp_kses_post( $text ); ?>

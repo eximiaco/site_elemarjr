@@ -43,20 +43,20 @@ if ( $now_timestamp >= $start_timestamp && $now_timestamp <= $end_timestamp ) {
 
 // Use `div` for elements without URL and `a` for elements with URL.
 $url = get_field( 'event_url' );
-if( '' === $url ) {
+if ( '' === $url ) {
 	$tag = [
 		'div',
-		''
+		'',
 	];
 } else {
 	$tag = [
 		'a',
-		'href="' . esc_url( get_field( 'event_url' ) ) . '" target="_blank"'
+		'href="' . esc_url( get_field( 'event_url' ) ) . '" target="_blank"',
 	];
 }
 
 ?>
-<<?php echo esc_html( $tag[0] ) ?> <?php echo $tag[1] ?> class="event <?php echo esc_attr( $event_class ); ?>">
+<<?php echo esc_html( $tag[0] ); ?> <?php echo esc_html( $tag[1] ); ?> class="event <?php echo esc_attr( $event_class ); ?>">
 	<div class="event--wrapper">
 		<div class="event--container">
 			<div class="event--header">
@@ -74,4 +74,4 @@ if( '' === $url ) {
 			<div class="event--footer"><?php the_title(); ?></div>
 		</div>
 	</div>
-</<?php echo esc_html( $tag[0] ) ?>>
+</<?php echo esc_html( $tag[0] ); ?>>

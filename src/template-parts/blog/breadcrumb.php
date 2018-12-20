@@ -21,7 +21,12 @@ $url = get_permalink( get_option( 'page_for_posts' ) );
 			<?php if ( is_search() ) : ?>
 			<li class="breadcrumb--item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
 				<a class="breadcrumb--link" href="<?php echo esc_url( get_search_link( get_search_query() ) ); ?>" itemprop="url">
-					<span itemprop="title"><?php echo esc_html( sprintf( __( 'Search Results for &#8220;%s&#8221;', 'elemarjr' ), get_search_query() ) ); ?></span>
+					<span itemprop="title">
+						<?php
+							/* translators: search results */
+							echo esc_html( sprintf( __( 'Search Results for &#8220;%s&#8221;', 'elemarjr' ), get_search_query() ) );
+						?>
+					</span>
 				</a>
 			</li>
 				<?php
@@ -68,7 +73,12 @@ $url = get_permalink( get_option( 'page_for_posts' ) );
 				?>
 			<li class="breadcrumb--item" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
 				<a class="breadcrumb--link" href="<?php echo esc_url( $paged_url ); ?>" itemprop="url">
-					<span itemprop="title"><?php echo esc_html( sprintf( __( 'Page %s' ), $paged ) ); ?></span>
+					<span itemprop="title">
+						<?php
+							/* translators: page number */
+							echo esc_html( sprintf( __( 'Page %s' ), $paged ) );
+						?>
+					</span>
 				</a>
 			</li>
 			<?php endif; ?>

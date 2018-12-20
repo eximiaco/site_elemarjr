@@ -116,7 +116,6 @@ class About extends Base {
 	 * @return string The title text with `strong` tag
 	 */
 	public function row_title() {
-		/** @var Text $text_helper */
 		$text_helper = $this->container->get( Text::class );
 
 		return $text_helper->asterisk_to_strong( get_sub_field( 'title' ) );
