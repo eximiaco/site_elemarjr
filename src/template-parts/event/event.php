@@ -56,8 +56,8 @@ if ( '' === $url ) {
 }
 
 ?>
-<<?php echo esc_html( $tag[0] ); ?> <?php echo esc_html( $tag[1] ); ?> class="event <?php echo esc_attr( $event_class ); ?>">
-	<div class="event--wrapper">
+<<?php echo esc_html( $tag[0] ); ?> <?php echo esc_html( $tag[1] ); ?> class="event card <?php echo esc_attr( $event_class ); ?>">
+	<div class="card__wrapper">
 		<div class="event--container">
 			<div class="event--header">
 				<time class="event--date">

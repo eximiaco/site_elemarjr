@@ -37,7 +37,7 @@ get_header(); ?>
 				<h3 class="page-header--title"><?php echo esc_html( __( 'Calendar', 'elemarjr' ) ); ?> <b><?php echo esc_html( $year ); ?></b></h3>
 			</div>
 			<div class="events--list--wrapper">
-				<section class="events--list">
+				<section class="events--list cards-list">
 					<?php
 					foreach ( $events as $post ) :
 						setup_postdata( $post );
