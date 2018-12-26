@@ -12,6 +12,7 @@
  * Get ACF fields.
  */
 $lab_tag = get_field( 'lab_tag' );
+$lab_link = get_field( 'lab_link' );
 ?>
 
 <div class="card lab">
@@ -28,14 +29,16 @@ $lab_tag = get_field( 'lab_tag' );
             <?php the_content(); ?>
         </div>
         <div class="lab__footer">
-            <div class="lab__repository">
+            <a href="<?php echo esc_url( $lab_link ); ?>" target="_blank" class="lab__repository">
                 <i class="i-github"></i>
-            </div>
+            </a>
             <div class="lab__tag">
+                <?php if ( pll_get_term( $lab_tag ) ) : ?>
                 <a href="<?php echo esc_url( get_term_link( pll_get_term( $lab_tag ) ) ); ?>" class="lab__button">
                     <i class="i-note"></i>
-                    <?php echo __( 'what we wrote about it' ); ?>
+                    <?php echo __( 'what we wrote about it', 'elemarjr' ); ?>
                 </a>
+                <?php endif; ?>
                 
                 <?php if( get_locale() == 'pt_BR' ) : ?>
                 <ul class="lab__langs">
