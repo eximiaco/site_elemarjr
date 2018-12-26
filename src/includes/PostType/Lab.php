@@ -54,12 +54,15 @@ class Lab extends Base {
 	/**
 	 * Get all labs.
 	 *
-	 * @return array
+	 * @return \WP_Query
 	 */
 	public function get_labs() {
-		return get_posts(
+		return new \WP_Query(
 			array(
-			'post_type'   => 'lab',
+				'post_type'      => 'lab',
+				'order'          => 'ASC',
+				'orderby'        => 'menu_order',
+				'posts_per_page' => -1,
 			)
 		);
 	}

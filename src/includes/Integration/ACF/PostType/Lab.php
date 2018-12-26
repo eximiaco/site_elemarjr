@@ -55,14 +55,14 @@ class Lab extends Base {
 			'title'  => __( 'Lab', 'elemarjr' ),
 			'fields' => array(
 				array(
-					'type'       => 'taxonomy',
-					'key'        => 'lab_tag',
-					'name'       => 'lab_tag',
-					'required'   => true,
-					'label'      => __( 'Tag', 'elemarjr' ),
-					'taxonomy'   => 'post_tag',
-					'field_type' => 'select',
-					'wrapper'    => array(
+					'type'         => 'taxonomy',
+					'key'          => 'lab_tag',
+					'name'         => 'lab_tag',
+					'required'     => true,
+					'label'        => __( 'Tag', 'elemarjr' ),
+					'taxonomy'     => 'post_tag',
+					'field_type'   => 'select',
+					'wrapper'      => array(
 						'width' => '50%'
 					),
 				),

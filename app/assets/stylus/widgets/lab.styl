@@ -1,0 +1,71 @@
+.lab
+    $box-padding = 25px
+
+    background $white
+    padding $box-padding
+
+    &__header
+        align-items flex-start
+        display flex
+        justify-content space-between
+        min-height 64px
+    
+    &__title
+        font-size 20px
+        margin 0
+
+    &__thumbnail
+        margin-top - $box-padding
+        max-width 64px
+
+    &__wrapper
+        display flex
+        flex-direction column
+    
+    &__content
+        color $brownish-grey
+
+        p
+            margin-top 0
+
+    &__button
+        color $white
+        background $tiffany
+        padding 1px 2px 1px 1.875rem
+        position relative
+        text-decoration none
+
+        .i-note
+            color $black
+            font-size 1.875rem
+            left -5px
+            position absolute
+            top 50%
+            transform translateY( -50% )
+    
+    &__repository
+        .i-github
+            font-size 1.875rem
+    
+    &__footer
+        align-items center
+        display flex
+        justify-content space-between
+        margin-top auto
+    
+    &__tag
+        display flex
+
+    &__langs
+        list-style none
+        margin 0
+        padding 0
+
+        &-item
+            display inline-block
+            margin-left 4px
+
+            a
+                color $tiffany
+                font-weight bold
+                text-decoration none
