@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Elemar Jr Blog Theme 1.0.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/src\n"
-"POT-Creation-Date: 2018-11-12 12:02:48+00:00\n"
+"POT-Creation-Date: 2018-12-26 10:45:43+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -64,15 +64,15 @@ msgstr ""
 msgid "Background Image - (%s)"
 msgstr ""
 
-#: includes/Customize/Banner/Footer/Promotion.php:25
+#: includes/Customize/Banner/Footer/Promotion.php:30
 msgid "Footer promotion banner"
 msgstr ""
 
-#: includes/Customize/Banner/SinglePost/Contact.php:25
+#: includes/Customize/Banner/SinglePost/Contact.php:30
 msgid "Single post contact banner"
 msgstr ""
 
-#: includes/Customize/Banner/SinglePost/Promotion.php:25
+#: includes/Customize/Banner/SinglePost/Promotion.php:30
 msgid "Single post promotion banner"
 msgstr ""
 
@@ -375,6 +375,18 @@ msgstr ""
 msgid "Role"
 msgstr ""
 
+#: includes/Integration/ACF/PostType/Lab.php:55 includes/PostType/Lab.php:37
+msgid "Lab"
+msgstr ""
+
+#: includes/Integration/ACF/PostType/Lab.php:62
+msgid "Tag"
+msgstr ""
+
+#: includes/Integration/ACF/PostType/Lab.php:74
+msgid "Repository"
+msgstr ""
+
 #: includes/Integration/ACF/PostType/Testimonial.php:51
 #: includes/PostType/Testimonial.php:37
 msgid "Testimonial"
@@ -439,6 +451,49 @@ msgstr ""
 
 #: includes/PostType/Event.php:46
 msgid "No events found in Trash."
+msgstr ""
+
+#. #-#-#-#-#  elemarjr.pot (Elemar Jr Blog Theme 1.0.2)  #-#-#-#-#
+#. Template Name of the plugin/theme
+#: includes/PostType/Lab.php:36
+msgid "Labs"
+msgstr ""
+
+#: includes/PostType/Lab.php:38
+msgctxt "lab"
+msgid "Add New"
+msgstr ""
+
+#: includes/PostType/Lab.php:39
+msgid "Add New Lab"
+msgstr ""
+
+#: includes/PostType/Lab.php:40
+msgid "New Lab"
+msgstr ""
+
+#: includes/PostType/Lab.php:41
+msgid "Edit Lab"
+msgstr ""
+
+#: includes/PostType/Lab.php:42
+msgid "View Lab"
+msgstr ""
+
+#: includes/PostType/Lab.php:43
+msgid "All Labs"
+msgstr ""
+
+#: includes/PostType/Lab.php:44
+msgid "Search Labs"
+msgstr ""
+
+#: includes/PostType/Lab.php:45
+msgid "No labs found."
+msgstr ""
+
+#: includes/PostType/Lab.php:46
+msgid "No labs found in Trash."
 msgstr ""
 
 #: includes/PostType/Testimonial.php:38
@@ -546,7 +601,7 @@ msgstr ""
 msgid "Next Page"
 msgstr ""
 
-#: page-templates/contact.php:77
+#: page-templates/contact.php:85
 msgid "Send"
 msgstr ""
 
@@ -563,11 +618,13 @@ msgctxt "label"
 msgid "Search for:"
 msgstr ""
 
-#: template-parts/blog/breadcrumb.php:24
+#. translators: search results
+#: template-parts/blog/breadcrumb.php:27
 msgid "Search Results for &#8220;%s&#8221;"
 msgstr ""
 
-#: template-parts/blog/breadcrumb.php:71
+#. translators: page number
+#: template-parts/blog/breadcrumb.php:79
 msgid "Page %s"
 msgstr ""
 
@@ -583,7 +640,8 @@ msgstr ""
 msgid "Loading posts..."
 msgstr ""
 
-#: template-parts/blog/single/comment.php:39
+#. translators: comment date
+#: template-parts/blog/single/comment.php:41
 msgid "%1$s at %2$s"
 msgstr ""
 
@@ -601,7 +659,8 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: template-parts/blog/single/serie.php:32
+#. translators: more posts in series
+#: template-parts/blog/single/serie.php:35
 msgid "More posts in %s series"
 msgstr ""
 
@@ -611,6 +670,10 @@ msgstr ""
 
 #: template-parts/event/event.php:22
 msgid "and"
+msgstr ""
+
+#: template-parts/lab/lab.php:37
+msgid "what we wrote about it"
 msgstr ""
 
 #: template-parts/newsletter/form.php:47
