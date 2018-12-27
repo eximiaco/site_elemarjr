@@ -35,7 +35,7 @@ $lab_link = get_field( 'lab_link' );
             <div class="lab__tag">
                 <?php if ( pll_get_term( $lab_tag ) ) : ?>
                 <a href="<?php echo esc_url( get_term_link( pll_get_term( $lab_tag ) ) ); ?>" class="lab__button">
-                    <i class="i-note"></i>
+                    <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/note.svg' ); ?>" class="lab__button-note">
                     <?php echo __( 'what we wrote about it', 'elemarjr' ); ?>
                 </a>
                 <?php endif; ?>
