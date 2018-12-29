@@ -9,14 +9,15 @@ require 'recipe/npm.php';
 require 'app/recipe/bower.php';
 require 'app/recipe/grunt.php';
 
-host('107.22.150.147')
+host('186.237.59.129')
+	->port(2201)
 	->stage('staging')
 	->user('elemarjr')
 	->set('deploy_path', '/home/elemarjr')
 	->set('http_user', 'www-data');
 
 set('repository', 'git@greatcode.aztecweb.net:aztecwebteam/elemarjr.git');
-set('branch', 'site-2018');
+set('branch', 'master');
 
 set('ssh_multiplexing', false);
 
