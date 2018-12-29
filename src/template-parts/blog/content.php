@@ -9,8 +9,8 @@
  */
 
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'listing-post' ); ?>>
-	<div class="listing-post__wrapper">
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'card listing-post' ); ?>>
+	<div class="card__wrapper">
 		<div class="listing-post__container">
 			<div class="listing-post__bg" style="background-image: url('<?php the_post_thumbnail_url( 'post-listing' ); ?>')"></div>
 			<div class="listing-post__bg__overlay"></div>

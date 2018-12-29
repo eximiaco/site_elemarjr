@@ -15,7 +15,7 @@ $extra_class = $container->get( 'post_list.extra_class' );
 ?>
 <div class="post-list--wrapper">
 	<div class="post-list--loading"><?php esc_html_e( 'Loading posts...', 'elemarjr' ); ?></div>
-	<div class="post-list <?php echo esc_attr( $extra_class ); ?>">
+	<div class="post-list cards-list <?php echo esc_attr( $extra_class ); ?>">
 		<?php
 		while ( $query->have_posts() ) :
 			$query->the_post();

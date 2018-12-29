@@ -1,11 +1,16 @@
 <?php
+/**
+ * Contact banner class
+ *
+ * @package Aztec
+ */
 
 namespace Aztec\Customize\Banner\SinglePost;
 
 use Aztec\Customize\Banner\Banner;
 
 /**
- * Customers banner class.
+ * Contact banner class.
  */
 class Contact extends Banner {
 

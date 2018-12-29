@@ -1,0 +1,28 @@
+.cards-list
+    display flex
+    flex-wrap wrap
+
+.card
+    height 325px
+    margin 0 auto 10px
+    max-width 400px
+    width 100%
+
+    @media screen and ( min-width $screen-md )
+        margin 0 10px 10px 0
+        width calc( 50% - 10px )
+
+        &:nth-child( 2n )
+            margin-right 0
+
+    @media screen and ( min-width $screen-lg )
+        width calc( 33.33% - 10px )
+
+        &:nth-child( 2n )
+            margin-right 10px
+
+        &:nth-child( 3n + 0 )
+            margin-right 0
+    
+    &__wrapper
+        height 100%
