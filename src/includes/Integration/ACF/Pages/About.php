@@ -11,6 +11,7 @@
 namespace Aztec\Integration\ACF\Pages;
 
 use Aztec\Base;
+use Aztec\Helper\PageSection;
 
 /**
  * Add custom fields to about template.
@@ -25,9 +26,9 @@ class About extends Base {
 	protected $location = array(
 		array(
 			array(
-				'param' => 'post_template',
+				'param'    => 'post_template',
 				'operator' => '==',
-				'value' => 'page-templates/about.php',
+				'value'    => 'page-templates/about.php',
 			),
 		),
 	);
@@ -38,9 +39,9 @@ class About extends Base {
 	 * @var array
 	 */
 	protected $default = array(
-		'field' => 'template',
+		'field'    => 'template',
 		'operator' => '==',
-		'value' => 'default',
+		'value'    => 'default',
 	);
 
 	/**
@@ -49,9 +50,9 @@ class About extends Base {
 	 * @var array
 	 */
 	protected $mvp = array(
-		'field' => 'template',
+		'field'    => 'template',
 		'operator' => '==',
-		'value' => 'mvp',
+		'value'    => 'mvp',
 	);
 
 	/**
@@ -60,10 +61,17 @@ class About extends Base {
 	 * @var array
 	 */
 	protected $customers = array(
-		'field' => 'template',
+		'field'    => 'template',
 		'operator' => '==',
-		'value' => 'customers',
+		'value'    => 'customers',
 	);
+
+	/**
+	 * Section template.
+	 * 
+	 * @var \Aztec\Helper\PageSection
+	 */
+	private $page_section;
 
 	/**
 	 * Init on container
@@ -73,6 +81,8 @@ class About extends Base {
 			add_action( 'acf/include_fields', $this->callback( 'add_hero_fields' ) );
 			add_action( 'acf/include_fields', $this->callback( 'body_lines' ) );
 		}
+
+		$this->page_section = $this->container->get( PageSection::class );
 	}
 
 	/**
@@ -81,117 +91,63 @@ class About extends Base {
 	public function body_lines() {
 		acf_add_local_field_group(
 			array(
-			'key' => 'body_lines',
-			'title' => __( 'Page Sections', 'elemarjr' ),
+			'key'            => 'body_lines',
+			'title'          => __( 'Page Sections', 'elemarjr' ),
 			'hide_on_screen' => array( 'the_content' ),
-			'fields' => array(
+			'fields'         => array(
 				array(
-					'type' => 'repeater',
-					'key' => 'about_repeater',
-					'name' => 'about_repeater',
-					'layout' => 'block',
+					'type'       => 'repeater',
+					'key'        => 'about_repeater',
+					'name'       => 'about_repeater',
+					'layout'     => 'block',
 					'sub_fields' => array(
 						array(
-							'type' => 'select',
-							'key' => 'template',
-							'label' => __( 'Template', 'elemarjr' ),
-							'name' => 'template',
-							'required' => true,
-							'choices' => array (
-								'default' => __( 'Default', 'elemarjr' ),
+							'type'          => 'select',
+							'key'           => 'template',
+							'label'         => __( 'Template', 'elemarjr' ),
+							'name'          => 'template',
+							'required'      => true,
+							'choices'       => array (
+								'default'   => __( 'Default', 'elemarjr' ),
 								'customers' => __( 'Customers', 'elemarjr' ),
-								'mvp' => __( 'MVP', 'elemarjr' ),
+								'mvp'       => __( 'MVP', 'elemarjr' ),
 							),
 							'default_value' => array (
 								0 => 'default',
 							),
 						),
-						array(
-							'type' => 'text',
-							'key' => 'title',
-							'name' => 'title',
-							'label' => __( 'Title', 'elemarjr' ),
-							'instructions' => __( 'Use * to bold', 'elemarjr' )
-						),
-						array(
-							'type' => 'wysiwyg',
-							'key' => 'text',
-							'name' => 'text',
-							'label' => __( 'Text', 'elemarjr' ),
-						),
-						array(
-							'type' => 'image',
-							'key' => 'image',
-							'name' => 'image',
-							'label' => __( 'Image', 'elemarjr' ),
-							'return_format' => 'id,'
-						),
-						array(
-							'type' => 'radio',
-							'key' => 'image_position',
-							'name' => 'image_position',
-							'label' => __( 'Image Position', 'elemarjr' ),
-							'choices' => array(
-								'left' => __( 'Left', 'elemarjr' ),
-								'right' => __( 'Right', 'elemarjr' ),
-							)
-						),
-						array(
-							'type' => 'radio',
-							'key' => 'image_align',
-							'name' => 'image_align',
-							'label' => __( 'Image Align', 'elemarjr' ),
-							'choices' => array(
-								'none' => __( 'None', 'elemarjr' ),
-								'top' => __( 'Overlap top', 'elemarjr' ),
-								'stick-top' => __( 'Stick on top', 'elemarjr' ),
-								'stick-bottom' => __( 'Stick on bottom', 'elemarjr' ),
-								'bottom' => __( 'Overlap bottom', 'elemarjr' ),
-							),
-							'conditional_logic' => array (
-								array (
-									$this->default,
-								),
-							),
-						),
-						array(
-							'type' => 'radio',
-							'key' => 'color',
-							'name' => 'color',
-							'label' => __( 'Color Scheme', 'elemarjr' ),
-							'choices' => array(
-								'white' => __( 'Background White and Title Black', 'elemarjr' ),
-								'light' => __( 'Background Gray and Title Black', 'elemarjr' ),
-								'dark' => __( 'Background Black and Title White', 'elemarjr' ),
-								'dusky' => __( 'Background Dusky and Title White', 'elemarjr' ),
-							)
-						),
+						$this->page_section->add_title_field(),
+						$this->page_section->add_content_field(),
+						$this->page_section->add_image_field(),
+						$this->page_section->add_image_position_field(),
+						$this->page_section->add_image_align_field( $this->default ),
+						$this->page_section->add_color_scheme_field(),
 						array (
-							'type' => 'repeater',
-							'key' => 'items',
-							'label' => __( 'Items', 'elemarjr' ),
-							'name' => 'items',
+							'type'              => 'repeater',
+							'key'               => 'items',
+							'label'             => __( 'Items', 'elemarjr' ),
+							'name'              => 'items',
 							'conditional_logic' => array (
 								array (
 									$this->customers,
 								),
 							),
-							'layout' => 'table',
-							'sub_fields' => array (
+							'layout'            => 'table',
+							'sub_fields'        => array (
 								array (
-									'type' => 'text',
-									'key' => 'item_text',
+									'type'  => 'text',
+									'key'   => 'item_text',
 									'label' => __( 'Item', 'elemarjr' ),
-									'name' => 'item_text',
+									'name'  => 'item_text',
 								),
 							),
 						),
 						array (
-							'type' => 'text',
-							'key' => 'button_label',
-							'label' => __( 'Button label', 'elemarjr' ),
-							'name' => 'button_label',
-							'wrapper' => array (
+							'type'              => 'text',
+							'key'               => 'button_label',
+							'label'             => __( 'Button label', 'elemarjr' ),
+							'name'              => 'button_label',
+							'wrapper'           => array (
 								'width'=> '50%',
 							),
 							'conditional_logic' => array (
@@ -204,11 +160,11 @@ class About extends Base {
 							),
 						),
 						array (
-							'key' => 'button_url',
-							'label' => __( 'Button URL', 'elemarjr' ),
-							'name' => 'button_url',
-							'type' => 'url',
-							'wrapper' => array (
+							'key'               => 'button_url',
+							'label'             => __( 'Button URL', 'elemarjr' ),
+							'name'              => 'button_url',
+							'type'              => 'url',
+							'wrapper'           => array (
 								'width'=> '50%',
 							),
 							'conditional_logic' => array (
@@ -223,7 +179,7 @@ class About extends Base {
 					)
 				),
 			 ),
-			 'location' => $this->location,
+			 'location'          => $this->location,
 			)
 		);
 	}
@@ -234,18 +190,18 @@ class About extends Base {
 	public function add_hero_fields() {
 		acf_add_local_field_group(
 			array(
-			'key' => 'about_hero',
-			'title' => __( 'Hero', 'elemarjr' ),
+			'key'            => 'about_hero',
+			'title'          => __( 'Hero', 'elemarjr' ),
 			'hide_on_screen' => array( 'the_content' ),
-			'fields' => array(
+			'fields'         => array(
 				array(
-					'type' => 'wysiwyg',
-					'key' => 'hero_text',
-					'name' => 'hero_text',
+					'type'  => 'wysiwyg',
+					'key'   => 'hero_text',
+					'name'  => 'hero_text',
 					'label' => __( 'Text', 'elemarjr' ),
 				),
 			 ),
-			 'location' => $this->location,
+			 'location'      => $this->location,
 			)
 		);
 	}

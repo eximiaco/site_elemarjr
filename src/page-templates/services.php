@@ -7,7 +7,7 @@
  * and that other 'pages' on your WordPress site may use a
  * different template.
  *
- * Template name: About
+ * Template name: Services
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -32,7 +32,7 @@ $page_section = $container->get( PageSection::class ); ?>
 		?>
 	<article id="post-<?php the_ID(); ?>" <?php post_class( 'rich-content' ); ?>>
 		<?php
-		while ( have_rows( 'about_repeater' ) ) :
+		while ( have_rows( 'services_repeater' ) ) :
 			the_row();
 			?>
 			<div class="<?php echo esc_attr( $page_section->get_row_classes() ); ?>">

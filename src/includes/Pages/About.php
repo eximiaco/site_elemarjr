@@ -70,7 +70,7 @@ class About extends Base {
 	 * @return void
 	 */
 	public function add_template_class( &$classes ) {
-		$classes[] = 'about--row__' . get_sub_field( 'template' );
+		$classes[] = 'about--row__' . get_sub_field( 'template' )[0];
 	}
 
 	/**
@@ -88,7 +88,7 @@ class About extends Base {
 			$align = 'bottom';
 		}
 
-		if ( $align !== 'none' ) {
+		if ( $align && $align !== 'none' ) {
 			$classes[] = 'about--row__image-' . $align;
 		}
 	}
