@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/src\n"
-"POT-Creation-Date: 2018-12-26 11:22:19+00:00\n"
-"PO-Revision-Date: 2018-12-26 09:22-0200\n"
+"POT-Creation-Date: 2019-01-04 12:54:29+00:00\n"
+"PO-Revision-Date: 2019-01-04 10:56-0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -129,27 +129,7 @@ msgstr "Mensagem enviada pelo site %s"
 msgid "Sent from: <a href=\"%1$s\">%1$s</a>"
 msgstr "Enviada por <a href=“%1$s”>%1$s</a>"
 
-#: includes/Integration/ACF/Pages/About.php:85
-msgid "Page Sections"
-msgstr "Seções da Página"
-
-#: includes/Integration/ACF/Pages/About.php:97
-msgid "Template"
-msgstr "Modelo"
-
-#: includes/Integration/ACF/Pages/About.php:101
-msgid "Default"
-msgstr "Padrão"
-
-#: includes/Integration/ACF/Pages/About.php:102
-msgid "Customers"
-msgstr "Clientes"
-
-#: includes/Integration/ACF/Pages/About.php:103
-msgid "MVP"
-msgstr "MVP"
-
-#: includes/Integration/ACF/Pages/About.php:113
+#: includes/Helper/PageSection.php:27
 #: includes/Integration/ACF/Pages/Contact.php:59
 #: includes/Integration/ACF/Pages/HomePage.php:61
 #: includes/Integration/ACF/Pages/HomePage.php:217
@@ -157,13 +137,13 @@ msgstr "MVP"
 msgid "Title"
 msgstr "Título"
 
-#: includes/Integration/ACF/Pages/About.php:114
+#: includes/Helper/PageSection.php:28
 #: includes/Integration/ACF/Pages/Contact.php:60
 msgid "Use * to bold"
 msgstr "Use * para negrito"
 
-#: includes/Integration/ACF/Pages/About.php:120
-#: includes/Integration/ACF/Pages/About.php:245
+#: includes/Helper/PageSection.php:42
+#: includes/Integration/ACF/Pages/About.php:201
 #: includes/Integration/ACF/Pages/Event.php:58
 #: includes/Integration/ACF/Pages/HomePage.php:67
 #: includes/Integration/ACF/Pages/HomePage.php:194
@@ -171,85 +151,105 @@ msgstr "Use * para negrito"
 msgid "Text"
 msgstr "Texto"
 
-#: includes/Integration/ACF/Pages/About.php:126
+#: includes/Helper/PageSection.php:56
 #: includes/Integration/ACF/Pages/HomePage.php:144
 msgid "Image"
 msgstr "Imagem"
 
-#: includes/Integration/ACF/Pages/About.php:133
+#: includes/Helper/PageSection.php:71
 msgid "Image Position"
 msgstr "Posição da imagem"
 
-#: includes/Integration/ACF/Pages/About.php:135
+#: includes/Helper/PageSection.php:73
 msgid "Left"
 msgstr "Esquerda"
 
-#: includes/Integration/ACF/Pages/About.php:136
+#: includes/Helper/PageSection.php:74
 msgid "Right"
 msgstr "Direita"
 
-#: includes/Integration/ACF/Pages/About.php:143
+#: includes/Helper/PageSection.php:90
 msgid "Image Align"
 msgstr "Alinhamento da imagem"
 
-#: includes/Integration/ACF/Pages/About.php:145
+#: includes/Helper/PageSection.php:92
 msgid "None"
 msgstr "Nenhum"
 
-#: includes/Integration/ACF/Pages/About.php:146
+#: includes/Helper/PageSection.php:93
 msgid "Overlap top"
 msgstr "Sobreposição para cima"
 
-#: includes/Integration/ACF/Pages/About.php:147
+#: includes/Helper/PageSection.php:94
 msgid "Stick on top"
 msgstr "Grudar acima"
 
-#: includes/Integration/ACF/Pages/About.php:148
+#: includes/Helper/PageSection.php:95
 msgid "Stick on bottom"
 msgstr "Grudar abaixo"
 
-#: includes/Integration/ACF/Pages/About.php:149
+#: includes/Helper/PageSection.php:96
 msgid "Overlap bottom"
 msgstr "Sobreposição para baixo"
 
-#: includes/Integration/ACF/Pages/About.php:161
+#: includes/Helper/PageSection.php:114
 msgid "Color Scheme"
 msgstr "Esquema de cores"
 
-#: includes/Integration/ACF/Pages/About.php:163
+#: includes/Helper/PageSection.php:116
 msgid "Background White and Title Black"
 msgstr "Fundo Branco e Título Preto"
 
-#: includes/Integration/ACF/Pages/About.php:164
+#: includes/Helper/PageSection.php:117
 msgid "Background Gray and Title Black"
 msgstr "Fundo Cinza e Título Preto"
 
-#: includes/Integration/ACF/Pages/About.php:165
+#: includes/Helper/PageSection.php:118
 msgid "Background Black and Title White"
 msgstr "Fundo Preto e Título Branco"
 
-#: includes/Integration/ACF/Pages/About.php:166
+#: includes/Helper/PageSection.php:119
 msgid "Background Dusky and Title White"
 msgstr "Fundo Escuro e Título Branco"
 
-#: includes/Integration/ACF/Pages/About.php:172
+#: includes/Integration/ACF/Pages/About.php:95
+msgid "Page Sections"
+msgstr "Seções da Página"
+
+#: includes/Integration/ACF/Pages/About.php:107
+msgid "Template"
+msgstr "Modelo"
+
+#: includes/Integration/ACF/Pages/About.php:111
+msgid "Default"
+msgstr "Padrão"
+
+#: includes/Integration/ACF/Pages/About.php:112
+msgid "Customers"
+msgstr "Clientes"
+
+#: includes/Integration/ACF/Pages/About.php:113
+msgid "MVP"
+msgstr "MVP"
+
+#: includes/Integration/ACF/Pages/About.php:128
 msgid "Items"
 msgstr "Itens"
 
-#: includes/Integration/ACF/Pages/About.php:184
+#: includes/Integration/ACF/Pages/About.php:140
 msgid "Item"
 msgstr "Item"
 
-#: includes/Integration/ACF/Pages/About.php:192
+#: includes/Integration/ACF/Pages/About.php:148
 msgid "Button label"
 msgstr "Rótulo do botão"
 
-#: includes/Integration/ACF/Pages/About.php:208
+#: includes/Integration/ACF/Pages/About.php:164
 #: includes/Integration/ACF/Pages/HomePage.php:79
 msgid "Button URL"
 msgstr "URL do botão"
 
-#: includes/Integration/ACF/Pages/About.php:238
+#: includes/Integration/ACF/Pages/About.php:194
 #: includes/Integration/ACF/Pages/HomePage.php:54
 #: includes/Integration/ACF/Pages/Page.php:51
 msgid "Hero"
@@ -390,6 +390,10 @@ msgstr "Etiquetas"
 msgid "Repository"
 msgstr "Repositório"
 
+#: includes/Integration/ACF/PostType/Service.php:65
+msgid "Service settings"
+msgstr ""
+
 #: includes/Integration/ACF/PostType/Testimonial.php:51
 #: includes/PostType/Testimonial.php:37
 msgid "Testimonial"
@@ -497,6 +501,52 @@ msgstr "Nenhum Lab encontrado."
 #: includes/PostType/Lab.php:46
 msgid "No labs found in Trash."
 msgstr "Nenhum lab encontrado na lixeira."
+
+#. Template Name of the plugin/theme
+#: includes/PostType/Service.php:36
+msgid "Services"
+msgstr ""
+
+#: includes/PostType/Service.php:37
+msgid "Service"
+msgstr ""
+
+#: includes/PostType/Service.php:38
+msgctxt "service"
+msgid "Add New"
+msgstr "Adicionar Novo"
+
+#: includes/PostType/Service.php:39
+msgid "Add New Service"
+msgstr "Adicionar Nova Serviço"
+
+#: includes/PostType/Service.php:40
+msgid "New Service"
+msgstr "Ver Serviço"
+
+#: includes/PostType/Service.php:41
+msgid "Edit Service"
+msgstr "Editar Serviço"
+
+#: includes/PostType/Service.php:42
+msgid "View Service"
+msgstr "Ver Serviço"
+
+#: includes/PostType/Service.php:43
+msgid "All Services"
+msgstr "Todas Serviços"
+
+#: includes/PostType/Service.php:44
+msgid "Search Services"
+msgstr "Procurar Serviços"
+
+#: includes/PostType/Service.php:45
+msgid "No services found."
+msgstr "Nenhuma serviço encontrada."
+
+#: includes/PostType/Service.php:46
+msgid "No services found in Trash."
+msgstr "Nenhum serviço encontrado na lixeira."
 
 #: includes/PostType/Testimonial.php:38
 msgctxt "testimonial"
@@ -674,7 +724,7 @@ msgstr "Etiquetas"
 msgid "and"
 msgstr "e"
 
-#: template-parts/lab/lab.php:37
+#: template-parts/lab/lab.php:39
 msgid "what we wrote about it"
 msgstr "o que escrevemos sobre"
 
