@@ -25,11 +25,21 @@ global $container;
 
 $page_section = $container->get( PageSection::class ); ?>
 
-<main>
+<main class="services">
 	<?php
 	while ( have_posts() ) :
 		the_post();
 		?>
+	<div class="services__header">
+		<div class="services__header-image">
+			<?php the_post_thumbnail(); ?>
+		</div>
+	</div>
+
+	<div class="page-header">
+		<h1 class="page-header--title"><?php the_title(); ?></h1>
+	</div>
+
 	<article id="post-<?php the_ID(); ?>" <?php post_class( 'rich-content' ); ?>>
 		<?php
 		while ( have_rows( 'services_repeater' ) ) :
