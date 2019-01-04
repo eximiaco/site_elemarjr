@@ -36,18 +36,26 @@ $lab_link = get_field( 'lab_link' );
 				<?php if ( pll_get_term( $lab_tag ) ) : ?>
 				<a href="<?php echo esc_url( get_term_link( pll_get_term( $lab_tag ) ) ); ?>" class="lab__button">
 					<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/note.svg' ); ?>" class="lab__button-note">
-					<?php echo __( 'what we wrote about it', 'elemarjr' ); ?>
+					<?php echo esc_html__( 'what we wrote about it', 'elemarjr' ); ?>
 				</a>
 				<?php endif; ?>
-				
-				<?php if ( get_locale() == 'pt_BR' ) : ?>
+
+				<?php if ( 'pt_BR' === get_locale() ) : ?>
 				<ul class="lab__langs">
-					<?php if ( $pt_term_id = pll_get_term( $lab_tag, 'pt_BR' ) ) : ?>
+					<?php
+					$pt_term_id = pll_get_term( $lab_tag, 'pt_BR' );
+
+					if ( null !== $pt_term_id ) :
+						?>
 					<li class="lab__langs-item">
 						<a href="<?php echo esc_url( get_term_link( $pt_term_id ) ); ?>">PT</a>
 					</li>
 					<?php endif; ?>
-					<?php if ( $en_term_id = pll_get_term( $lab_tag, 'en_US' ) ) : ?>
+					<?php
+					$en_term_id = pll_get_term( $lab_tag, 'en_US' );
+
+					if ( null !== $en_term_id ) :
+						?>
 					<li class="lab__langs-item">
 						<a href="<?php echo esc_url( get_term_link( $en_term_id ) ); ?>">EN</a>
 					</li>

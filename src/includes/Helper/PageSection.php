@@ -79,6 +79,7 @@ class PageSection extends Base {
 	/**
 	 * Add image align field.
 	 *
+	 * @param  array $conditional Conditional logic array.
 	 * @return array
 	 */
 	public function add_image_align_field( $conditional = array() ) {
@@ -212,7 +213,7 @@ class PageSection extends Base {
 	/**
 	 * Get ACF custom field or sub field.
 	 *
-	 * @param  string $name The name of the field
+	 * @param  string $name The name of the field.
 	 * @return mixed
 	 */
 	private function get_field( $name ) {
@@ -222,7 +223,7 @@ class PageSection extends Base {
 	/**
 	 * Get the section title
 	 *
-	 * @return string The the section title
+	 * @return string The the section title.
 	 */
 	public function get_title() {
 		$title = $this->get_field( 'title' );
@@ -239,7 +240,7 @@ class PageSection extends Base {
 	/**
 	 * Get the section content
 	 *
-	 * @return string The the section content
+	 * @return string The the section content.
 	 */
 	public function get_content() {
 		return $this->get_field( 'text' ) ? $this->get_field( 'text' ) : get_the_content();
@@ -248,7 +249,7 @@ class PageSection extends Base {
 	/**
 	 * Get the section image
 	 *
-	 * @return string The the section image
+	 * @return string The the section image.
 	 */
 	public function get_image() {
 		return wp_get_attachment_image( $this->get_field( 'image' ), 'full' );
