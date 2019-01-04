@@ -17,12 +17,12 @@ $page_section = $container->get( PageSection::class );
     <div class="page-section--content">
         <!-- Title -->
         <h2 class="page-section--title">
-            <?php echo wp_kses_post( $page_section->row_title() ); ?>
+            <?php echo wp_kses_post( $page_section->get_title() ); ?>
         </h2>
 
         <!-- Content -->
         <div class="page-section--text">
-            <?php echo wp_kses_post( get_sub_field( 'text' ) ); ?>
+            <?php echo wp_kses_post( $page_section->get_content() ); ?>
         </div>
 
         <!-- List -->
@@ -54,9 +54,6 @@ $page_section = $container->get( PageSection::class );
 
     <!-- Image -->
     <div class="page-section--image wow fadeIn">
-        <?php
-            $media_id = get_sub_field( 'image' );
-            echo wp_kses_post( wp_get_attachment_image( $media_id, 'full' ) );
-        ?>
+        <?php echo wp_kses_post( $page_section->get_image() ); ?>
     </div>
 </div>

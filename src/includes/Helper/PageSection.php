@@ -144,7 +144,7 @@ class PageSection extends Base {
 	 */
 	private function get_color_scheme_class( &$classes, $color_scheme = false ) {
 		if ( false === $color_scheme ) {
-			$color_scheme = get_sub_field( 'color' );
+			$color_scheme = $this->get_field( 'color' );
 		}
 
 		if ( 'white' !== $color_scheme ) {
@@ -169,7 +169,7 @@ class PageSection extends Base {
 	 * @return void
 	 */
 	private function get_template_class( &$classes ) {
-		$classes[] = 'page-section__' . get_sub_field( 'template' );
+		$classes[] = 'page-section__' . $this->get_field( 'template' )[0];
 	}
 
 	/**
@@ -181,9 +181,9 @@ class PageSection extends Base {
 	 * @return void
 	 */
 	private function get_image_align_class( &$classes ) {
-		$align = get_sub_field( 'image_align' );
+		$align = $this->get_field( 'image_align' );
 
-		if ( 'mvp' === get_sub_field( 'template' ) ) {
+		if ( 'mvp' === $this->get_field( 'template' ) ) {
 			$align = 'bottom';
 		}
 
@@ -201,23 +201,57 @@ class PageSection extends Base {
 	 */
 	private function get_image_position_class( &$classes, $image_position = false ) {
 		if ( false === $image_position ) {
-			$image_position = get_sub_field( 'image_position' );
+			$image_position = $this->get_field( 'image_position' );
 		}
 
 		if ( 'left' == $image_position ) {
 			$classes[] = 'page-section__invert';
 		}
-    }
+	}
+	
+	/**
+	 * Get ACF custom field or sub field.
+	 * 
+	 * @param  string $name The name of the field
+	 * @return mixed 
+	 */
+	private function get_field( $name ) {
+		return get_sub_field( $name ) ? get_sub_field( $name ) : get_field( $name );
+	}
 
 	/**
-	 * Replace title text between asterisk to `strong` tag
+	 * Get the section title
 	 *
-	 * @return string The title text with `strong` tag
+	 * @return string The the section title
 	 */
-	public function row_title() {
-		$text_helper = $this->container->get( Text::class );
+	public function get_title() {
+		$title = $this->get_field( 'title' );
 
-		return $text_helper->asterisk_to_strong( get_sub_field( 'title' ) );
+		if ( $title ) {
+			$text_helper = $this->container->get( Text::class );
+	
+			return $text_helper->asterisk_to_strong( $title );
+		}
+
+		return get_the_title();
+	}
+
+	/**
+	 * Get the section content
+	 *
+	 * @return string The the section content
+	 */
+	public function get_content() {
+		return $this->get_field( 'text' ) ? $this->get_field( 'text' ) : get_the_content();
+	}
+
+	/**
+	 * Get the section image
+	 *
+	 * @return string The the section image
+	 */
+	public function get_image() {
+		return wp_get_attachment_image( $this->get_field( 'image' ), 'full' );
 	}
 
 }

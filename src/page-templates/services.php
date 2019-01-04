@@ -19,36 +19,35 @@
 
 get_header();
 
+use Aztec\PostType\Service;
 use Aztec\Helper\PageSection;
 
 global $container;
+global $container;
 
-$page_section = $container->get( PageSection::class ); ?>
+$services     = $container->get( Service::class )->get_services();
+$page_section = $container->get( PageSection::class );
+?>
+
 
 <main class="services">
-	<?php
-	while ( have_posts() ) :
-		the_post();
-		?>
+	<?php while ( have_posts() ) : the_post(); ?>
 	<div class="services__header">
 		<div class="services__header-image">
 			<?php the_post_thumbnail(); ?>
 		</div>
 	</div>
 
-	<div class="page-header">
+	<div class="services__page-header page-header">
 		<h1 class="page-header--title"><?php the_title(); ?></h1>
 	</div>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class( 'rich-content' ); ?>>
-		<?php
-		while ( have_rows( 'services_repeater' ) ) :
-			the_row();
-			?>
-			<div class="<?php echo esc_attr( $page_section->get_row_classes() ); ?>">
-				<?php get_template_part( 'template-parts/page-sections' ); ?>
-			</div>
-			<?php endwhile; ?>
+		<?php while ( $services->have_posts() ) : $services->the_post(); ?>
+		<div class="<?php echo esc_attr( $page_section->get_row_classes() ); ?>">
+			<?php get_template_part( 'template-parts/page-sections' ); ?>
+		</div>
+		<?php endwhile; ?>
 	</article>
 	<?php endwhile; ?>
 </main>
