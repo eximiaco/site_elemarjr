@@ -25,26 +25,27 @@ get_header();
 ?>
 
 <div class="container labs">
-    <?php
-    while ( have_posts() ) :
-        the_post();
-        ?>
-    <div class="page-header">
+	<?php
+	while ( have_posts() ) :
+		the_post();
+		?>
+	<div class="page-header">
 		<h3 class="page-header--title">
-            <?php the_title(); ?>
-        </h3>
+			<?php the_title(); ?>
+		</h3>
 	</div>
 
-    <div class="cards-list labs__list">
-        <?php
-            while ( $labs->have_posts() ) : $labs->the_post();
-                get_template_part( 'template-parts/lab/lab' );
-            endwhile;
+	<div class="cards-list labs__list">
+		<?php
+		while ( $labs->have_posts() ) :
+			$labs->the_post();
+			get_template_part( 'template-parts/lab/lab' );
+			endwhile;
 
-            wp_reset_postdata();
-            ?>
-    </div>
-    <?php endwhile; ?>
+			wp_reset_postdata();
+		?>
+	</div>
+	<?php endwhile; ?>
 </div>
 
 <?php get_footer(); ?>

@@ -18,9 +18,9 @@ use Aztec\Helper\PageSection;
  */
 class Service extends Base {
 
-    /**
+	/**
 	 * Section template.
-	 * 
+	 *
 	 * @var \Aztec\Helper\PageSection
 	 */
 	private $page_section;
@@ -48,9 +48,9 @@ class Service extends Base {
 	public function init() {
 		if ( function_exists( 'acf_add_options_page' ) ) {
 			add_action( 'acf/include_fields', $this->callback( 'event_fields' ) );
-        }
-        
-        $this->page_section = $this->container->get( PageSection::class );
+		}
+
+		$this->page_section = $this->container->get( PageSection::class );
 	}
 
 	/**
@@ -64,9 +64,9 @@ class Service extends Base {
 			'key'    => 'service',
 			'title'  => __( 'Service settings', 'elemarjr' ),
 			'fields' => array(
-                $this->page_section->add_image_field(),
-                $this->page_section->add_image_position_field(),
-                $this->page_section->add_color_scheme_field(),
+				$this->page_section->add_image_field(),
+				$this->page_section->add_image_position_field(),
+				$this->page_section->add_color_scheme_field(),
 			 ),
 			 'location' => $this->location,
 			)

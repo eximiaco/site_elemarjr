@@ -68,7 +68,7 @@ class About extends Base {
 
 	/**
 	 * Section template.
-	 * 
+	 *
 	 * @var \Aztec\Helper\PageSection
 	 */
 	private $page_section;

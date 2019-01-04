@@ -31,7 +31,10 @@ $page_section = $container->get( PageSection::class );
 
 
 <main class="services">
-	<?php while ( have_posts() ) : the_post(); ?>
+	<?php
+	while ( have_posts() ) :
+		the_post();
+		?>
 	<div class="services__header">
 		<div class="services__header-image">
 			<?php the_post_thumbnail(); ?>
@@ -43,7 +46,10 @@ $page_section = $container->get( PageSection::class );
 	</div>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class( 'rich-content' ); ?>>
-		<?php while ( $services->have_posts() ) : $services->the_post(); ?>
+		<?php
+		while ( $services->have_posts() ) :
+			$services->the_post();
+			?>
 		<div class="<?php echo esc_attr( $page_section->get_row_classes() ); ?>">
 			<?php get_template_part( 'template-parts/page-sections' ); ?>
 		</div>

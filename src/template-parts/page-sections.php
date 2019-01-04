@@ -14,46 +14,46 @@ global $container;
 $page_section = $container->get( PageSection::class );
 ?>
 <div class="page-section--container container">
-    <div class="page-section--content">
-        <!-- Title -->
-        <h2 class="page-section--title">
-            <?php echo wp_kses_post( $page_section->get_title() ); ?>
-        </h2>
+	<div class="page-section--content">
+		<!-- Title -->
+		<h2 class="page-section--title">
+			<?php echo wp_kses_post( $page_section->get_title() ); ?>
+		</h2>
 
-        <!-- Content -->
-        <div class="page-section--text">
-            <?php echo wp_kses_post( $page_section->get_content() ); ?>
-        </div>
+		<!-- Content -->
+		<div class="page-section--text">
+			<?php echo wp_kses_post( $page_section->get_content() ); ?>
+		</div>
 
-        <!-- List -->
-        <?php if ( have_rows( 'items' ) ) : ?>
-        <ul class="page-section--list">
-            <?php
-            while ( have_rows( 'items' ) ) :
-                the_row();
-                ?>
-                <li><?php the_sub_field( 'item_text' ); ?></li>
-            <?php endwhile; ?>
-        </ul>
-        <?php endif; ?>
-    </div>
+		<!-- List -->
+		<?php if ( have_rows( 'items' ) ) : ?>
+		<ul class="page-section--list">
+			<?php
+			while ( have_rows( 'items' ) ) :
+				the_row();
+				?>
+				<li><?php the_sub_field( 'item_text' ); ?></li>
+			<?php endwhile; ?>
+		</ul>
+		<?php endif; ?>
+	</div>
 
-    <!-- Button -->
-    <?php
-    $url   = get_sub_field( 'button_url' );
-    $label = get_sub_field( 'button_label' );
+	<!-- Button -->
+	<?php
+	$url   = get_sub_field( 'button_url' );
+	$label = get_sub_field( 'button_label' );
 
-    if ( $label && $url ) :
-        ?>
-        <div class="page-section--button">
-            <a href="<?php echo esc_url( $url ); ?>" class="button button__bordered button__white">
-                <?php echo esc_html( $label ); ?>
-            </a>
-        </div>
-    <?php endif; ?>
+	if ( $label && $url ) :
+		?>
+		<div class="page-section--button">
+			<a href="<?php echo esc_url( $url ); ?>" class="button button__bordered button__white">
+				<?php echo esc_html( $label ); ?>
+			</a>
+		</div>
+	<?php endif; ?>
 
-    <!-- Image -->
-    <div class="page-section--image wow fadeIn">
-        <?php echo wp_kses_post( $page_section->get_image() ); ?>
-    </div>
+	<!-- Image -->
+	<div class="page-section--image wow fadeIn">
+		<?php echo wp_kses_post( $page_section->get_image() ); ?>
+	</div>
 </div>
