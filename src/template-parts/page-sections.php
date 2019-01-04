@@ -13,21 +13,21 @@ use Aztec\Helper\PageSection;
 global $container;
 $page_section = $container->get( PageSection::class );
 ?>
-<div class="about--row--container container">
-    <div class="about--row--content">
+<div class="page-section--container container">
+    <div class="page-section--content">
         <!-- Title -->
-        <h2 class="about--row--title">
+        <h2 class="page-section--title">
             <?php echo wp_kses_post( $page_section->row_title() ); ?>
         </h2>
 
         <!-- Content -->
-        <div class="about--row--text">
+        <div class="page-section--text">
             <?php echo wp_kses_post( get_sub_field( 'text' ) ); ?>
         </div>
 
         <!-- List -->
         <?php if ( have_rows( 'items' ) ) : ?>
-        <ul class="about--row--list">
+        <ul class="page-section--list">
             <?php
             while ( have_rows( 'items' ) ) :
                 the_row();
@@ -45,7 +45,7 @@ $page_section = $container->get( PageSection::class );
 
     if ( $label && $url ) :
         ?>
-        <div class="about--row--button">
+        <div class="page-section--button">
             <a href="<?php echo esc_url( $url ); ?>" class="button button__bordered button__white">
                 <?php echo esc_html( $label ); ?>
             </a>
@@ -53,7 +53,7 @@ $page_section = $container->get( PageSection::class );
     <?php endif; ?>
 
     <!-- Image -->
-    <div class="about--row--image wow fadeIn">
+    <div class="page-section--image wow fadeIn">
         <?php
             $media_id = get_sub_field( 'image' );
             echo wp_kses_post( wp_get_attachment_image( $media_id, 'full' ) );

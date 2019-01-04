@@ -125,7 +125,7 @@ class PageSection extends Base {
 	 */
 	public function get_row_classes() {
 		$classes   = array();
-        $classes[] = 'about--row';
+        $classes[] = 'page-section';
 
 		$this->get_template_class( $classes );
 		$this->get_color_scheme_class( $classes );
@@ -150,13 +150,13 @@ class PageSection extends Base {
 		if ( 'white' !== $color_scheme ) {
 			switch ( $color_scheme ) {
 				case 'light':
-					$classes[] = 'about--row__light';
+					$classes[] = 'page-section__light';
 					break;
 				case 'dark':
-					$classes[] = 'about--row__dark';
+					$classes[] = 'page-section__dark';
 					break;
 				case 'dusky':
-					$classes[] = 'about--row__dusky';
+					$classes[] = 'page-section__dusky';
 					break;
 			}
 		}
@@ -169,7 +169,7 @@ class PageSection extends Base {
 	 * @return void
 	 */
 	private function get_template_class( &$classes ) {
-		$classes[] = 'about--row__' . get_sub_field( 'template' )[0];
+		$classes[] = 'page-section__' . get_sub_field( 'template' );
 	}
 
 	/**
@@ -188,7 +188,7 @@ class PageSection extends Base {
 		}
 
 		if ( $align !== 'none' ) {
-			$classes[] = 'about--row__image-' . $align;
+			$classes[] = 'page-section__image-' . $align;
 		}
 	}
 
@@ -205,7 +205,7 @@ class PageSection extends Base {
 		}
 
 		if ( 'left' == $image_position ) {
-			$classes[] = 'about--row__invert';
+			$classes[] = 'page-section__invert';
 		}
     }
 

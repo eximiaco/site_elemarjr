@@ -1,0 +1,251 @@
+.page-section
+    // Elements
+    &--container
+        align-items center
+        justify-content space-between
+        padding 50px 25px
+        position relative
+
+        @media screen and ( min-width $screen-md )
+            display flex
+            padding 70px 35px
+
+    &--content
+        @media screen and ( min-width $screen-md )
+            flex 0 0 45%
+
+    &--list
+        padding-left 20px
+
+        li
+            font-weight bold
+            list-style-position inside
+            margin-bottom 6px
+            vertical-align text-top
+
+        @media screen and ( min-width $screen-md )
+            columns 2
+            flex 50%
+
+        @media screen and ( min-width $screen-lg )
+            padding 0
+
+            li
+                margin-bottom 10px
+
+    &--button
+        margin-bottom 20px
+        text-align center
+
+    &--text
+        line-height 28px
+
+    &--title
+        font-size 26px
+        font-weight normal
+        margin-top 0
+        text-transform uppercase
+        width 100%
+
+        @media screen and ( min-width $screen-md )
+            font-size 32px
+
+    &--image
+        @media screen and ( min-width $screen-md )
+            flex 0 0 45%
+
+        img
+            display block
+            margin 0 auto
+
+    // Background modifier
+    &__light
+        background $white-two
+
+    &__dark
+        background $dark-grey
+        color $white
+
+    &__dusky
+        background $dusky-blue
+        color $white
+
+    // Right modifier
+    &__invert
+        & ^[0..-2]--content
+            @media screen and ( min-width $screen-md )
+                order 2
+
+        & ^[0..-2]--image
+            @media screen and ( min-width $screen-lg )
+                margin-left 0
+                margin-right 40px
+
+    // Customer template
+    &__customers
+        position relative
+
+        & ^[0..-2]--container
+            display flex
+            flex-wrap wrap
+
+            @media screen and ( min-width $screen-lg )
+                clearfix()
+                display block
+                position relative
+
+        & ^[0..-2]--content
+            flex 100%
+            order 1
+
+            @media screen and ( min-width $screen-md )
+                display flex
+                flex-wrap wrap
+
+            @media screen and ( min-width $screen-lg )
+                float right
+                width 410px
+
+        & ^[0..-2]--image
+            flex 100%
+            order 2
+
+            @media screen and ( min-width $screen-lg )
+                left 0
+                position absolute
+                top 50%
+                transform translateY( -50% )
+                width 55%
+
+        & ^[0..-2]--text
+            @media screen and ( min-width $screen-md )
+                flex 50%
+                padding-right 50px
+
+            @media screen and ( min-width $screen-lg )
+                flex auto
+                padding-right 0
+
+        & ^[0..-2]--button
+            flex 100%
+            margin-top 40px
+            order 3
+
+            @media screen and ( min-width $screen-lg )
+                clear right
+                float right
+                margin-top 0
+                text-align left
+                width 410px
+
+    // MVP template
+    &__mvp
+        & ^[0..-2]--container
+            @media screen and ( min-width $screen-md )
+                clearfix()
+                display block
+
+        & ^[0..-2]--content
+            @media screen and ( min-width $screen-md )
+                width 100%
+
+            @media screen and ( min-width $screen-lg )
+                float left
+                width 45%
+
+        & ^[0..-2]--button
+            @media screen and ( min-width $screen-md )
+                clear left
+                float left
+                margin-top 40px
+
+        & ^[0..-2]--image
+            @media screen and ( min-width $screen-md )
+                float right
+                width calc( 100% - 300px )
+
+            @media screen and ( min-width $screen-lg )
+                width 55%
+
+    // Image align top
+    &__image-top
+        & ^[0..-2]--container
+            @media screen and ( min-width $screen-md )
+                justify-content flex-end
+                padding-top 0
+                position relative
+
+        & ^[0..-2]--content
+            @media screen and ( min-width $screen-md )
+                padding-top 70px
+
+        & ^[0..-2]--image
+            @media screen and ( min-width $screen-md )
+                left 35px
+                position absolute
+                top -100px
+                width 45%
+
+            @media screen and ( min-width $screen-lg )
+                position static
+                margin-top -100px
+
+        &__before
+            & ^[0..-3]--content
+                @media screen and ( min-width $screen-md )
+                    padding-bottom 50px
+
+                @media screen and ( min-width $screen-lg )
+                    padding-bottom 150px
+
+    // Image align bottom
+    &__image-bottom
+        & ^[0..-2]--container
+            padding-bottom 0
+
+        & ^[0..-2]--image
+            margin-top -60px
+            transform translateY( 60px )
+
+            @media screen and ( min-width $screen-md )
+                align-self flex-end
+                margin-bottom -75px
+                margin-top 0
+                transform none
+
+            @media screen and ( min-width $screen-lg )
+                margin-bottom -150px
+
+        & + ^[0..-2]
+            & ^[0..-3]--content
+                @media screen and ( min-width $screen-md )
+                    padding-top 50px
+
+                @media screen and ( min-width $screen-lg )
+                    padding-top 150px
+
+    // Image stick top
+    &__image-stick-top
+        & ^[0..-2]--container
+            padding-top 0
+
+        & ^[0..-2]--content
+            @media screen and ( min-width $screen-md )
+                padding-top 100px
+
+        & ^[0..-2]--image
+            @media screen and ( min-width $screen-md )
+                align-self flex-start
+
+    // Image stick bottom
+    &__image-stick-bottom
+        & ^[0..-2]--container
+            padding-bottom 0
+
+        & ^[0..-2]--content
+            @media screen and ( min-width $screen-md )
+                padding-bottom 100px
+
+        & ^[0..-2]--image
+            @media screen and ( min-width $screen-md )
+                align-self flex-end
