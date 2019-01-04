@@ -47,6 +47,7 @@ class Service extends Base {
 				),
 				'show_ui'                => true,
 				'supports'               => array( 'title', 'editor' ),
+				'menu_icon'              => 'dashicons-hammer',
 			)
 		);
 	}

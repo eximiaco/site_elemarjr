@@ -43,10 +43,11 @@ class Lab extends Base {
 					'all_items'          => __( 'All Labs', 'elemarjr' ),
 					'search_items'       => __( 'Search Labs', 'elemarjr' ),
 					'not_found'          => __( 'No labs found.', 'elemarjr' ),
-					'not_found_in_trash' => __( 'No labs found in Trash.', 'elemarjr' )
+					'not_found_in_trash' => __( 'No labs found in Trash.', 'elemarjr' ),
 				),
 				'show_ui'                => true,
-				'supports'               => array( 'title', 'editor', 'thumbnail' )
+				'supports'               => array( 'title', 'editor', 'thumbnail' ),
+				'menu_icon'              => 'dashicons-archive',
 			)
 		);
 	}

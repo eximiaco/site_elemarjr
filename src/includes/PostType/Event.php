@@ -43,10 +43,11 @@ class Event extends Base {
 					'all_items' => __( 'All Events', 'elemarjr' ),
 					'search_items' => __( 'Search Events', 'elemarjr' ),
 					'not_found' => __( 'No events found.', 'elemarjr' ),
-					'not_found_in_trash' => __( 'No events found in Trash.', 'elemarjr' )
+					'not_found_in_trash' => __( 'No events found in Trash.', 'elemarjr' ),
 				),
 				'show_ui' => true,
-				'supports' => array( 'title', 'thumbnail' )
+				'supports' => array( 'title', 'thumbnail' ),
+				'menu_icon' => 'dashicons-calendar-alt',
 			)
 		);
 	}

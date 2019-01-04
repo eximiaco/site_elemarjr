@@ -43,10 +43,11 @@ class Testimonial extends Base {
 					'all_items' => __( 'All Testimonials', 'elemarjr' ),
 					'search_items' => __( 'Search Testimonials', 'elemarjr' ),
 					'not_found' => __( 'No testimonials found.', 'elemarjr' ),
-					'not_found_in_trash' => __( 'No testimonials found in Trash.', 'elemarjr' )
+					'not_found_in_trash' => __( 'No testimonials found in Trash.', 'elemarjr' ),
 				),
 				'show_ui' => true,
-				'supports' => array( 'title', 'editor', 'page-attributes' )
+				'supports' => array( 'title', 'editor', 'page-attributes' ),
+				'menu_icon' => 'dashicons-format-status',
 			)
 		);
 	}
