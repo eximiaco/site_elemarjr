@@ -1,6 +1,14 @@
 .services
     &__page-header
         margin-bottom 75px
+        .page-header--title
+            color $black-light
+
+    .page-section--content
+        margin-bottom 40px
+
+        @media screen and ( min-width $screen-sm )
+            margin-bottom 0
 
     &__header
         position relative
@@ -19,7 +27,11 @@
         &-image
             background $white
             margin 0 auto
-            padding 10px
+            padding 0 10px
             position relative
             width 145px
             z-index 10
+        
+.page-template-services
+    .site-content
+        padding-top 'calc( 55px + %s )' % $sm-nav-height
