@@ -8,6 +8,7 @@
 .salts
 deploy.log
 wp-cli.yml
+/.vscode/
 
 # Composer
 /vendor/
