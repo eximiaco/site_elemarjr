@@ -92,7 +92,7 @@ class About extends Base {
 		acf_add_local_field_group(
 			array(
 			'key'            => 'body_lines',
-			'title'          => __( 'Page Sections', 'elemarjr' ),
+			'title'          => __( 'Page sections', 'elemarjr' ),
 			'hide_on_screen' => array( 'the_content' ),
 			'fields'         => array(
 				array(

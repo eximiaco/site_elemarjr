@@ -24,7 +24,7 @@ $labs = $container->get( Aztec\PostType\Lab::class )->get_labs();
 get_header();
 ?>
 
-<div class="container labs">
+<div class="container">
 	<?php
 	while ( have_posts() ) :
 		the_post();
@@ -35,7 +35,7 @@ get_header();
 		</h3>
 	</div>
 
-	<div class="cards-list labs__list">
+	<div class="cards-list cards-list--labs">
 		<?php
 		while ( $labs->have_posts() ) :
 			$labs->the_post();

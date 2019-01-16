@@ -1,72 +1,50 @@
-.event
-    $box-padding = 25px
+.card
+    &--event
+        & ^[0]__wrapper
+            color $black
+            font-weight bold
+            position relative
+            text-transform uppercase
 
-    &--container
-        background $white
-        color $black
-        font-weight bold
-        height 100%
-        padding $box-padding
-        position relative
-        text-transform uppercase
+        & ^[0]__date
+            font-size 20px
 
-    &--date
-        left $box-padding
-        max-width 'calc( 45% - %s )' % $box-padding
-        position absolute
-        top $box-padding
+        & ^[0]__image
+            height 80px
+            max-width calc( 50% )
 
-    &--image
-        height 80px
-        max-width 'calc( 50% - %s )' % $box-padding
-        position absolute
-        right $box-padding
-        top $box-padding
+            img
+                height auto
+                max-height 100%
+                max-width 100%
+                width auto
 
-        img
-            height auto
-            max-height 100%
-            max-width 100%
-            width auto
+        & ^[0]__title
+            font-size 16px
+            letter-spacing 1px
 
-    &--date
-        font-size 20px
+        & ^[0]__footer
+            font-weight 100
+            text-transform none
 
-    &--content
-        left $box-padding
-        position absolute
-        top 120px
+        & ^[0]__role
+            color $dusky-blue
+            font-size 12px
 
-    &--title
-        font-size 16px
-        letter-spacing 1px
-        margin 0
-
-    &--role
-        color $dusky-blue
-        font-size 12px
-
-    &--footer
-        bottom $box-padding
-        font-weight 100
-        left $box-padding
-        position absolute
-        text-transform none
-
-    &__active
-        & ^[0]--wrapper
+    &--active
+        & ^[0]__wrapper
             background $dusky-blue
             color $white
 
-        & ^[0]--role,
-        & ^[0]--footer
+        & ^[0]__role,
+        & ^[0]__footer
             color $black
 
-    &__old
-        & ^[0]--date
-        & ^[0]--title,
-        & ^[0]--footer
+    &--old
+        & ^[0]__date
+        & ^[0]__title,
+        & ^[0]__footer
             color $gray-light-300
 
-        & ^[0]--role
+        & ^[0]__role
             color $tiffany

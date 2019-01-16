@@ -31,8 +31,7 @@ class Service extends Base {
 		register_post_type(
 			'service',
 			array(
-				'hierarchical' => true,
-				'labels' => array(
+				'labels'       => array(
 					'name'               => __( 'Services', 'elemarjr' ),
 					'singular_name'      => __( 'Service', 'elemarjr' ),
 					'add_new'            => _x( 'Add New', 'service', 'elemarjr' ),
@@ -44,9 +43,13 @@ class Service extends Base {
 					'search_items'       => __( 'Search Services', 'elemarjr' ),
 					'not_found'          => __( 'No services found.', 'elemarjr' ),
 					'not_found_in_trash' => __( 'No services found in Trash.', 'elemarjr' ),
-				),
+                ),
+                'hierarchical'           => true,
+                'query_var'              => true,
+                'public'                 => true,
+                'publicly_queryable'     => true,
 				'show_ui'                => true,
-				'supports'               => array( 'title', 'editor' ),
+				'supports'               => array( 'title', 'editor', 'thumbnail' ),
 				'menu_icon'              => 'dashicons-hammer',
 			)
 		);

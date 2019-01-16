@@ -23,38 +23,31 @@ use Aztec\PostType\Service;
 use Aztec\Helper\PageSection;
 
 global $container;
-global $container;
 
 $services     = $container->get( Service::class )->get_services();
 $page_section = $container->get( PageSection::class );
 ?>
 
-
-<main class="services">
+<main class="container">
 	<?php
 	while ( have_posts() ) :
 		the_post();
 		?>
-	<div class="services__header">
-		<div class="services__header-image">
-			<?php the_post_thumbnail(); ?>
-		</div>
-	</div>
+	<div class="page-header">
+        <h3 class="page-header--title"><?php the_title(); ?></h3>
+    </div>
 
-	<div class="services__page-header page-header">
-		<h1 class="page-header--title"><?php the_title(); ?></h1>
-	</div>
-
-	<article id="post-<?php the_ID(); ?>" <?php post_class( 'rich-content' ); ?>>
+    <div class="cards-list services__list">
 		<?php
 		while ( $services->have_posts() ) :
 			$services->the_post();
-			?>
-		<div class="<?php echo esc_attr( $page_section->get_row_classes() ); ?>">
-			<?php get_template_part( 'template-parts/page-sections' ); ?>
-		</div>
-		<?php endwhile; ?>
-	</article>
+			get_template_part( 'template-parts/service/service' );
+			endwhile;
+
+			wp_reset_postdata();
+		?>
+	</div>
+
 	<?php endwhile; ?>
 </main>
 

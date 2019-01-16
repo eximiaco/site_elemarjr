@@ -1,24 +1,12 @@
 .services
-    &__page-header
-        margin-bottom 75px
-        padding-left 40px
-        padding-right 40px
+    .site-content
+        background $white-two
 
-        @media screen and ( min-width $screen-md )
-            padding-left 0
-            padding-right 0
-
-        .page-header--title
-            color $black-light
-
-    .page-section--content
-        margin-bottom 40px
-
-        @media screen and ( min-width $screen-md )
-            margin-bottom 0
+.single-service
+    .site-content
+        padding-top 'calc( 55px + %s )' % $sm-nav-height-breakpoint
 
     &__header
-        margin-bottom 40px
         position relative
 
         &::after
@@ -26,19 +14,24 @@
             content ''
             height 3px
             left 0
-            top 50%
-            transform translateY( -50% )
             position absolute
+            top 50%
             width 100%
 
         &-image
             background $white
+            display block
+            height auto
             margin 0 auto
             padding 0 10px
             position relative
-            width 145px
+            width 149px
             z-index 10
 
-.page-template-services
-    .site-content
-        padding-top 'calc( 55px + %s )' % $sm-nav-height
+    &__title
+        color $black-light
+        font-size 30px
+        font-weight 100
+        margin 40px 0 60px
+        text-align center
+        text-transform uppercase

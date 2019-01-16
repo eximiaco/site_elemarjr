@@ -36,9 +36,9 @@ $start_timestamp = $start->getTimestamp();
 $end_timestamp   = $end->getTimestamp();
 
 if ( $now_timestamp >= $start_timestamp && $now_timestamp <= $end_timestamp ) {
-	$event_class = 'event__active';
+	$event_class = 'card--active';
 } elseif ( $now_timestamp > $end_timestamp ) {
-	$event_class = 'event__old';
+	$event_class = 'card--old';
 }
 
 // Use `div` for elements without URL and `a` for elements with URL.
@@ -56,22 +56,20 @@ if ( '' === $url ) {
 }
 
 ?>
-<<?php echo esc_html( $tag[0] ); ?> <?php echo esc_html( $tag[1] ); ?> class="event card <?php echo esc_attr( $event_class ); ?>">
+<<?php echo esc_html( $tag[0] ); ?> <?php echo esc_html( $tag[1] ); ?> class="card card--white card--event <?php echo esc_attr( $event_class ); ?>">
 	<div class="card__wrapper">
-		<div class="event--container">
-			<div class="event--header">
-				<time class="event--date">
-					<?php echo esc_html( $event_months ); ?><br><?php echo esc_html( $event_days ); ?>
-				</time>
-				<div class="event--image">
-					<?php the_post_thumbnail(); ?>
-				</div>
-			</div>
-			<div class="event--content">
-				<p class="event--role"><?php the_field( 'event_role' ); ?></p>
-				<h3 class="event--title"><?php the_field( 'event_name' ); ?></h3>
-			</div>
-			<div class="event--footer"><?php the_title(); ?></div>
-		</div>
+        <div class="card__header">
+            <time class="card__date">
+                <?php echo esc_html( $event_months ); ?><br><?php echo esc_html( $event_days ); ?>
+            </time>
+            <div class="card__image">
+                <?php the_post_thumbnail(); ?>
+            </div>
+        </div>
+        <div class="card__content">
+            <p class="card__role"><?php the_field( 'event_role' ); ?></p>
+            <h3 class="card__title"><?php the_field( 'event_name' ); ?></h3>
+        </div>
+        <div class="card__footer"><?php the_title(); ?></div>
 	</div>
 </<?php echo esc_html( $tag[0] ); ?>>

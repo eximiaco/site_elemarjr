@@ -1,12 +1,20 @@
 .cards-list
     display flex
     flex-wrap wrap
+    justify-content center
+
+    &--labs
+        justify-content flex-start
 
 .card
-    height 325px
     margin 0 auto 10px
     max-width 400px
+    padding $card-box-padding
+    text-decoration none
     width 100%
+
+    @media screen and ( min-width $screen-sm )
+        height 325px
 
     @media screen and ( min-width $screen-md )
         margin 0 10px 10px 0
@@ -23,6 +31,58 @@
 
         &:nth-child( 3n + 0 )
             margin-right 0
-    
+
+    /**
+     * BLOCKS
+     */
+
+    &__header
+        align-items flex-start
+        display flex
+        justify-content space-between
+        margin-bottom 20px
+        min-height 64px
+
+    &__thumbnail
+        max-height 64px
+
+        img
+            max-width 100%
+            max-height 64px
+            width auto
+
+    &__title
+        font-size 18px
+        margin 0
+
+    &__content
+        color $brownish-grey
+
+        p
+            margin-top 0
+
+        a
+            color $blue-gray
+
     &__wrapper
+        display flex
+        flex-direction column
         height 100%
+
+    &__footer
+        margin-top auto
+
+    &__button
+        background $blue-gray
+        color $white
+        line-height normal
+        padding 1px 2px 1px
+        position relative
+        text-decoration none
+
+    /**
+     * MODIFIERS
+     */
+
+    &--white
+        background $white

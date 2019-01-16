@@ -26,7 +26,7 @@ class Service extends Base {
 	private $page_section;
 
 	/**
-	 * Event post type condition
+	 * Service post type condition
 	 *
 	 * @var array
 	 */
@@ -47,28 +47,38 @@ class Service extends Base {
 	 */
 	public function init() {
 		if ( function_exists( 'acf_add_options_page' ) ) {
-			add_action( 'acf/include_fields', $this->callback( 'event_fields' ) );
+			add_action( 'acf/include_fields', $this->callback( 'service_fields' ) );
 		}
 
 		$this->page_section = $this->container->get( PageSection::class );
 	}
 
 	/**
-	 * Add event fields.
+	 * Add servie fields.
 	 *
 	 * @return void
 	 */
-	public function event_fields() {
+	public function service_fields() {
 		acf_add_local_field_group(
 			array(
-			'key'    => 'service',
-			'title'  => __( 'Service settings', 'elemarjr' ),
-			'fields' => array(
-				$this->page_section->add_image_field(),
-				$this->page_section->add_image_position_field(),
-				$this->page_section->add_color_scheme_field(),
+			'key'            => 'service_sections',
+            'title'          => __( 'Page sections', 'elemarjr' ),
+            'fields'         => array(
+				array(
+					'type'       => 'repeater',
+					'key'        => 'service_repeater',
+					'name'       => 'service_repeater',
+					'layout'     => 'block',
+					'sub_fields' => array(
+                        $this->page_section->add_title_field(),
+						$this->page_section->add_content_field(),
+                        $this->page_section->add_image_field(),
+                        $this->page_section->add_image_position_field(),
+                        $this->page_section->add_color_scheme_field(),
+                    ),
+                ),
 			 ),
-			 'location' => $this->location,
+			 'location'      => $this->location,
 			)
 		);
 	}
