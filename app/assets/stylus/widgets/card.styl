@@ -1,15 +1,23 @@
 .cards-list
-    display flex
-    flex-wrap wrap
-    justify-content center
+    &__wrapper
+        display flex
+        flex-wrap wrap
+        justify-content center
+        margin 0 auto
+        max-width 400px
+        width 100%
 
-    &--labs
-        justify-content flex-start
+        @media screen and ( min-width $screen-md )
+            justify-content flex-start
+            max-width 800px
+
+        @media screen and ( min-width $screen-lg )
+            max-width 100%
 
 .card
     margin 0 auto 10px
     max-width 400px
-    padding $card-box-padding
+    padding $card-box-padding-above $card-box-padding-aside
     text-decoration none
     width 100%
 

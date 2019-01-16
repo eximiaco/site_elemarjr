@@ -2,34 +2,7 @@
     .site-content
         background $white-two
 
-    &--wrapper
-        padding 0 0 80px
-        text-align center
-
-    &--list
-        display flex
-        flex-wrap wrap
-        justify-content center
-        margin-bottom 50px
-        text-align left
-
-        @media screen and ( min-width $screen-md )
-            justify-content flex-start
-
-        &--wrapper
-            display inline-block
-            max-width 400px
-            width 100%
-
-            @media screen and ( min-width $screen-md )
-                margin-right -10px
-                max-width 800px
-
-            @media screen and ( min-width $screen-lg )
-                display block
-                max-width 100%
-
-    &--about
+    &__about
         color $black
         font-weight bold
         margin-top 50px
@@ -38,3 +11,10 @@
         &-text
             margin-bottom 40px
             text-transform uppercase
+
+    &__container
+        padding 0 0 80px
+
+.cards-list--events
+    margin-bottom 50px
+
