@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/src\n"
-"POT-Creation-Date: 2019-01-04 12:54:29+00:00\n"
-"PO-Revision-Date: 2019-01-04 10:56-0200\n"
+"POT-Creation-Date: 2019-01-16 16:21:50+00:00\n"
+"PO-Revision-Date: 2019-01-16 14:37-0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Domain: elemarjr\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 
 #: 404.php:17
 msgid "Page not found"
@@ -68,19 +68,15 @@ msgstr "Imagem de fundo - (%s)"
 
 #: includes/Customize/Banner/Footer/Promotion.php:30
 msgid "Footer promotion banner"
-msgstr ""
+msgstr "Banner de promoção do rodapé"
 
 #: includes/Customize/Banner/SinglePost/Contact.php:30
-#, fuzzy
-#| msgid "Single Post Banner"
 msgid "Single post contact banner"
-msgstr "Banner na Página do Post"
+msgstr "Banner na página do post"
 
 #: includes/Customize/Banner/SinglePost/Promotion.php:30
-#, fuzzy
-#| msgid "Single Post Banner"
 msgid "Single post promotion banner"
-msgstr "Banner na Página do Post"
+msgstr "Banner na página do post"
 
 #: includes/Customize/Newsletter.php:47
 msgid "Newletter Form"
@@ -213,8 +209,9 @@ msgid "Background Dusky and Title White"
 msgstr "Fundo Escuro e Título Branco"
 
 #: includes/Integration/ACF/Pages/About.php:95
-msgid "Page Sections"
-msgstr "Seções da Página"
+#: includes/Integration/ACF/PostType/Service.php:65
+msgid "Page sections"
+msgstr "Seções da página"
 
 #: includes/Integration/ACF/Pages/About.php:107
 msgid "Template"
@@ -390,10 +387,6 @@ msgstr "Etiquetas"
 msgid "Repository"
 msgstr "Repositório"
 
-#: includes/Integration/ACF/PostType/Service.php:65
-msgid "Service settings"
-msgstr ""
-
 #: includes/Integration/ACF/PostType/Testimonial.php:51
 #: includes/PostType/Testimonial.php:37
 msgid "Testimonial"
@@ -503,48 +496,48 @@ msgid "No labs found in Trash."
 msgstr "Nenhum lab encontrado na lixeira."
 
 #. Template Name of the plugin/theme
-#: includes/PostType/Service.php:36
+#: includes/PostType/Service.php:35
 msgid "Services"
-msgstr ""
+msgstr "Serviços"
+
+#: includes/PostType/Service.php:36
+msgid "Service"
+msgstr "Serviço"
 
 #: includes/PostType/Service.php:37
-msgid "Service"
-msgstr ""
-
-#: includes/PostType/Service.php:38
 msgctxt "service"
 msgid "Add New"
 msgstr "Adicionar Novo"
 
-#: includes/PostType/Service.php:39
+#: includes/PostType/Service.php:38
 msgid "Add New Service"
 msgstr "Adicionar Nova Serviço"
 
-#: includes/PostType/Service.php:40
+#: includes/PostType/Service.php:39
 msgid "New Service"
 msgstr "Ver Serviço"
 
-#: includes/PostType/Service.php:41
+#: includes/PostType/Service.php:40
 msgid "Edit Service"
 msgstr "Editar Serviço"
 
-#: includes/PostType/Service.php:42
+#: includes/PostType/Service.php:41
 msgid "View Service"
 msgstr "Ver Serviço"
 
-#: includes/PostType/Service.php:43
+#: includes/PostType/Service.php:42
 msgid "All Services"
 msgstr "Todas Serviços"
 
-#: includes/PostType/Service.php:44
+#: includes/PostType/Service.php:43
 msgid "Search Services"
 msgstr "Procurar Serviços"
 
-#: includes/PostType/Service.php:45
+#: includes/PostType/Service.php:44
 msgid "No services found."
 msgstr "Nenhuma serviço encontrada."
 
-#: includes/PostType/Service.php:46
+#: includes/PostType/Service.php:45
 msgid "No services found in Trash."
 msgstr "Nenhum serviço encontrado na lixeira."
 
@@ -657,7 +650,7 @@ msgstr "Próxima Página"
 msgid "Send"
 msgstr "Enviar"
 
-#: page-templates/events.php:37
+#: page-templates/events.php:36
 msgid "Calendar"
 msgstr "Agenda"
 
@@ -724,7 +717,7 @@ msgstr "Etiquetas"
 msgid "and"
 msgstr "e"
 
-#: template-parts/lab/lab.php:39
+#: template-parts/lab/lab.php:35
 msgid "what we wrote about it"
 msgstr "o que escrevemos sobre"
 
