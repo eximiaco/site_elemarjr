@@ -48,7 +48,7 @@ $lab_link = get_field( 'lab_link' );
 					</li>
 					<?php endif; ?>
 					<?php
-                    $en_term_id = pll_get_term( $lab_tag, 'en_US' );
+					$en_term_id = pll_get_term( $lab_tag, 'en_US' );
 
 					if ( null !== $en_term_id && false !== $en_term_id ) :
 						?>

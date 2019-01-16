@@ -62,21 +62,21 @@ class Service extends Base {
 		acf_add_local_field_group(
 			array(
 			'key'            => 'service_sections',
-            'title'          => __( 'Page sections', 'elemarjr' ),
-            'fields'         => array(
+			'title'          => __( 'Page sections', 'elemarjr' ),
+			'fields'         => array(
 				array(
 					'type'       => 'repeater',
 					'key'        => 'service_repeater',
 					'name'       => 'service_repeater',
 					'layout'     => 'block',
 					'sub_fields' => array(
-                        $this->page_section->add_title_field(),
+						$this->page_section->add_title_field(),
 						$this->page_section->add_content_field(),
-                        $this->page_section->add_image_field(),
-                        $this->page_section->add_image_position_field(),
-                        $this->page_section->add_color_scheme_field(),
-                    ),
-                ),
+						$this->page_section->add_image_field(),
+						$this->page_section->add_image_position_field(),
+						$this->page_section->add_color_scheme_field(),
+					),
+				),
 			 ),
 			 'location'      => $this->location,
 			)

@@ -58,18 +58,18 @@ if ( '' === $url ) {
 ?>
 <<?php echo esc_html( $tag[0] ); ?> <?php echo esc_html( $tag[1] ); ?> class="card card--white card--event <?php echo esc_attr( $event_class ); ?>">
 	<div class="card__wrapper">
-        <div class="card__header">
-            <time class="card__date">
-                <?php echo esc_html( $event_months ); ?><br><?php echo esc_html( $event_days ); ?>
-            </time>
-            <div class="card__image">
-                <?php the_post_thumbnail(); ?>
-            </div>
-        </div>
-        <div class="card__content">
-            <p class="card__role"><?php the_field( 'event_role' ); ?></p>
-            <h3 class="card__title"><?php the_field( 'event_name' ); ?></h3>
-        </div>
-        <div class="card__footer"><?php the_title(); ?></div>
+		<div class="card__header">
+			<time class="card__date">
+				<?php echo esc_html( $event_months ); ?><br><?php echo esc_html( $event_days ); ?>
+			</time>
+			<div class="card__image">
+				<?php the_post_thumbnail(); ?>
+			</div>
+		</div>
+		<div class="card__content">
+			<p class="card__role"><?php the_field( 'event_role' ); ?></p>
+			<h3 class="card__title"><?php the_field( 'event_name' ); ?></h3>
+		</div>
+		<div class="card__footer"><?php the_title(); ?></div>
 	</div>
 </<?php echo esc_html( $tag[0] ); ?>>

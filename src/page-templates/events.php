@@ -32,31 +32,31 @@ get_header(); ?>
 		?>
 	<div class="container events__container">
 		<?php foreach ( $events_by_year as $year => $events ) : ?>
-        <div class="page-header">
-            <h3 class="page-header--title"><?php echo esc_html( __( 'Calendar', 'elemarjr' ) ); ?> <b><?php echo esc_html( $year ); ?></b></h3>
-        </div>
-        <div class="cards-list cards-list--events">
-            <div class="cards-list__wrapper">
-                <?php
-                foreach ( $events as $post ) :
-                    setup_postdata( $post );
-                    get_template_part( 'template-parts/event/event' );
-                endforeach;
+		<div class="page-header">
+			<h3 class="page-header--title"><?php echo esc_html( __( 'Calendar', 'elemarjr' ) ); ?> <b><?php echo esc_html( $year ); ?></b></h3>
+		</div>
+		<div class="cards-list cards-list--events">
+			<div class="cards-list__wrapper">
+				<?php
+				foreach ( $events as $post ) :
+					setup_postdata( $post );
+					get_template_part( 'template-parts/event/event' );
+				endforeach;
 
-                wp_reset_postdata();
-                ?>
-            </div>
-        </div>
-        <?php endforeach; ?>
+				wp_reset_postdata();
+				?>
+			</div>
+		</div>
+		<?php endforeach; ?>
 
-        <div class="events__about">
-            <div class="events--about-text">
-                <?php the_field( 'cta_text' ); ?>
-            </div>
-            <a href="<?php the_field( 'cta_url' ); ?>" class="button button__bordered">
-                <?php the_field( 'cta_label' ); ?>
-            </a>
-        </div>
+		<div class="events__about">
+			<div class="events--about-text">
+				<?php the_field( 'cta_text' ); ?>
+			</div>
+			<a href="<?php the_field( 'cta_url' ); ?>" class="button button__bordered">
+				<?php the_field( 'cta_label' ); ?>
+			</a>
+		</div>
 	</div>
 	<?php endwhile; ?>
 </main>

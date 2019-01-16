@@ -47,9 +47,9 @@ class Services extends Base {
 	public function remove_the_content() {
 		acf_add_local_field_group(
 			array(
-			    'key'            => 'services_page',
-                'hide_on_screen' => array( 'the_content' ),
-			    'location'       => $this->location,
+				'key'            => 'services_page',
+				'hide_on_screen' => array( 'the_content' ),
+				'location'       => $this->location,
 			)
 		);
 	}

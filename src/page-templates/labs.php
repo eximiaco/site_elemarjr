@@ -36,16 +36,16 @@ get_header();
 	</div>
 
 	<div class="cards-list cards-list--labs">
-        <div class="cards-list__wrapper">
-            <?php
-            while ( $labs->have_posts() ) :
-                $labs->the_post();
-                get_template_part( 'template-parts/lab/lab' );
-                endwhile;
+		<div class="cards-list__wrapper">
+			<?php
+			while ( $labs->have_posts() ) :
+				$labs->the_post();
+				get_template_part( 'template-parts/lab/lab' );
+				endwhile;
 
-                wp_reset_postdata();
-            ?>
-        </div>
+				wp_reset_postdata();
+			?>
+		</div>
 	</div>
 	<?php endwhile; ?>
 </div>
