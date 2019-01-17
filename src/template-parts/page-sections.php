@@ -36,21 +36,21 @@ $page_section = $container->get( PageSection::class );
 			<?php endwhile; ?>
 		</ul>
 		<?php endif; ?>
+
+        <!-- Button -->
+        <?php
+        $url   = get_sub_field( 'button_url' );
+        $label = get_sub_field( 'button_label' );
+
+        if ( $label && $url ) :
+            ?>
+            <div class="page-section--button">
+                <a href="<?php echo esc_url( $url ); ?>" class="button button__bordered button__white">
+                    <?php echo esc_html( $label ); ?>
+                </a>
+            </div>
+        <?php endif; ?>
 	</div>
-
-	<!-- Button -->
-	<?php
-	$url   = get_sub_field( 'button_url' );
-	$label = get_sub_field( 'button_label' );
-
-	if ( $label && $url ) :
-		?>
-		<div class="page-section--button">
-			<a href="<?php echo esc_url( $url ); ?>" class="button button__bordered button__white">
-				<?php echo esc_html( $label ); ?>
-			</a>
-		</div>
-	<?php endif; ?>
 
 	<!-- Image -->
 	<div class="page-section--image wow fadeIn">
