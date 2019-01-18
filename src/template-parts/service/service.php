@@ -25,7 +25,7 @@ global $container;
 			<?php echo wp_kses_post( mb_strimwidth( get_the_content(), 0, 320, '...' ) ); ?>
 		</div>
 		<div class="card__footer">
-			<a href="<?php the_permalink(); ?>" class="card__button">Saiba mais</a>
+			<a href="<?php the_permalink(); ?>" class="card__button">Saiba mais <i class="i-shaft"></i></a>
 		</div>
 	</div>
 </div>
