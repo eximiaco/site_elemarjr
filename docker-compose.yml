@@ -66,9 +66,9 @@ services:
     volumes:
       - .:/var/www/html
     environment:
-      PHP_XDEBUG_REMOTE_ENABLE: "Off"
+      PHP_XDEBUG_REMOTE_ENABLE: "On"
       PHP_XDEBUG_REMOTE_HOST: "10.254.254.254"
-      PHP_XDEBUG_IDEKEY: "xdebug_idekey"
+      PHP_XDEBUG_IDEKEY: "VSCODE"
     depends_on:
       - db
       - smtp

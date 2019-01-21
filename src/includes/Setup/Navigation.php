@@ -21,6 +21,7 @@ class Navigation extends Base {
 		add_action( 'after_setup_theme', $this->callback( 'register_nav_menus' ) );
 
 		add_filter( 'walker_nav_menu_start_el', $this->callback( 'social_walker_nav_menu_start_el' ), 10, 4 );
+		add_filter( 'nav_menu_css_class', $this->callback( 'fix_services_custom_post_type_highlight' ), 10, 4 );
 	}
 
 	/**
@@ -29,8 +30,8 @@ class Navigation extends Base {
 	public function register_nav_menus() {
 		register_nav_menus(
 			array(
-			'primary' => __( 'Primary', 'elemarjr' ),
-			'social' => __( 'Social Menu', 'elemarjr' ),
+			    'primary' => __( 'Primary', 'elemarjr' ),
+			    'social' => __( 'Social Menu', 'elemarjr' ),
 			)
 		);
 	}
@@ -91,5 +92,28 @@ class Navigation extends Base {
 		}
 
 		return $icon;
-	}
+    }
+
+    /**
+     * Fix menu hightlight on services custom post type listing.
+     *
+     * @param  array    $classes
+     * @param  \WP_Post $item
+     * @return array
+     */
+    public function fix_services_custom_post_type_highlight( $classes, $item ) {
+        if ( 'service' == get_post_type() ) {
+            if ( get_option( 'page_for_posts' ) == $item->object_id ) {
+                $key = array_search( 'current-menu-item', $classes );
+
+                if ( false != $key ) {
+                    unset( $classes[$key] );
+                }
+            } else if ( 'page-templates/services.php' == get_page_template_slug( $item->object_id ) ) {
+                $classes[] = 'current-menu-item';
+            }
+        }
+
+        return $classes;
+    }
 }
