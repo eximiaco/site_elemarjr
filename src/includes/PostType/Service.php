@@ -22,6 +22,7 @@ class Service extends Base {
 	 */
 	public function init() {
 		add_action( 'init', $this->callback( 'register_post_type' ) );
+		add_filter( 'wpseo_title', $this->callback( 'remove_asterisk_from_title' ) );
 	}
 
 	/**
@@ -56,7 +57,17 @@ class Service extends Base {
 				'menu_icon'              => 'dashicons-hammer',
 			)
 		);
-	}
+    }
+
+    /**
+     * Remove asterisk from title.
+     *
+     * @param  string $title
+     * @return string
+     */
+    public function remove_asterisk_from_title( $title ) {
+        return preg_replace( '/\*/', '', $title );
+    }
 
 	/**
 	 * Get all services.
