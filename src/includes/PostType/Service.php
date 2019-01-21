@@ -43,7 +43,10 @@ class Service extends Base {
 					'search_items'       => __( 'Search Services', 'elemarjr' ),
 					'not_found'          => __( 'No services found.', 'elemarjr' ),
 					'not_found_in_trash' => __( 'No services found in Trash.', 'elemarjr' ),
-				),
+                ),
+                'rewrite'                => array(
+                    'slug' => 'servicos'
+                ),
 				'hierarchical'           => true,
 				'query_var'              => true,
 				'public'                 => true,
