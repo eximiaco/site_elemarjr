@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/src\n"
-"POT-Creation-Date: 2019-01-16 16:21:50+00:00\n"
-"PO-Revision-Date: 2019-01-16 14:37-0200\n"
+"POT-Creation-Date: 2019-01-21 15:58:18+00:00\n"
+"PO-Revision-Date: 2019-01-21 14:02-0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -68,7 +68,7 @@ msgstr "Imagem de fundo - (%s)"
 
 #: includes/Customize/Banner/Footer/Promotion.php:30
 msgid "Footer promotion banner"
-msgstr "Banner de promoção do rodapé"
+msgstr ""
 
 #: includes/Customize/Banner/SinglePost/Contact.php:30
 msgid "Single post contact banner"
@@ -527,7 +527,7 @@ msgstr "Ver Serviço"
 
 #: includes/PostType/Service.php:42
 msgid "All Services"
-msgstr "Todas Serviços"
+msgstr "Todos Serviços"
 
 #: includes/PostType/Service.php:43
 msgid "Search Services"
@@ -578,11 +578,11 @@ msgstr "Nenhuma recomendação encontrada."
 msgid "No testimonials found in Trash."
 msgstr "Nenhuma recomendação encontrada na lixeira."
 
-#: includes/Setup/Navigation.php:32
+#: includes/Setup/Navigation.php:33
 msgid "Primary"
 msgstr "Primário"
 
-#: includes/Setup/Navigation.php:33
+#: includes/Setup/Navigation.php:34
 msgid "Social Menu"
 msgstr "Menu Social"
 
@@ -681,7 +681,7 @@ msgstr "Ver Todos"
 msgid "Nothing found here."
 msgstr "Nada encontrado aqui."
 
-#: template-parts/blog/post-list.php:17
+#: template-parts/blog/post-list.php:18
 msgid "Loading posts..."
 msgstr "Carregando posts…"
 
@@ -759,7 +759,7 @@ msgstr "Veja mais"
 
 #. Theme Name of the plugin/theme
 msgid "Elemar Jr Blog Theme"
-msgstr "Tema do Blog do Elemar Jr."
+msgstr "Tema do Blog do Elemar Jr"
 
 #. Author of the plugin/theme
 msgid "Aztec Online Solutions"
