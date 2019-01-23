@@ -34,7 +34,7 @@ $page_section = $container->get( PageSection::class );
 		</div>
 		<?php endif; ?>
 
-		<h1 class="single-service__title">
+		<h1 class="container single-service__title">
 			<?php echo wp_kses_post( $container->get( Text::class )->asterisk_to_strong( get_the_title() ) ); ?>
 		</h1>
 
