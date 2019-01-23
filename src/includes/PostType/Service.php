@@ -53,7 +53,7 @@ class Service extends Base {
 				'public'                 => true,
 				'publicly_queryable'     => true,
 				'show_ui'                => true,
-				'supports'               => array( 'title', 'editor', 'thumbnail' ),
+				'supports'               => array( 'title', 'editor', 'thumbnail', 'page-attributes' ),
 				'menu_icon'              => 'dashicons-hammer',
 			)
 		);
