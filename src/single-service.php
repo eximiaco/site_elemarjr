@@ -28,11 +28,11 @@ $page_section = $container->get( PageSection::class );
 			the_post();
 			?>
 
-        <?php if ( has_post_thumbnail() ) : ?>
+			<?php if ( has_post_thumbnail() ) : ?>
 		<div class="single-service__header">
-			<?php the_post_thumbnail( 'post-thumbnail', array( 'class' => 'single-service__header-image' ) ); ?>
+				<?php the_post_thumbnail( 'post-thumbnail', array( 'class' => 'single-service__header-image' ) ); ?>
 		</div>
-        <?php endif; ?>
+		<?php endif; ?>
 
 		<h1 class="single-service__title">
 			<?php echo wp_kses_post( $container->get( Text::class )->asterisk_to_strong( get_the_title() ) ); ?>

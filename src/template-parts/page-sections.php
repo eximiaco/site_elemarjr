@@ -37,19 +37,19 @@ $page_section = $container->get( PageSection::class );
 		</ul>
 		<?php endif; ?>
 
-        <!-- Button -->
-        <?php
-        $url   = get_sub_field( 'button_url' );
-        $label = get_sub_field( 'button_label' );
+		<!-- Button -->
+		<?php
+		$url   = get_sub_field( 'button_url' );
+		$label = get_sub_field( 'button_label' );
 
-        if ( $label && $url ) :
-            ?>
-            <div class="page-section--button">
-                <a href="<?php echo esc_url( $url ); ?>" class="button button__bordered button__white">
-                    <?php echo esc_html( $label ); ?>
-                </a>
-            </div>
-        <?php endif; ?>
+		if ( $label && $url ) :
+			?>
+			<div class="page-section--button">
+				<a href="<?php echo esc_url( $url ); ?>" class="button button__bordered button__white">
+					<?php echo esc_html( $label ); ?>
+				</a>
+			</div>
+		<?php endif; ?>
 	</div>
 
 	<!-- Image -->

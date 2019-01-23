@@ -30,8 +30,8 @@ class Navigation extends Base {
 	public function register_nav_menus() {
 		register_nav_menus(
 			array(
-			    'primary' => __( 'Primary', 'elemarjr' ),
-			    'social' => __( 'Social Menu', 'elemarjr' ),
+				'primary' => __( 'Primary', 'elemarjr' ),
+				'social' => __( 'Social Menu', 'elemarjr' ),
 			)
 		);
 	}
@@ -92,28 +92,28 @@ class Navigation extends Base {
 		}
 
 		return $icon;
-    }
+	}
 
-    /**
-     * Fix menu hightlight on services custom post type listing.
-     *
-     * @param  array    $classes
-     * @param  \WP_Post $item
-     * @return array
-     */
-    public function fix_services_custom_post_type_highlight( $classes, $item ) {
-        if ( 'service' == get_post_type() ) {
-            if ( get_option( 'page_for_posts' ) == $item->object_id ) {
-                $key = array_search( 'current-menu-item', $classes );
+	/**
+	 * Fix menu hightlight on services custom post type listing.
+	 *
+	 * @param  array    $classes Current menu classes.
+	 * @param  \WP_Post $item    Current menu item.
+	 * @return array
+	 */
+	public function fix_services_custom_post_type_highlight( $classes, $item ) {
+		if ( 'service' == get_post_type() ) {
+			if ( get_option( 'page_for_posts' ) == $item->object_id ) {
+				$key = array_search( 'current-menu-item', $classes );
 
-                if ( false != $key ) {
-                    unset( $classes[$key] );
-                }
-            } else if ( 'page-templates/services.php' == get_page_template_slug( $item->object_id ) ) {
-                $classes[] = 'current-menu-item';
-            }
-        }
+				if ( false != $key ) {
+					unset( $classes[$key] );
+				}
+			} elseif ( 'page-templates/services.php' == get_page_template_slug( $item->object_id ) ) {
+				$classes[] = 'current-menu-item';
+			}
+		}
 
-        return $classes;
-    }
+		return $classes;
+	}
 }

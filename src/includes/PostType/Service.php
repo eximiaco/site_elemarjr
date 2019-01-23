@@ -44,10 +44,10 @@ class Service extends Base {
 					'search_items'       => __( 'Search Services', 'elemarjr' ),
 					'not_found'          => __( 'No services found.', 'elemarjr' ),
 					'not_found_in_trash' => __( 'No services found in Trash.', 'elemarjr' ),
-                ),
-                'rewrite'                => array(
-                    'slug' => 'servicos'
-                ),
+				),
+				'rewrite'                => array(
+					'slug' => 'servicos'
+				),
 				'hierarchical'           => true,
 				'query_var'              => true,
 				'public'                 => true,
@@ -57,17 +57,17 @@ class Service extends Base {
 				'menu_icon'              => 'dashicons-hammer',
 			)
 		);
-    }
+	}
 
-    /**
-     * Remove asterisk from title.
-     *
-     * @param  string $title
-     * @return string
-     */
-    public function remove_asterisk_from_title( $title ) {
-        return preg_replace( '/\*/', '', $title );
-    }
+	/**
+	 * Remove asterisk from title.
+	 *
+	 * @param  string $title The title with asterisk.
+	 * @return string
+	 */
+	public function remove_asterisk_from_title( $title ) {
+		return preg_replace( '/\*/', '', $title );
+	}
 
 	/**
 	 * Get all services.
