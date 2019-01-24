@@ -2,6 +2,7 @@
 
 set -ex
 
+compressFile="elemarjr.zip"
 grunt="docker-compose run --rm node grunt"
 deployDir="/home/elem3989155387/deploy"
 elemarResetKey="ssh-keygen -R www.elemarjr.com"
@@ -23,11 +24,11 @@ ${grunt} dist
 
 # Make deploy
 elemar-ssh mkdir -p ${deployDir}
-elemar-scp elemarjr.zip
+elemar-scp ${compressFile}
 
 elemar-ssh << EOF
 	cd ${deployDir}
-	unzip elemarjr.zip
+	unzip ${compressFile}
 	sed -i -r 's/(\/..\/..\/..\/vendor)/\/..\/..\/..\1/g' src/includes/WP_CLI/bootstrap.php
 	sed -i -r 's/src(\/includes)/html\/wp-content\/themes\/elemarjr\1/g' composer.json
 	php ../vendor/bin/composer install --prefer-dist --no-progress --no-interaction --no-dev --optimize-autoloader
@@ -39,7 +40,7 @@ elemar-ssh << EOF
 	rm -r ${deployDir}
 EOF
 
-rm elemarjr.zip
+rm ${compressFile}
 
 # Regenerate dev assets
 rm -rf .assets/
