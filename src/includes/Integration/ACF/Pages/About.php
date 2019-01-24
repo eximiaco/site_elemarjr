@@ -45,17 +45,6 @@ class About extends Base {
 	);
 
 	/**
-	 * MVP template logic condition.
-	 *
-	 * @var array
-	 */
-	protected $mvp = array(
-		'field'    => 'template',
-		'operator' => '==',
-		'value'    => 'mvp',
-	);
-
-	/**
 	 * Customers template logic condition.
 	 *
 	 * @var array
@@ -142,40 +131,8 @@ class About extends Base {
 								),
 							),
 						),
-						array (
-							'type'              => 'text',
-							'key'               => 'button_label',
-							'label'             => __( 'Button label', 'elemarjr' ),
-							'name'              => 'button_label',
-							'wrapper'           => array (
-								'width'=> '50%',
-							),
-							'conditional_logic' => array (
-								array (
-									$this->mvp,
-								),
-								array (
-									$this->customers,
-								),
-							),
-						),
-						array (
-							'key'               => 'button_url',
-							'label'             => __( 'Button URL', 'elemarjr' ),
-							'name'              => 'button_url',
-							'type'              => 'url',
-							'wrapper'           => array (
-								'width'=> '50%',
-							),
-							'conditional_logic' => array (
-								array (
-									$this->mvp,
-								),
-								array (
-									$this->customers,
-								),
-							),
-						),
+						$this->page_section->add_button_label_field(),
+						$this->page_section->add_button_url_field(),
 					)
 				),
 			 ),

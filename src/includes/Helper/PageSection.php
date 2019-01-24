@@ -99,7 +99,41 @@ class PageSection extends Base {
 				$conditional
 			),
 		);
-	}
+    }
+
+    /**
+     * Add button label field.
+     *
+     * @return array
+     */
+    public function add_button_label_field() {
+        return array (
+            'type'    => 'text',
+            'key'     => 'button_label',
+            'label'   => __( 'Button label', 'elemarjr' ),
+            'name'    => 'button_label',
+            'wrapper' => array (
+                'width' => '50%',
+            )
+        );
+    }
+
+    /**
+     * Add button URL field.
+     *
+     * @return array
+     */
+    public function add_button_url_field() {
+        return array (
+            'key'     => 'button_url',
+            'label'   => __( 'Button URL', 'elemarjr' ),
+            'name'    => 'button_url',
+            'type'    => 'url',
+            'wrapper' => array (
+                'width' => '50%',
+            ),
+        );
+    }
 
 	/**
 	 * Add color scheme field.

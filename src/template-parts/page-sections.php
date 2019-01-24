@@ -44,8 +44,8 @@ $page_section = $container->get( PageSection::class );
 
 		if ( $label && $url ) :
 			?>
-			<div class="page-section--button">
-				<a href="<?php echo esc_url( $url ); ?>" class="button button__bordered button__white">
+			<div class="page-section--action">
+				<a href="<?php echo esc_url( $url ); ?>" class="page-section--button button button__bordered">
 					<?php echo esc_html( $label ); ?>
 				</a>
 			</div>
