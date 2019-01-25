@@ -10,7 +10,7 @@ module.exports = function ( grunt ) {
 		'requirejs:compile',
 		// 'imagemin',
 		'copy',
-		'compress'
-		// 'symlink'
+		'compress',
+		'symlink'
 	] );
 };
