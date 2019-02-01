@@ -32,7 +32,9 @@ class Index extends Base {
 	 * Add hooks.
 	 */
 	public function init() {
-		add_action( 'init', $this->callback( 'add_index_fields' ) );
+		if ( function_exists( 'acf_add_local_field_group' ) ) {
+			add_action( 'init', $this->callback( 'add_index_fields' ) );
+		}
 	}
 
 	/**
