@@ -8,33 +8,30 @@
  * @version 0.1.0
  */
 
+use Aztec\Query\Post;
 use Aztec\Helper\Url;
 
 global $container;
 
 $args         = $container->get( 'template.home.blog' );
 $blog_id      = get_option( 'page_for_posts' );
-$query_args   = [
-	'posts_per_page' => 4,
-];
+$language     = pll_current_language();
 $url_helper   = new Url();
 $see_more_url = '';
 
 if ( ! empty( $args['language'] ) ) {
-	$language           = $args['language'];
-	$query_args['lang'] = $language;
-	$see_more_url       = $url_helper->get_another_language_post_url( $blog_id, $language );
+	$language     = $args['language'];
+	$see_more_url = $url_helper->get_another_language_post_url( $blog_id, $language );
 }
 
 if ( '' === $see_more_url ) {
 	$see_more_url = get_permalink( $blog_id );
 }
 
-$query = new WP_Query( $query_args );
-
+$query = $container->get( Post::class )->get_posts( 4, $language );
 ?>
 
-<div class="front-page--blog-list <?php echo esc_attr( isset( $language ) ? $language : 'pt' ); ?>">
+<div class="front-page--blog-list <?php echo esc_attr( $language ); ?>">
 	<p class="front-page--blog-description wow fadeIn">
 		<?php echo wp_kses_post( $args['description'] ); ?>
 	</p>
@@ -43,7 +40,7 @@ $query = new WP_Query( $query_args );
 		<?php
 			$container->set( 'post_list.query', $query );
 			$container->set( 'post_list.extra_class', 'front-page--blog--list' );
-			get_template_part( 'template-parts/blog/post-list' );
+            get_template_part( 'template-parts/blog/post-list' );
 		?>
 	</div>
 
