@@ -40,7 +40,7 @@ $query = $container->get( Post::class )->get_posts( 4, $language );
 		<?php
 			$container->set( 'post_list.query', $query );
 			$container->set( 'post_list.extra_class', 'front-page--blog--list' );
-            get_template_part( 'template-parts/blog/post-list' );
+			get_template_part( 'template-parts/blog/post-list' );
 		?>
 	</div>
 
