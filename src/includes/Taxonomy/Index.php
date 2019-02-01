@@ -32,8 +32,8 @@ class Index extends Base {
 	 */
 	public function register_taxonomy() {
 		register_taxonomy(
-            $this->slug,
-            'post',
+			$this->slug,
+			'post',
 			array(
 				'hierarchical' => true,
 				'label'        => __( 'Indexes', 'elemarjr' ),
