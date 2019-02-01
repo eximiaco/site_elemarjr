@@ -57,6 +57,7 @@ class Kernel {
 			\Aztec\Integration\ACF\PostType\Event::class,
 			\Aztec\Integration\ACF\PostType\Service::class,
 			\Aztec\Integration\ACF\PostType\Testimonial::class,
+			\Aztec\Integration\ACF\Taxonomy\Index::class,
 
 			\Aztec\Integration\AddThis\AddThis::class,
 
