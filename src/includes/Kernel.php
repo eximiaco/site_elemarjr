@@ -75,6 +75,7 @@ class Kernel {
 			\Aztec\Performance\Css::class,
 
 			\Aztec\PostType\Lab::class,
+			\Aztec\PostType\Post::class,
 			\Aztec\PostType\Event::class,
 			\Aztec\PostType\Service::class,
 			\Aztec\PostType\Testimonial::class,
