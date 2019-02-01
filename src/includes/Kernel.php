@@ -93,6 +93,7 @@ class Kernel {
 			\Aztec\Shortcode\Twitter::class,
 
 			\Aztec\Taxonomy\Serie::class,
+			\Aztec\Taxonomy\Index::class,
 		];
 
 		foreach ( $init_classes as $class ) {
