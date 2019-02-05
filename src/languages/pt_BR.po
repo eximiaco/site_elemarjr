@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/src\n"
-"POT-Creation-Date: 2019-01-21 15:58:18+00:00\n"
-"PO-Revision-Date: 2019-01-21 14:02-0200\n"
+"POT-Creation-Date: 2019-01-31 13:29:44+00:00\n"
+"PO-Revision-Date: 2019-01-31 11:30-0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -139,7 +139,7 @@ msgid "Use * to bold"
 msgstr "Use * para negrito"
 
 #: includes/Helper/PageSection.php:42
-#: includes/Integration/ACF/Pages/About.php:201
+#: includes/Integration/ACF/Pages/About.php:158
 #: includes/Integration/ACF/Pages/Event.php:58
 #: includes/Integration/ACF/Pages/HomePage.php:67
 #: includes/Integration/ACF/Pages/HomePage.php:194
@@ -188,65 +188,66 @@ msgstr "Grudar abaixo"
 msgid "Overlap bottom"
 msgstr "Sobreposição para baixo"
 
-#: includes/Helper/PageSection.php:114
-msgid "Color Scheme"
-msgstr "Esquema de cores"
-
-#: includes/Helper/PageSection.php:116
-msgid "Background White and Title Black"
-msgstr "Fundo Branco e Título Preto"
-
-#: includes/Helper/PageSection.php:117
-msgid "Background Gray and Title Black"
-msgstr "Fundo Cinza e Título Preto"
-
-#: includes/Helper/PageSection.php:118
-msgid "Background Black and Title White"
-msgstr "Fundo Preto e Título Branco"
-
-#: includes/Helper/PageSection.php:119
-msgid "Background Dusky and Title White"
-msgstr "Fundo Escuro e Título Branco"
-
-#: includes/Integration/ACF/Pages/About.php:95
-#: includes/Integration/ACF/PostType/Service.php:65
-msgid "Page sections"
-msgstr "Seções da página"
-
-#: includes/Integration/ACF/Pages/About.php:107
-msgid "Template"
-msgstr "Modelo"
-
-#: includes/Integration/ACF/Pages/About.php:111
-msgid "Default"
-msgstr "Padrão"
-
-#: includes/Integration/ACF/Pages/About.php:112
-msgid "Customers"
-msgstr "Clientes"
-
-#: includes/Integration/ACF/Pages/About.php:113
-msgid "MVP"
-msgstr "MVP"
-
-#: includes/Integration/ACF/Pages/About.php:128
-msgid "Items"
-msgstr "Itens"
-
-#: includes/Integration/ACF/Pages/About.php:140
-msgid "Item"
-msgstr "Item"
-
-#: includes/Integration/ACF/Pages/About.php:148
+#: includes/Helper/PageSection.php:113
 msgid "Button label"
 msgstr "Rótulo do botão"
 
-#: includes/Integration/ACF/Pages/About.php:164
+#: includes/Helper/PageSection.php:129
 #: includes/Integration/ACF/Pages/HomePage.php:79
 msgid "Button URL"
 msgstr "URL do botão"
 
-#: includes/Integration/ACF/Pages/About.php:194
+#: includes/Helper/PageSection.php:148
+msgid "Color Scheme"
+msgstr "Esquema de cores"
+
+#: includes/Helper/PageSection.php:150
+msgid "Background White and Title Black"
+msgstr "Fundo Branco e Título Preto"
+
+#: includes/Helper/PageSection.php:151
+msgid "Background Gray and Title Black"
+msgstr "Fundo Cinza e Título Preto"
+
+#: includes/Helper/PageSection.php:152
+msgid "Background Black and Title White"
+msgstr "Fundo Preto e Título Branco"
+
+#: includes/Helper/PageSection.php:153
+msgid "Background Dusky and Title White"
+msgstr "Fundo Escuro e Título Branco"
+
+#: includes/Integration/ACF/Pages/About.php:84
+#: includes/Integration/ACF/PostType/Service.php:65
+#: includes/Integration/ACF/Taxonomy/Index.php:45
+msgid "Page sections"
+msgstr "Seções da página"
+
+#: includes/Integration/ACF/Pages/About.php:96
+msgid "Template"
+msgstr "Modelo"
+
+#: includes/Integration/ACF/Pages/About.php:100
+msgid "Default"
+msgstr "Padrão"
+
+#: includes/Integration/ACF/Pages/About.php:101
+msgid "Customers"
+msgstr "Clientes"
+
+#: includes/Integration/ACF/Pages/About.php:102
+msgid "MVP"
+msgstr "MVP"
+
+#: includes/Integration/ACF/Pages/About.php:117
+msgid "Items"
+msgstr "Itens"
+
+#: includes/Integration/ACF/Pages/About.php:129
+msgid "Item"
+msgstr "Item"
+
+#: includes/Integration/ACF/Pages/About.php:151
 #: includes/Integration/ACF/Pages/HomePage.php:54
 #: includes/Integration/ACF/Pages/Page.php:51
 msgid "Hero"
@@ -404,6 +405,10 @@ msgstr "Foto"
 msgid "Company Logo"
 msgstr "Logo da Empresa"
 
+#: includes/Integration/ACF/Taxonomy/Index.php:49
+msgid "Order"
+msgstr "Ordem"
+
 #: includes/Integration/Polylang/Polylang.php:51
 msgid "Contact Phone"
 msgstr "Telefone de contato"
@@ -496,48 +501,48 @@ msgid "No labs found in Trash."
 msgstr "Nenhum lab encontrado na lixeira."
 
 #. Template Name of the plugin/theme
-#: includes/PostType/Service.php:35
+#: includes/PostType/Service.php:36
 msgid "Services"
 msgstr "Serviços"
 
-#: includes/PostType/Service.php:36
+#: includes/PostType/Service.php:37
 msgid "Service"
 msgstr "Serviço"
 
-#: includes/PostType/Service.php:37
+#: includes/PostType/Service.php:38
 msgctxt "service"
 msgid "Add New"
 msgstr "Adicionar Novo"
 
-#: includes/PostType/Service.php:38
+#: includes/PostType/Service.php:39
 msgid "Add New Service"
 msgstr "Adicionar Nova Serviço"
 
-#: includes/PostType/Service.php:39
+#: includes/PostType/Service.php:40
 msgid "New Service"
 msgstr "Ver Serviço"
 
-#: includes/PostType/Service.php:40
+#: includes/PostType/Service.php:41
 msgid "Edit Service"
 msgstr "Editar Serviço"
 
-#: includes/PostType/Service.php:41
+#: includes/PostType/Service.php:42
 msgid "View Service"
 msgstr "Ver Serviço"
 
-#: includes/PostType/Service.php:42
+#: includes/PostType/Service.php:43
 msgid "All Services"
 msgstr "Todos Serviços"
 
-#: includes/PostType/Service.php:43
+#: includes/PostType/Service.php:44
 msgid "Search Services"
 msgstr "Procurar Serviços"
 
-#: includes/PostType/Service.php:44
+#: includes/PostType/Service.php:45
 msgid "No services found."
 msgstr "Nenhuma serviço encontrada."
 
-#: includes/PostType/Service.php:45
+#: includes/PostType/Service.php:46
 msgid "No services found in Trash."
 msgstr "Nenhum serviço encontrado na lixeira."
 
@@ -585,6 +590,58 @@ msgstr "Primário"
 #: includes/Setup/Navigation.php:34
 msgid "Social Menu"
 msgstr "Menu Social"
+
+#: includes/Taxonomy/Index.php:39 includes/Taxonomy/Index.php:41
+msgid "Indexes"
+msgstr "Índices"
+
+#: includes/Taxonomy/Index.php:42
+msgid "Index"
+msgstr "Índice"
+
+#: includes/Taxonomy/Index.php:43
+msgid "All Indexes"
+msgstr "Todos os Índices"
+
+#: includes/Taxonomy/Index.php:44
+msgid "Edit Index"
+msgstr "Editar Índice"
+
+#: includes/Taxonomy/Index.php:45
+msgid "View Index"
+msgstr "Ver Índice"
+
+#: includes/Taxonomy/Index.php:46
+msgid "Update Index"
+msgstr "Atualizar Índice"
+
+#: includes/Taxonomy/Index.php:47
+msgid "Add New Index"
+msgstr "Adicionar Índice"
+
+#: includes/Taxonomy/Index.php:48
+msgid "New Index Name"
+msgstr "Novo nome de Índice"
+
+#: includes/Taxonomy/Index.php:49
+msgid "Parent Index"
+msgstr "Índice pai"
+
+#: includes/Taxonomy/Index.php:50
+msgid "Parent Index:"
+msgstr "Índice pai:"
+
+#: includes/Taxonomy/Index.php:51
+msgid "Search Indexes"
+msgstr "Procurar Índices"
+
+#: includes/Taxonomy/Index.php:52
+msgid "Popular Indexes"
+msgstr "Índice populares"
+
+#: includes/Taxonomy/Index.php:53
+msgid "No indexes found."
+msgstr "Nenhuma índice encontrado."
 
 #: includes/Taxonomy/Serie.php:38 includes/Taxonomy/Serie.php:40
 msgid "Series"
