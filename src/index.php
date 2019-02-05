@@ -15,7 +15,11 @@
  * @version 0.1.0
  */
 
-global $wp_query;
+use Aztec\Query\Post;
+
+global $container;
+
+$query = $container->get( Post::class )->get_posts();
 
 get_header(); ?>
 
@@ -23,9 +27,9 @@ get_header(); ?>
 
 <main>
 	<?php
-		$container->set( 'post_list.query', $wp_query );
+		$container->set( 'post_list.query', $query );
 		$container->set( 'post_list.extra_class', '' );
-		$template = $wp_query->have_posts() ? null : 'empty';
+		$template = $query->have_posts() ? null : 'empty';
 		get_template_part( 'template-parts/blog/post-list', $template );
 	?>
 

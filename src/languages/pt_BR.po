@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/src\n"
-"POT-Creation-Date: 2019-01-31 13:29:44+00:00\n"
-"PO-Revision-Date: 2019-01-31 11:30-0200\n"
+"POT-Creation-Date: 2019-02-05 10:33:02+00:00\n"
+"PO-Revision-Date: 2019-02-05 08:34-0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -68,7 +68,7 @@ msgstr "Imagem de fundo - (%s)"
 
 #: includes/Customize/Banner/Footer/Promotion.php:30
 msgid "Footer promotion banner"
-msgstr ""
+msgstr "Banner de promoção do rodapé"
 
 #: includes/Customize/Banner/SinglePost/Contact.php:30
 msgid "Single post contact banner"
@@ -695,11 +695,11 @@ msgstr "Séries Populares"
 msgid "No series found."
 msgstr "Nenhuma série encontrada."
 
-#: index.php:33
+#: index.php:37
 msgid "Previous Page"
 msgstr "Página Anterior"
 
-#: index.php:33
+#: index.php:37
 msgid "Next Page"
 msgstr "Próxima Página"
 
@@ -787,8 +787,8 @@ msgid "Check the content of your interest"
 msgstr "Marque o conteúdo de seu interesse"
 
 #: template-parts/newsletter/form.php:56
-msgid "Events in which I will speak"
-msgstr "Eventos em que irei palestrar"
+msgid "Events in which we will speak"
+msgstr "Eventos em que iremos palestrar"
 
 #: template-parts/newsletter/form.php:64
 msgid "English content"
@@ -810,7 +810,7 @@ msgstr "Selecione pelo menos um interesse"
 msgid "Subscribe"
 msgstr "Inscrever-se"
 
-#: template-parts/page/home/blog.php:55
+#: template-parts/page/home/blog.php:52
 msgid "See more"
 msgstr "Veja mais"
 
