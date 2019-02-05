@@ -21,17 +21,17 @@ class Post extends Base {
 	 * Init.
 	 */
 	public function init() {
-        add_action( 'pre_get_posts', array( $this, 'hide_private' ) );
-    }
+		add_action( 'pre_get_posts', array( $this, 'hide_private' ) );
+	}
 
-	/**
-	 * Get posts.
-	 *
-	 * @return WP_Query
-	 */
-	public function hide_private($query) {
-        if ( ! is_admin() ) {
-            $query->set( 'post_status', 'publish' );
-        }
+	 /**
+	  * Esconde posts privados no site
+	  *
+	  * @param WP_Query $query A consulta que está sendo processada.
+	  */
+	public function hide_private( $query ) {
+		if ( ! is_admin() ) {
+			$query->set( 'post_status', 'publish' );
+		}
 	}
 }
