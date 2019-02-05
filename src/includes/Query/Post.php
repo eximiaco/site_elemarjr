@@ -20,28 +20,18 @@ class Post extends Base {
 	/**
 	 * Init.
 	 */
-	public function init() {}
+	public function init() {
+		add_action( 'pre_get_posts', array( $this, 'hide_private' ) );
+	}
 
-	/**
-	 * Get posts.
-	 *
-	 * @param  int    $per_page Posts per page.
-	 * @param  string $language Posts language.
-	 * @return WP_Query
-	 */
-	public function get_posts( $per_page = null, $language = null ) {
-		$args = array(
-			'post_status' => 'publish',
-		);
-
-		if ( null != $per_page ) {
-			$args['posts_per_page'] = $per_page;
+	 /**
+	  * Esconde posts privados no site
+	  *
+	  * @param WP_Query $query A consulta que está sendo processada.
+	  */
+	public function hide_private( $query ) {
+		if ( ! is_admin() ) {
+			$query->set( 'post_status', 'publish' );
 		}
-
-		if ( null != $language ) {
-			$args['lang'] = $language;
-		}
-
-		return new WP_Query( $args );
 	}
 }
