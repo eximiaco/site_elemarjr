@@ -53,7 +53,7 @@ foreach ( $bg_images as $size => $url ) :
 			<div class="newsletter--options">
 				<label for="evt-pale">
 					<div class="newsletter--interest">
-						<span><?php esc_html_e( 'Events in which I will speak', 'elemarjr' ); ?></span>
+						<span><?php esc_html_e( 'Events in which we will speak', 'elemarjr' ); ?></span>
 						<input id="evt-pale" class="newsletter--check" type="checkbox" name="group[4625][1]" value="1">
 						<span class="checkmark"></span>
 					</div>
