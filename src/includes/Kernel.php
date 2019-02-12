@@ -57,6 +57,7 @@ class Kernel {
 			\Aztec\Integration\ACF\PostType\Event::class,
 			\Aztec\Integration\ACF\PostType\Service::class,
 			\Aztec\Integration\ACF\PostType\Testimonial::class,
+			\Aztec\Integration\ACF\Taxonomy\Index::class,
 
 			\Aztec\Integration\AddThis\AddThis::class,
 
@@ -72,6 +73,8 @@ class Kernel {
 			\Aztec\Pages\Single::class,
 
 			\Aztec\Performance\Css::class,
+
+			\Aztec\Query\Post::class,
 
 			\Aztec\PostType\Lab::class,
 			\Aztec\PostType\Post::class,
@@ -94,6 +97,7 @@ class Kernel {
 			\Aztec\Shortcode\Twitter::class,
 
 			\Aztec\Taxonomy\Serie::class,
+			\Aztec\Taxonomy\Index::class,
 		];
 
 		foreach ( $init_classes as $class ) {

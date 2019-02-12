@@ -44,19 +44,28 @@ if ( $now_timestamp >= $start_timestamp && $now_timestamp <= $end_timestamp ) {
 // Use `div` for elements without URL and `a` for elements with URL.
 $url = get_field( 'event_url' );
 if ( '' === $url ) {
-	$tag = [
-		'div',
-		'',
+	$el = [
+		'tag' => 'div',
+		'href' => '',
 	];
 } else {
-	$tag = [
-		'a',
-		'href="' . esc_url( get_field( 'event_url' ) ) . '" target="_blank"',
+	$el = [
+		'tag' => 'a',
+        'href' => get_field( 'event_url' ),
+        'target' => '_blank',
 	];
 }
 
 ?>
-<<?php echo esc_html( $tag[0] ); ?> <?php echo esc_html( $tag[1] ); ?> class="card card--white card--event <?php echo esc_attr( $event_class ); ?>">
+<<?php
+
+    echo esc_html( $el['tag'] );
+
+    if( ! empty( $el['href'] ) ) :
+        echo ' href="' . esc_url( $el['href'] ) . '" target="' . esc_attr( $el['target'] ) . '"';
+    endif;
+
+    ?> class="card card--white card--event <?php echo esc_attr( $event_class ); ?>">
 	<div class="card__wrapper">
 		<div class="card__header">
 			<time class="card__date">
@@ -72,4 +81,4 @@ if ( '' === $url ) {
 		</div>
 		<div class="card__footer"><?php the_title(); ?></div>
 	</div>
-</<?php echo esc_html( $tag[0] ); ?>>
+</<?php echo esc_html( $el['tag'] ); ?>>
