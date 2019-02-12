@@ -1,10 +1,11 @@
-.indexes
+.index-tags
     background $dusky-blue
     padding 30px 0
     position fixed
     width 100%
     top $sm-nav-height
     transition top $transition-default
+    z-index 100
 
     @media screen and ( min-width $nav-breakpoint )
         top $sm-nav-height-breakpoint
@@ -12,9 +13,8 @@
     /.sticky &
         top $sm-nav-height-sticky
 
-
     &__container
-		align-items center
+        align-items center
         display flex
         justify-content space-between
 

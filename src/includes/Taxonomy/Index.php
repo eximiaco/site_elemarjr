@@ -56,4 +56,36 @@ class Index extends Base {
 			)
 		);
 	}
+
+	/**
+	 * Get indexes.
+	 *
+	 * @return array
+	 */
+	public function get_indexes() {
+		return get_terms( $this->slug );
+	}
+
+	/**
+	 * Get all posts with index taxonomy.
+	 *
+	 * @return array
+	 */
+	public function get_posts() {
+		$data = array();
+
+		foreach ($this->get_indexes() as $index) {
+			$data[$index->name] = new \WP_Query(array(
+				'tax_query' => array(
+					array(
+						'taxonomy' => $this->slug,
+						'field'    => 'term_id',
+						'terms'    => $index->term_id,
+					),
+				),
+			));
+		}
+
+		return $data;
+	}
 }
