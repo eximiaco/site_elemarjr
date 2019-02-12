@@ -14,6 +14,6 @@ module.exports = {
 	},
 	js: {
 		files: ['<%= config.assets.src %>/js/**/*'],
-		tasks: ['jshint']
+		tasks: ['jshint', 'requirejs:nooptimize']
 	}
 };

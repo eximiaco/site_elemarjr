@@ -75,7 +75,8 @@ class Index extends Base {
 		$data = array();
 
 		foreach ($this->get_indexes() as $index) {
-			$data[$index->name] = new \WP_Query(array(
+			$data[$index->slug]['term'] = $index;
+			$data[$index->slug]['query'] = new \WP_Query(array(
 				'tax_query' => array(
 					array(
 						'taxonomy' => $this->slug,

@@ -15,6 +15,7 @@ require([
     'app/post-list',
     'app/scroll-button',
     'app/row',
+    'app/index-tags',
     'app/site-footer',
     'app/site-header',
     'app/site-navigation',
