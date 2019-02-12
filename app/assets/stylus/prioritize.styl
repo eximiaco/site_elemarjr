@@ -11,8 +11,6 @@ normalize-css()
 *:before
 *:after
     box-sizing border-box
-    // transition all .2s linear
-
 body
     color $gray-dark
     font-family $sans-serif
@@ -65,7 +63,7 @@ button
 .top-header-wrapper
     fixed top left
     height $sm-nav-height
-    transition $transition-default
+    transition .2s ease-out
     width 100%
     z-index 99
 
@@ -314,7 +312,7 @@ button
     background-size cover
     height 100%
     position fixed
-    top 0 // test
+    top 0
     width 100%
     z-index 10
 
@@ -381,9 +379,11 @@ button
         z-index 10
 
         /.sticky &
+            // TODO: Utilizar uma variável para controlar o margin
             margin-top 115px
 
         @media screen and ( min-width $screen-md )
+            // TODO: Utilizar uma variável para controlar o margin
             margin-top 107px
 
     &--item
