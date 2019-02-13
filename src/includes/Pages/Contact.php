@@ -67,7 +67,7 @@ class Contact extends Base {
 
 		if ( false !== $message_id ) {
 
-			$message = get_post_meta( get_the_id(), 'contact_message_' . $message_id, true );
+			$message = get_field( get_the_id(), 'contact_message_' . $message_id, true );
 			if ( false === $message ) {
 				$message_id = false;
 			}
@@ -113,6 +113,6 @@ class Contact extends Base {
 	public function title() {
 		$text_helper = $this->container->get( Text::class );
 
-		return $text_helper->asterisk_to_strong( get_post_meta( get_the_ID(), 'contact_title', true ) );
+		return $text_helper->asterisk_to_strong( get_field( get_the_ID(), 'contact_title', true ) );
 	}
 }
