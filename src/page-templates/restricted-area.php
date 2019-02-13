@@ -25,46 +25,29 @@ get_header();
 ?>
 
 <main>
-	<nav class="indexes-tags">
-		<div class="indexes-tags__arrow indexes-tags__arrow--prev">
-			<i class="i-arrow-left"></i>
-		</div>
-		<div class="indexes-tags__container">
-			<div class="indexes-tags__selected">
-				<?php echo esc_html( reset($indexes)['term']->name ) ?>
+	<div class="indexes">
+		<div class="container indexes__container">
+			<div class="indexes__current">
+				<?php echo esc_html( reset( $indexes )['term']->name ) ?>
 			</div>
-			<ul class="indexes-tags__list">
-				<?php foreach( $indexes as $slug => $index ) : ?>
-				<li class="indexes-tags__item">
-					<a href="#<?php echo esc_attr( $index['term']->slug ); ?>">
-						<?php echo esc_html( $index['term']->name ); ?>
-					</a>
-				</li>
-				<?php endforeach; ?>
-			</ul>
+			<div class="swiper-container indexes__swiper-container">
+				<div class="swiper-wrapper indexes__swiper-wrapper">
+					<?php foreach( $indexes as $slug => $index ) : ?>
+					<div class="swiper-slide indexes__item">
+						<a href="#<?php echo esc_attr( $index['term']->slug ); ?>">
+							<?php echo esc_html( $index['term']->name ); ?>
+						</a>
+					</div>
+					<?php endforeach; ?>
+				</div>
+				<div class="indexes__nav indexes__nav--next"><i class="i-arrow-right"></i></div>
+				<div class="indexes__nav indexes__nav--prev"><i class="i-arrow-left"></i></div>
+			</div>
+			<div class="indexes__toggler">
+				<i class="i-arrow-left"></i>
+			</div>
 		</div>
-		<div class="indexes-tags__arrow indexes-tags__arrow--next">
-			<i class="i-arrow-right"></i>
-		</div>
-		<div class="indexes-tags__toggler">
-			<i class="i-arrow-left"></i>
-		</div>
-	</nav>
+	</div>
 </main>
-
-<div class="container">
-	<?php foreach( $indexes as $slug => $index ) : ?>
-	<section id="<?php echo esc_attr( $index['term']->slug ); ?>" class="index-section">
-		<h2 class="index-section__title">
-			<?php echo esc_html( $index['term']->name ); ?>
-		</h2>
-		<?php
-		while( $index['query']->have_posts() ) : $index['query']->the_post();
-			get_template_part( 'template-parts/blog/content' );
-		endwhile;
-		?>
-	</section>
-	<?php endforeach; ?>
-</div>
 
 <?php get_footer(); ?>

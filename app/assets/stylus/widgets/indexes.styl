@@ -1,150 +1,65 @@
-.indexes-tags
-    // Varibales
-    $arrow-width    = 38px
-    $arrow-width-md = 88px
-    $arrow-width-lg = 38px
-
-    $toggler-width    = 38px
-    $toggler-width-md = 68px
-
-    background $dusky-blue
-    position fixed
-    top $sm-nav-height
-    transition top $transition-default
-    width 100%
-    z-index 100
-
-    @media screen and ( min-width $nav-breakpoint )
-        top $sm-nav-height-breakpoint
-
-    /.sticky &
-        top $sm-nav-height-sticky
+.indexes
+    background $denim-blue
+    padding 30px 0
 
     // Container
-
     &__container
-        @media screen and ( min-width $screen-lg )
-            display flex
+        position relative
 
-    // Toggler
+    // Current
 
-    &__toggler
-        border 2px solid $dusky-blue
-        bottom - ( $toggler-width )
-        color $dusky-blue
-        font-size 2rem
-        height $toggler-width
-        line-height $toggler-width
-        position absolute
-        right 0
-        text-align center
-        width $toggler-width
-
-        @media screen and ( min-width $screen-md )
-            background $denim-blue
-            border none
-            bottom auto
-            color $white
-            top 0
-            width $toggler-width-md
-
+    &__current
         @media screen and ( min-width $screen-lg )
             display none
 
-    // Navigation
+    // Nav
 
-    &__arrow
+    &__nav
+        background blue
         color $white
-        font-size 1.5rem
-        height $arrow-width
-        line-height $arrow-width
+        cursor pointer
+        font-size 2rem
+        height 30px
+        line-height 30px
         position absolute
-        top 0
-        text-align center
-        width $arrow-width
-
-        @media screen and ( min-width $screen-md )
-            width $arrow-width-md
-
-        @media screen and ( min-width $screen-lg )
-            width $arrow-width-lg
-
-        &--next
-            right 0
-
-            @media screen and ( min-width $screen-md )
-                right ( $arrow-width + 15px )
-
-            @media screen and ( min-width $screen-lg )
-                right 0
+        top 50%
+        transform translateY( -50% )
+        width 30px
+        z-index 10
 
         &--prev
             left 0
 
-    // Indexes list
+        &--next
+            right 0
 
-    &__list
+        &--disabled
+            opacity .5
+
+    // Swiper
+    &__swiper
+        &-wrapper
+            //
+
+        &-container
+            background red
+            min-height 30px
+
+
+    // Toggler
+
+    &__toggler
         display none
-        list-style none
-        margin 0
-        padding 0
 
-        @media screen and ( min-width $screen-lg )
-            align-items center
-            display flex
+    // Item
 
-        &--open
-            display block
-
-    &__item,
-    &__selected
-        border-bottom 1px solid $dusky-blue
-        color $white
-        font-size 18px
-        line-height 1
-        padding 10px 0
-
-        @media screen and ( min-width $screen-lg )
-            border-color $white
-            padding 0 0 10px
-
-        &:last-child
-            border-bottom none
+    &__item
+        background green
+        border-bottom 1px solid $white
+        padding-bottom 10px
+        text-align center
+        width auto
 
         a
             color $white
-            display block
             text-decoration none
-
-    &__item
-        background $denim-blue
-        padding-left $arrow-width
-        padding-right $arrow-width
-
-    // Selected index
-
-    &__selected
-        background $dusky-blue
-        border-bottom none
-        margin 0 $arrow-width
-
-.index-section
-    position relative
-    margin-bottom 30px
-    padding-bottom 30px
-
-    &::after
-        background $cool-grey
-        bottom 0
-        content ""
-        left 50%
-        height 1px
-        transform translateX( -50% )
-        position absolute
-        width 245px
-
-    &__title
-        color $tiffany
-        font-size 18px
-        font-weight normal
-        margin 0 0 30px
