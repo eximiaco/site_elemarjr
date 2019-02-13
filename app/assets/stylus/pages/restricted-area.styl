@@ -1,0 +1,12 @@
+.restricted-area
+    $min-height = 38px
+
+    &.no-hero .site-content
+        padding-top $sm-nav-height + $min-height
+
+        @media screen and ( min-width $nav-breakpoint )
+            padding-top $sm-nav-height-breakpoint + $min-height
+
+    &.sticky .site-content
+        padding-top $sm-nav-height-breakpoint + $min-height
+
