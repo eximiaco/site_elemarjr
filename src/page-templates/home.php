@@ -39,7 +39,7 @@ get_header(); ?>
 			<?php
 				$container->set(
 					'template.home.blog', [
-						'description' => get_post_meta( get_the_ID(), 'blog_text', true ),
+						'description' => get_post_meta( get_the_ID(), 'home_blog_text', true ),
 					]
 				);
 				get_template_part( 'template-parts/page/home/blog' );
@@ -63,30 +63,30 @@ get_header(); ?>
 			</div>
 			<div class="front-page--purpose-content">
 				<div class="front-page--purpose-title wow fadeIn">
-				<?php echo wp_kses_post( get_post_meta( get_the_ID(), 'purpose_title', true ) ); ?>
+				<?php echo wp_kses_post( get_post_meta( get_the_ID(), 'home_purpose_title', true ) ); ?>
 				</div>
 				<div class="purpose wow fadeIn">
-				<?php $icon_class = get_post_meta( get_the_ID(), 'purpose_icon_1', true ); ?>
+				<?php $icon_class = get_post_meta( get_the_ID(), 'home_purpose_icon_1', true ); ?>
 					<div class="purpose--icon">
 						<i class="<?php echo esc_attr( $icon_class ); ?>"></i>
 					</div>
 					<div class="purpose--content">
 						<div class="purpose--title">
-						<?php echo wp_kses_post( get_post_meta( get_the_ID(), 'purpose_title_1', true ) ); ?>
+						<?php echo wp_kses_post( get_post_meta( get_the_ID(), 'home_purpose_title_1', true ) ); ?>
 						</div>
-					<?php echo wp_kses_post( get_post_meta( get_the_ID(), 'purpose_text_1', true ) ); ?>
+					<?php echo wp_kses_post( get_post_meta( get_the_ID(), 'home_purpose_text_1', true ) ); ?>
 					</div>
 				</div>
 				<div class="purpose wow fadeIn">
-				<?php $icon_class = get_post_meta( get_the_ID(), 'purpose_icon_2', true ); ?>
+				<?php $icon_class = get_post_meta( get_the_ID(), 'home_purpose_icon_2', true ); ?>
 					<div class="purpose--icon">
 						<i class="<?php echo esc_attr( $icon_class ); ?>"></i>
 					</div>
 					<div class="purpose--content">
 						<div class="purpose--title">
-						<?php echo wp_kses_post( get_post_meta( get_the_ID(), 'purpose_title_2', true ) ); ?>
+						<?php echo wp_kses_post( get_post_meta( get_the_ID(), 'home_purpose_title_2', true ) ); ?>
 						</div>
-					<?php echo wp_kses_post( get_post_meta( get_the_ID(), 'purpose_text_2', true ) ); ?>
+					<?php echo wp_kses_post( get_post_meta( get_the_ID(), 'home_purpose_text_2', true ) ); ?>
 					</div>
 				</div>
 			</div>
@@ -97,7 +97,7 @@ get_header(); ?>
 				<div class="wow fadeIn">
 					<div class="front-page--quote-content">
 						<span class="front-page--quote-icon"><i class="i-quote"></i></span>
-						<div><?php echo wp_kses_post( get_post_meta( get_the_ID(), 'quote', true ) ); ?></div>
+						<div><?php echo wp_kses_post( get_post_meta( get_the_ID(), 'home_quote', true ) ); ?></div>
 						<p class="front-page--quote-author">Elemar JR</p>
 					</div>
 				</div>

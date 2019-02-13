@@ -53,11 +53,11 @@ get_header(); ?>
 			</div>
 
 			<p class="contact--subtitle">
-			<?php echo wp_kses_post( get_post_meta( get_the_ID(), 'subtitle', true ) ); ?>
+			<?php echo wp_kses_post( get_post_meta( get_the_ID(), 'contact_subtitle', true ) ); ?>
 			</p>
 
 			<p class="contact--description">
-			<?php echo wp_kses_post( get_post_meta( get_the_ID(), 'description', true ) ); ?>
+			<?php echo wp_kses_post( get_post_meta( get_the_ID(), 'contact_description', true ) ); ?>
 			</p>
 
 		<?php
