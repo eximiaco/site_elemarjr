@@ -92,7 +92,7 @@ get_header(); ?>
 			</div>
 		</div>
 
-		<div class="front-page--quote" style="background-image: url(<?php echo esc_url( get_field( 'quote_image' )['url'] ); ?>);">
+		<div class="front-page--quote" style="background-image: url(<?php echo esc_url( get_field( 'home_quote_image' )['url'] ); ?>);">
 			<div class="container">
 				<div class="wow fadeIn">
 					<div class="front-page--quote-content">
