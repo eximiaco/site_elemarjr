@@ -27,9 +27,6 @@ get_header();
 <main>
 	<div class="indexes">
 		<div class="container indexes__container">
-			<div class="indexes__current">
-				<?php echo esc_html( reset( $indexes )['term']->name ) ?>
-			</div>
 			<div class="swiper-container indexes__swiper-container">
 				<div class="swiper-wrapper indexes__swiper-wrapper">
 					<?php foreach( $indexes as $slug => $index ) : ?>
@@ -44,9 +41,25 @@ get_header();
 				<div class="indexes__nav indexes__nav--prev"><i class="i-arrow-left"></i></div>
 			</div>
 			<div class="indexes__toggler">
-				<i class="i-arrow-left"></i>
+				<i class="i-arrow-down"></i>
 			</div>
+			<div class="indexes__select"></div>
 		</div>
+	</div>
+
+	<div class="container">
+		<?php foreach( $indexes as $slug => $index ) : ?>
+		<section id="<?php echo esc_attr( $index['term']->slug ); ?>" class="index-section">
+			<h2 class="index-section__title">
+				<?php echo esc_html( $index['term']->name ); ?>
+			</h2>
+			<?php
+			while( $index['query']->have_posts() ) : $index['query']->the_post();
+				get_template_part( 'template-parts/blog/content' );
+			endwhile;
+			?>
+		</section>
+		<?php endforeach; ?>
 	</div>
 </main>
 

@@ -1,26 +1,50 @@
 .indexes
-    background $denim-blue
-    padding 30px 0
+    $toggler-width    = 46px
+    $toggler-height   = 38px
+    $toggler-width-sm = 66px
+
+    background $dusky-blue
+    position fixed
+    top $sm-nav-height
+    transition top $transition-default
+    width 100%
+    z-index 100
+
+    /.sticky &
+        top $sm-nav-height-sticky
+
+    @media screen and ( min-width $screen-lg )
+        padding 30px 0
 
     // Container
+
     &__container
+        display flex
+        flex-wrap wrap
+        padding 0
         position relative
 
-    // Current
+        @media screen and ( min-width $screen-md )
+            padding-left $container-padding
+            padding-right $container-padding
 
-    &__current
         @media screen and ( min-width $screen-lg )
-            display none
+            display block
+
+        a
+            color $white
+            text-decoration none
 
     // Nav
 
     &__nav
-        background blue
+        align-items center
+        display flex
         color $white
         cursor pointer
         font-size 2rem
-        height 30px
-        line-height 30px
+        height 100%
+        justify-content center
         position absolute
         top 50%
         transform translateY( -50% )
@@ -37,29 +61,89 @@
             opacity .5
 
     // Swiper
+
     &__swiper
         &-wrapper
             //
 
         &-container
-            background red
-            min-height 30px
+            @media screen and ( min-width $screen-sm )
+                width 'calc( 100% - %s )' % $toggler-width-sm
+
+            @media screen and ( min-width $screen-lg )
+                width 100%
 
 
     // Toggler
 
     &__toggler
-        display none
+        align-items center
+        bottom - $toggler-height
+        border 2px solid $dusky-blue
+        display flex
+        color $dusky-blue
+        font-size .625rem
+        height $toggler-height
+        justify-content center
+        position absolute
+        right 0
+        width $toggler-width
+
+        @media screen and ( min-width $screen-sm )
+            background $denim-blue
+            border-color $denim-blue
+            color $white
+            height auto
+            position static
+            width $toggler-width-sm
+
+        @media screen and ( min-width $screen-lg )
+            display none
 
     // Item
 
     &__item
-        background green
-        border-bottom 1px solid $white
+        padding-top 10px
         padding-bottom 10px
         text-align center
         width auto
 
-        a
-            color $white
-            text-decoration none
+        @media screen and ( min-width $screen-lg )
+            border-bottom 1px solid $white
+
+    // Select
+
+    &__select
+        display none
+
+        &-item
+            background $denim-blue
+            border-bottom 1px solid $dusky-blue
+            font-size 16px
+            padding 10px 0
+
+        @media screen and ( max-width $screen-md )
+            &--open
+                display block
+                width 100%
+
+.index-section
+    position relative
+    margin-bottom 30px
+    padding-bottom 30px
+
+    &::after
+        background $brown-grey
+        bottom 0
+        content ""
+        height 1px
+        left 50%
+        position absolute
+        transform translateX( -50% )
+        width 245px
+
+    &__title
+        font-size 18px
+        font-weight normal
+        color $tiffany
+        margin 0 0 30px
