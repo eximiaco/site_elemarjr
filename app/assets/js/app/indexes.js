@@ -56,6 +56,34 @@ define( [ 'app/breakpoint', 'swiper/dist/js/swiper' ], function( breakpoint, Swi
     }
 
     /**
+     * Set current index.
+     *
+     * @param {Event} e
+     */
+    function setIndex( e ) {
+        var $this = jQuery( this );
+
+        if ( ! breakpoint.isSmallerThan( 'MD' ) ) {
+            setIndexAsActive( $this );
+            scroolToElement( $this.find( 'a' ).attr( 'href' ) );
+        }
+
+        e.preventDefault();
+    }
+
+    /**
+     * Set current index class.
+     *
+     * @param {jQuery} $index
+     */
+    function setIndexAsActive ( $index ) {
+        var className = 'indexes__item--active';
+
+        jQuery( '.' + className ).removeClass( className );
+        $index.addClass( className );
+    }
+
+    /**
      * Generate index select.
      */
     function generateIndexSelect() {
@@ -91,6 +119,9 @@ define( [ 'app/breakpoint', 'swiper/dist/js/swiper' ], function( breakpoint, Swi
     } ).promise().done( function() {
         swiper.init();
     } );
+
+    // Add index item event.
+    jQuery( '.indexes__item' ).click( setIndex );
 
     // Add toggler event.
     jQuery( '.indexes__toggler' ).click( toggleSelect );

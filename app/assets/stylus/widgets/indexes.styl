@@ -15,7 +15,7 @@
     /.sticky &
         top $sm-nav-height-sticky
 
-    @media screen and ( min-width $screen-lg )
+    @media screen and ( min-width $screen-md )
         padding 30px 0
 
     // Container
@@ -99,7 +99,7 @@
             position static
             width $toggler-width-sm
 
-        @media screen and ( min-width $screen-lg )
+        @media screen and ( min-width $screen-md )
             display none
 
     // Item
@@ -110,8 +110,15 @@
         text-align center
         width auto
 
-        @media screen and ( min-width $screen-lg )
+        @media screen and ( min-width $screen-md )
             border-bottom 1px solid $white
+
+        &--active
+            border-color $tiffany
+
+            a
+                color $tiffany
+
 
     // Select
 
