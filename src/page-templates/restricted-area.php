@@ -29,7 +29,7 @@ get_header();
 		<div class="container indexes__container">
 			<div class="swiper-container indexes__swiper-container">
 				<div class="swiper-wrapper indexes__swiper-wrapper">
-					<?php foreach( $indexes as $slug => $index ) : ?>
+					<?php foreach ( $indexes as $slug => $index ) : ?>
 					<div class="swiper-slide indexes__item">
 						<a href="#<?php echo esc_attr( $index['term']->slug ); ?>">
 							<?php echo esc_html( $index['term']->name ); ?>
@@ -48,13 +48,14 @@ get_header();
 	</div>
 
 	<div class="container">
-		<?php foreach( $indexes as $slug => $index ) : ?>
+		<?php foreach ( $indexes as $slug => $index ) : ?>
 		<section id="<?php echo esc_attr( $index['term']->slug ); ?>" class="index-section">
 			<h2 class="index-section__title">
 				<?php echo esc_html( $index['term']->name ); ?>
 			</h2>
 			<?php
-			while( $index['query']->have_posts() ) : $index['query']->the_post();
+			while ( $index['query']->have_posts() ) :
+				$index['query']->the_post();
 				get_template_part( 'template-parts/blog/content' );
 			endwhile;
 			?>
