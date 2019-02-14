@@ -66,9 +66,7 @@ services:
     volumes:
       - .:/var/www/html
     environment:
-      PHP_XDEBUG_REMOTE_ENABLE: "On"
-      PHP_XDEBUG_REMOTE_HOST: "10.254.254.254"
-      PHP_XDEBUG_IDEKEY: "VSCODE"
+      - ./app/env/xdebug.env
     depends_on:
       - db
       - smtp
@@ -96,3 +94,14 @@ services:
     links:
       - server
     command: ngrok http server:80
+
+  # WP-CLI
+  wp:
+    build:
+      context: ./app/docker/wp-cli
+    depends_on:
+      - db
+    env_file:
+      - ./app/env/xdebug.env
+    volumes:
+      - .:/var/www/html

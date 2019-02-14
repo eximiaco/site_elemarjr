@@ -28,3 +28,7 @@ services:
   watch:
     volumes:
       - .:/app:cached
+
+  wp:
+    volumes:
+      - .:/var/www/html:cached
