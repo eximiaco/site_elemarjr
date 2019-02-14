@@ -78,7 +78,7 @@ class Event extends Base {
 		$years = array();
 
 		foreach ($this->get_events() as $event) {
-			$start = get_field( 'event_start' );
+			$start = get_field( 'event_start', $event->ID );
 
 			if ( $start ) {
 				$year             = date( 'Y', strtotime( $start ) );

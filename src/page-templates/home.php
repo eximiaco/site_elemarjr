@@ -59,7 +59,7 @@ get_header(); ?>
 
 		<div class="front-page--purpose container">
 			<div class="front-page--purpose-image wow fadeIn">
-				<img src="<?php echo esc_url( get_field( 'purpose_image' )['url'] ); ?>" alt="Meu trabalho">
+				<img src="<?php echo esc_url( get_field( 'home_purpose_image' )['url'] ); ?>" alt="Meu trabalho">
 			</div>
 			<div class="front-page--purpose-content">
 				<div class="front-page--purpose-title wow fadeIn">
