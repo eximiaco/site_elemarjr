@@ -1,7 +1,7 @@
 /**
  * Indexes tags.
  */
-define( [ 'swiper/dist/js/swiper' ], function( Swiper ) {
+define( [ 'app/breakpoint', 'swiper/dist/js/swiper' ], function( breakpoint, Swiper ) {
     /**
      * Setup Swiper.
      */
@@ -33,8 +33,11 @@ define( [ 'swiper/dist/js/swiper' ], function( Swiper ) {
      * Scroll to index ID.
      */
     function scrollToIndex() {
-        var item = jQuery( '.indexes__item' ).eq( this.snapIndex );
-        scroolToElement( item.find( 'a' ).attr( 'href' ) );
+        if ( breakpoint.isSmallerThan( 'MD' ) ) {
+            var item = jQuery( '.indexes__item' ).eq( this.snapIndex );
+
+            scroolToElement( item.find( 'a' ).attr( 'href' ) );
+        }
     }
 
     /**
@@ -47,7 +50,9 @@ define( [ 'swiper/dist/js/swiper' ], function( Swiper ) {
 
         jQuery( 'html, body' ).animate( {
             scrollTop: elOffset
-        }, 800 );
+        }, 800, function() {
+            window.location.hash = target;
+        } );
     }
 
     /**
@@ -59,9 +64,24 @@ define( [ 'swiper/dist/js/swiper' ], function( Swiper ) {
         } );
     }
 
-    jQuery( '.indexes__toggler' ).click( function() {
+    /**
+     * Handle with toggler click.
+     */
+    function toggleSelect() {
         jQuery( '.indexes__select' ).toggleClass( 'indexes__select--open' );
-    } );
+    }
+
+    /**
+     * Handle with selected index.
+     *
+     * @param {Event} e
+     */
+    function selectedIndex( e ) {
+        swiper.slideTo( jQuery( this ).index() );
+        toggleSelect();
+
+        e.preventDefault();
+    }
 
     /**
      * Set the index item width for Swiper calculate correctly.
@@ -71,4 +91,10 @@ define( [ 'swiper/dist/js/swiper' ], function( Swiper ) {
     } ).promise().done( function() {
         swiper.init();
     } );
+
+    // Add toggler event.
+    jQuery( '.indexes__toggler' ).click( toggleSelect );
+
+    // Add index select event.
+    jQuery( 'body' ).on( 'click', '.indexes__select-item', selectedIndex );
 } );

@@ -3,6 +3,8 @@
     $toggler-height   = 38px
     $toggler-width-sm = 66px
 
+    $nav-arrow-width = 38px
+
     background $dusky-blue
     position fixed
     top $sm-nav-height
@@ -48,7 +50,7 @@
         position absolute
         top 50%
         transform translateY( -50% )
-        width 30px
+        width $nav-arrow-width
         z-index 10
 
         &--prev
@@ -120,7 +122,7 @@
             background $denim-blue
             border-bottom 1px solid $dusky-blue
             font-size 16px
-            padding 10px 0
+            padding 10px $nav-arrow-width
 
         @media screen and ( max-width $screen-md )
             &--open
