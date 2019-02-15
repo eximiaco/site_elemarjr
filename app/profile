@@ -16,7 +16,7 @@ fi
 alias php="${compose} run --rm php"
 
 ## WP-CLI
-alias wp="${compose} run --rm wp"
+alias wp="${compose} run --rm php wp"
 
 ## Database - A database container must be up
 alias dbroot="${compose} exec db mysql -proot"
