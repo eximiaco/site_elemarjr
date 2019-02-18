@@ -10,4 +10,4 @@ Validar código PHP
 
 Validar Stylus e JS
 
-    $ grunt list
+    $ grunt lint
