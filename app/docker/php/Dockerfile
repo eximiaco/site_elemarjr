@@ -17,7 +17,7 @@
 # gd      - Thumbnail generator
 # mysqli  - MySQL server access
 # opcache - Improve performance
-FROM php:7-alpine
+FROM php:7.2-alpine
 
 # Install alpine packages
 RUN apk add --update autoconf bash build-base mysql-client openssh-client ssmtp
