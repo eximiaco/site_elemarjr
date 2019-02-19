@@ -48,19 +48,29 @@ get_header();
 	</div>
 
 	<div class="container">
-		<?php foreach ( $indexes as $slug => $index ) : ?>
+		<?php
+		foreach ( $indexes as $slug => $index ) :
+			if ( $index['query']->have_posts() ) :
+		?>
 		<section id="<?php echo esc_attr( $index['term']->slug ); ?>" class="index-section">
 			<h2 class="index-section__title">
 				<?php echo esc_html( $index['term']->name ); ?>
 			</h2>
-			<?php
-			while ( $index['query']->have_posts() ) :
-				$index['query']->the_post();
-				get_template_part( 'template-parts/blog/content' );
-			endwhile;
-			?>
+			<div class="cards-list">
+				<div class="cards-list__wrapper">
+				<?php
+				while ( $index['query']->have_posts() ) :
+					$index['query']->the_post();
+					get_template_part( 'template-parts/blog/content' );
+				endwhile;
+				?>
+				</div>
+			</div>
 		</section>
-		<?php endforeach; ?>
+		<?php
+			endif;
+		endforeach;
+		?>
 	</div>
 </main>
 
