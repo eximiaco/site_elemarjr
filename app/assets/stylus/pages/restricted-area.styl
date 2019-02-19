@@ -1,12 +1,14 @@
 .restricted-area
+    $indexes-height = 44px
     $indexes-height-md = 105px
+    $indexes-margin-bottom = 30px
 
     &.no-hero .site-content
-        padding-top $sm-nav-height
+        padding-top $sm-nav-height + $indexes-height + $indexes-margin-bottom
 
         @media screen and ( min-width $nav-breakpoint )
-            padding-top $sm-nav-height + $indexes-height-md
+            padding-top $sm-nav-height-breakpoint + $indexes-height-md + $indexes-margin-bottom
 
     &.sticky .site-content
-        padding-top $sm-nav-height-sticky + $indexes-height-md
+        padding-top $sm-nav-height-sticky + $indexes-height-md + $indexes-margin-bottom
 

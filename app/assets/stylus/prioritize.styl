@@ -428,10 +428,12 @@ button
 
 // Indexes
 .indexes
-    &__swiper-wrapper
-        display inline-block
+    &__swiper-container
+        @media screen and ( min-width $screen-lg )
+            padding-left 38px
+            padding-right 38px
 
     &__item
-        display inline
+        display inline-block
         font-size 18px
         width auto

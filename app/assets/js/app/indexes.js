@@ -45,14 +45,17 @@ define( [ 'app/breakpoint', 'swiper/dist/js/swiper' ], function( breakpoint, Swi
      *
      * @param {String} target
      */
-    function scroolToElement( target ) {
-        var elOffset = jQuery( target ).offset().top;
+    function scroolToElement( target, extraMargin ) {
+        var elOffset = jQuery( target ).offset().top,
+            indexHeight = jQuery( '.indexes' ).outerHeight(),
+            marginBottom = 25,
+            headerHeight = 62;
+
+        extraMargin = extraMargin ? extraMargin : 0;
 
         jQuery( 'html, body' ).animate( {
-            scrollTop: elOffset
-        }, 800, function() {
-            window.location.hash = target;
-        } );
+            scrollTop: elOffset - ( headerHeight + indexHeight + marginBottom + extraMargin )
+        }, 800 );
     }
 
     /**
@@ -115,7 +118,13 @@ define( [ 'app/breakpoint', 'swiper/dist/js/swiper' ], function( breakpoint, Swi
      * Set the index item width for Swiper calculate correctly.
      */
     jQuery( '.indexes__item' ).each( function( index, el ) {
-        jQuery( el ).width( jQuery( el ).width() + 40 );
+        var width = jQuery( el ).width() + 5;
+
+        if ( index === jQuery( '.indexes__item' ).length - 1 ) {
+            width += 3;
+        }
+
+        jQuery( el ).width( width );
     } ).promise().done( function() {
         swiper.init();
     } );
