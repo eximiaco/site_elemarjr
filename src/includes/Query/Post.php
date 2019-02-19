@@ -30,7 +30,7 @@ class Post extends Base {
 	  * @param WP_Query $query A consulta que está sendo processada.
 	  */
 	public function hide_private( $query ) {
-		if ( ! is_admin() ) {
+		if ( ! is_admin() && ! is_preview() ) {
 			$query->set( 'post_status', 'publish' );
 		}
 	}
