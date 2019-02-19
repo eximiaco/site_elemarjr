@@ -27,6 +27,7 @@ alias db="${compose} exec db mysql -u project -pproject project"
 
 ## Up server
 alias server="${compose} up -d server watch"
+alias server56="${compose} -f docker-compose.php56.yml up -d server watch"
 
 ## Node
 alias node="${compose} run --rm node"
