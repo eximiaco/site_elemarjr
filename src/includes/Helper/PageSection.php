@@ -22,8 +22,8 @@ class PageSection extends Base {
 	public function add_title_field() {
 		return array(
 			'type'         => 'text',
-			'key'          => 'title',
-			'name'         => 'title',
+			'key'          => 'section_title',
+			'name'         => 'section_title',
 			'label'        => __( 'Title', 'elemarjr' ),
 			'instructions' => __( 'Use * to bold', 'elemarjr' )
 		);
@@ -37,8 +37,8 @@ class PageSection extends Base {
 	public function add_content_field() {
 		return array(
 			'type'  => 'wysiwyg',
-			'key'   => 'text',
-			'name'  => 'text',
+			'key'   => 'section_text',
+			'name'  => 'section_text',
 			'label' => __( 'Text', 'elemarjr' ),
 		);
 	}
@@ -51,8 +51,8 @@ class PageSection extends Base {
 	public function add_image_field() {
 		return array(
 			'type'          => 'image',
-			'key'           => 'image',
-			'name'          => 'image',
+			'key'           => 'section_image',
+			'name'          => 'section_image',
 			'label'         => __( 'Image', 'elemarjr' ),
 			'return_format' => 'id,'
 		);
@@ -66,8 +66,8 @@ class PageSection extends Base {
 	public function add_image_position_field() {
 		return array(
 			'type'    => 'radio',
-			'key'     => 'image_position',
-			'name'    => 'image_position',
+			'key'     => 'section_image_position',
+			'name'    => 'section_image_position',
 			'label'   => __( 'Image Position', 'elemarjr' ),
 			'choices' => array(
 				'left'  => __( 'Left', 'elemarjr' ),
@@ -85,8 +85,8 @@ class PageSection extends Base {
 	public function add_image_align_field( $conditional = array() ) {
 		return array(
 			'type'    => 'radio',
-			'key'     => 'image_align',
-			'name'    => 'image_align',
+			'key'     => 'section_image_align',
+			'name'    => 'section_image_align',
 			'label'   => __( 'Image Align', 'elemarjr' ),
 			'choices' => array(
 				'none'         => __( 'None', 'elemarjr' ),
@@ -109,9 +109,9 @@ class PageSection extends Base {
 	public function add_button_label_field() {
 		return array (
 			'type'    => 'text',
-			'key'     => 'button_label',
+			'key'     => 'section_button_label',
 			'label'   => __( 'Button label', 'elemarjr' ),
-			'name'    => 'button_label',
+			'name'    => 'section_button_label',
 			'wrapper' => array (
 				'width' => '50%',
 			)
@@ -125,9 +125,9 @@ class PageSection extends Base {
 	 */
 	public function add_button_url_field() {
 		return array (
-			'key'     => 'button_url',
+			'key'     => 'section_button_url',
 			'label'   => __( 'Button URL', 'elemarjr' ),
-			'name'    => 'button_url',
+			'name'    => 'section_button_url',
 			'type'    => 'url',
 			'wrapper' => array (
 				'width' => '50%',
@@ -143,8 +143,8 @@ class PageSection extends Base {
 	public function add_color_scheme_field() {
 		return array(
 			'type'    => 'radio',
-			'key'     => 'color',
-			'name'    => 'color',
+			'key'     => 'section_color',
+			'name'    => 'section_color',
 			'label'   => __( 'Color Scheme', 'elemarjr' ),
 			'choices' => array(
 				'white' => __( 'Background White and Title Black', 'elemarjr' ),
