@@ -36,7 +36,7 @@ elemar-ssh << EOF
 	cp -R ${deployDir}/composer.* .
 	cp -R ${deployDir}/src/* html/wp-content/themes/elemarjr
 	cp -R ${deployDir}/vendor vendor
-	cp -R ${deployDir}/web/wp-content/plugins html/wp-content/plugins
+	cp -R ${deployDir}/web/wp-content/plugins html/wp-content
 	rm -r ${deployDir}
 EOF
 
