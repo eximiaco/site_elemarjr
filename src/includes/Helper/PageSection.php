@@ -179,7 +179,7 @@ class PageSection extends Base {
 	 */
 	private function get_color_scheme_class( &$classes, $color_scheme = false ) {
 		if ( false === $color_scheme ) {
-			$color_scheme = $this->get_field( 'color' );
+			$color_scheme = $this->get_field( 'section_color' );
 		}
 
 		if ( 'white' !== $color_scheme ) {
@@ -204,7 +204,7 @@ class PageSection extends Base {
 	 * @return void
 	 */
 	private function get_template_class( &$classes ) {
-		$classes[] = 'page-section__' . $this->get_field( 'template' )[0];
+		$classes[] = 'page-section__' . $this->get_field( 'section_template' )[0];
 	}
 
 	/**
@@ -216,9 +216,9 @@ class PageSection extends Base {
 	 * @return void
 	 */
 	private function get_image_align_class( &$classes ) {
-		$align = $this->get_field( 'image_align' );
+		$align = $this->get_field( 'section_image_align' );
 
-		if ( 'mvp' === $this->get_field( 'template' ) ) {
+		if ( 'mvp' === $this->get_field( 'section_template' ) ) {
 			$align = 'bottom';
 		}
 
@@ -236,7 +236,7 @@ class PageSection extends Base {
 	 */
 	private function get_image_position_class( &$classes, $image_position = false ) {
 		if ( false === $image_position ) {
-			$image_position = $this->get_field( 'image_position' );
+			$image_position = $this->get_field( 'section_image_position' );
 		}
 
 		if ( 'left' == $image_position ) {
@@ -260,7 +260,7 @@ class PageSection extends Base {
 	 * @return string The the section title.
 	 */
 	public function get_title() {
-		$title = $this->get_field( 'title' );
+		$title = $this->get_field( 'section_title' );
 
 		if ( $title ) {
 			$text_helper = $this->container->get( Text::class );
@@ -277,7 +277,7 @@ class PageSection extends Base {
 	 * @return string The the section content.
 	 */
 	public function get_content() {
-		return $this->get_field( 'text' ) ? $this->get_field( 'text' ) : get_the_content();
+		return $this->get_field( 'section_text' ) ? $this->get_field( 'section_text' ) : get_the_content();
 	}
 
 	/**
@@ -286,7 +286,7 @@ class PageSection extends Base {
 	 * @return string The the section image.
 	 */
 	public function get_image() {
-		return wp_get_attachment_image( $this->get_field( 'image' ), 'full' );
+		return wp_get_attachment_image( $this->get_field( 'section_image' ), 'full' );
 	}
 
 }
