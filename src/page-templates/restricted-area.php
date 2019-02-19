@@ -19,6 +19,11 @@
 
 global $container;
 
+// Redirect to login page if the user is not logged
+if ( ! is_user_logged_in() ) {
+	auth_redirect();
+}
+
 $indexes = $container->get( Aztec\Taxonomy\Index::class )->get_posts();
 
 get_header();
