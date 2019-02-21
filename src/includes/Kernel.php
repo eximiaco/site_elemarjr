@@ -65,6 +65,7 @@ class Kernel {
 			\Aztec\Integration\YoastSEO\YoastSEO::class,
 
 			\Aztec\Pages\Blog::class,
+			\Aztec\Pages\Login::class,
 			\Aztec\Pages\Contact::class,
 			\Aztec\Pages\NewsletterForm::class,
 			\Aztec\Pages\NotFound::class,

@@ -32,9 +32,11 @@
             color $dusky-blue
             font-size 12px
 
-    &--active
-        & ^[0]__wrapper
-            background $dusky-blue
+    &--event&--active
+        background $dusky-blue
+
+        & ^[0]__date,
+        & ^[0]__title
             color $white
 
         & ^[0]__role,
