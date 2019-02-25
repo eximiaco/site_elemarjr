@@ -6,16 +6,17 @@ define( [ 'app/breakpoint', 'swiper/dist/js/swiper' ], function( breakpoint, Swi
      * Setup Swiper.
      */
     var swiper = new Swiper( '.indexes__swiper-container', {
-        init: false,
         slidesPerView: 'auto',
         spaceBetween: 30,
 
+        // Navigation
         navigation: {
             nextEl: '.indexes__nav--next',
             prevEl: '.indexes__nav--prev',
             disabledClass: 'indexes__nav--disabled'
         },
 
+        // Breakpoints
         breakpoints: {
             768: {
                 spaceBetween: 0,
@@ -23,6 +24,7 @@ define( [ 'app/breakpoint', 'swiper/dist/js/swiper' ], function( breakpoint, Swi
             }
         },
 
+        // Events
         on: {
             init: generateIndexSelect,
             slideChange: scrollToIndex
@@ -113,22 +115,6 @@ define( [ 'app/breakpoint', 'swiper/dist/js/swiper' ], function( breakpoint, Swi
 
         e.preventDefault();
     }
-
-    /**
-     * Set the index item width for Swiper calculate correctly.
-     */
-    jQuery( '.indexes__item' ).each( function( index, el ) {
-        // @TODO: Check why extra size is required
-        var width = jQuery( el ).width() + 7;
-
-        if ( index === jQuery( '.indexes__item' ).length - 1 ) {
-            width += 3;
-        }
-
-        jQuery( el ).width( width );
-    } ).promise().done( function() {
-        swiper.init();
-    } );
 
     // Add index item event.
     jQuery( '.indexes__item' ).click( setIndex );
