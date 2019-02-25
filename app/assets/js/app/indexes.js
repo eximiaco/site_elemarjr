@@ -118,7 +118,8 @@ define( [ 'app/breakpoint', 'swiper/dist/js/swiper' ], function( breakpoint, Swi
      * Set the index item width for Swiper calculate correctly.
      */
     jQuery( '.indexes__item' ).each( function( index, el ) {
-        var width = jQuery( el ).width() + 5;
+        // @TODO: Check why extra size is required
+        var width = jQuery( el ).width() + 7;
 
         if ( index === jQuery( '.indexes__item' ).length - 1 ) {
             width += 3;
