@@ -9,23 +9,8 @@ body
 .login
     background $white
 
-    #nav a,
-    #backtoblog a
-        color $tundora
-
-        &:hover
-            color $tiffany
-
     label
         color $tundora
-
-    #login_error // @stylint ignore namingConvention warning preferred naming convention is BEM
-        border 2px solid $punch
-        border-bottom none
-        box-shadow none
-        margin 15px auto 0
-        padding 10px
-        width 247px
 
     .message
         border 2px solid $tiffany
@@ -40,28 +25,23 @@ body
         box-shadow none
         margin-top 44px
 
-        .input
-            background $white
-            border 1px solid $silver
+    input[type='checkbox']
+        &:focus
+            border-color $tiffany
             box-shadow none
 
-        .submit
-            .button
-                font-size 13px
-                height 28px
-                line-height normal
-                padding 0
-                text-align center
-                width 67px
-                
+        &:checked
+            &:before
+                color $tiffany
 
-        input[type='checkbox']
-            &:focus
-                border-color $tiffany
-                box-shadow none
-            &:checked
-                &:before
-                    color $tiffany
+    .submit
+        .button
+            font-size 13px
+            height 28px
+            line-height normal
+            padding 0
+            text-align center
+            width 67px
 
     h1
         a
@@ -70,6 +50,26 @@ body
             height 47px
             margin 50px auto 0
             width 125px
+
+#nav a,
+#backtoblog a
+    color $tundora
+
+    &:hover
+        color $tiffany
+
+#login_error // @stylint ignore namingConvention warning preferred naming convention is BEM
+    border 2px solid $punch
+    border-bottom none
+    box-shadow none
+    margin 15px auto 0
+    padding 10px
+    width 247px
+
+.input
+    background $white
+    border 1px solid $silver
+    box-shadow none
 
 .wp-core-ui
     .button-primary
