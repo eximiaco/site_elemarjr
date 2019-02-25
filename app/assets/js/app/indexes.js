@@ -49,7 +49,7 @@ define( [ 'app/breakpoint', 'swiper/dist/js/swiper' ], function( breakpoint, Swi
         var elOffset = jQuery( target ).offset().top,
             indexHeight = jQuery( '.indexes' ).outerHeight(),
             marginBottom = 25,
-            headerHeight = 62;
+            headerHeight = jQuery( '.top-header-wrapper' ).outerHeight();
 
         extraMargin = extraMargin ? extraMargin : 0;
 
