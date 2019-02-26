@@ -17,7 +17,7 @@ host('186.237.59.129')
 	->set('http_user', 'www-data');
 
 set('repository', 'git@greatcode.aztecweb.net:aztecwebteam/elemarjr.git');
-set('branch', 'master');
+set('branch', 'develop');
 
 set('ssh_multiplexing', false);
 
