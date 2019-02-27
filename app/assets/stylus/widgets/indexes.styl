@@ -93,6 +93,7 @@
         justify-content center
         position absolute
         right 0
+        top 42px
         width $toggler-width
 
         @media screen and ( min-width $screen-md )
@@ -107,6 +108,11 @@
 
         @media screen and ( min-width $screen-lg )
             display none
+
+        &--open
+            border none
+            color $white
+            transform rotate( 180deg )
 
     // Item
 
@@ -133,6 +139,7 @@
     // Select
 
     &__select
+        cursor pointer
         display none
 
         @media screen and ( max-width $screen-md )
