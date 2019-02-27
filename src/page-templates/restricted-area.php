@@ -48,8 +48,8 @@ get_header();
 			<div class="indexes__toggler">
 				<i class="i-arrow-down"></i>
 			</div>
-			<div class="indexes__select"></div>
 		</div>
+		<div class="indexes__select"></div>
 	</div>
 
 	<div class="container">
