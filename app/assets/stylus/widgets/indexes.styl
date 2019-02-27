@@ -1,7 +1,7 @@
 .indexes
     $toggler-width    = 46px
     $toggler-height   = 38px
-    $toggler-width-sm = 70px
+    $toggler-width-md = 70px
 
     $nav-arrow-width = 38px
 
@@ -15,7 +15,7 @@
     @media screen and ( min-width $nav-breakpoint )
         top $sm-nav-height-breakpoint
 
-    @media screen and ( min-width $screen-md )
+    @media screen and ( min-width $screen-lg )
         padding 30px 0
 
     /.sticky &
@@ -70,10 +70,10 @@
 
     &__swiper
         &-container
-            @media screen and ( min-width $screen-sm )
-                width 'calc( 100% - %s )' % $toggler-width-sm
-
             @media screen and ( min-width $screen-md )
+                width 'calc( 100% - %s )' % $toggler-width-md
+
+            @media screen and ( min-width $screen-lg )
                 padding-left 38px
                 padding-right 63px
                 width 100%
@@ -95,7 +95,7 @@
         right 0
         width $toggler-width
 
-        @media screen and ( min-width $screen-sm )
+        @media screen and ( min-width $screen-md )
             align-self stretch
             background $denim-blue
             border-color $denim-blue
@@ -103,9 +103,9 @@
             height auto
             position static
             width auto
-            flex-basis $toggler-width-sm
+            flex-basis $toggler-width-md
 
-        @media screen and ( min-width $screen-md )
+        @media screen and ( min-width $screen-lg )
             display none
 
     // Item
@@ -117,7 +117,7 @@
         text-indent 38px
         width auto
 
-        @media screen and ( min-width $screen-md )
+        @media screen and ( min-width $screen-lg )
             border-bottom 1px solid $white
             font-weight normal
             text-align center
@@ -135,6 +135,9 @@
     &__select
         display none
 
+        @media screen and ( max-width $screen-md )
+            width 100%
+
         &-item
             background $denim-blue
             border-bottom 1px solid $dusky-blue
@@ -147,8 +150,10 @@
                     font-weight normal
                     text-decoration none
 
-        @media screen and ( max-width $screen-md )
-            width 100%
+        &--open
+            @media screen and ( max-width $screen-lg )
+                display block
+                width 100%
 
 .index-section
     margin-bottom 30px
