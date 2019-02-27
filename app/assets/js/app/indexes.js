@@ -102,6 +102,7 @@ define( [ 'app/breakpoint', 'swiper/dist/js/swiper' ], function( breakpoint, Swi
      */
     function toggleSelect() {
         jQuery( '.indexes__select' ).toggleClass( 'indexes__select--open' ).fadeToggle();
+        jQuery( '.indexes__toggler' ).toggleClass( 'indexes__toggler--open' );
     }
 
     /**
