@@ -1,9 +1,13 @@
 .indexes
+    $container-height = 70px
+
     $toggler-width    = 46px
-    $toggler-height   = 38px
+    $toggler-height   = 36px
     $toggler-width-md = 70px
 
-    $nav-arrow-width = 38px
+    $nav-arrow-width    = 40px
+    $nav-arrow-width-md = 90px
+    $nav-arrow-width-lg = $nav-arrow-width
 
     background $dusky-blue
     position fixed
@@ -15,8 +19,8 @@
     @media screen and ( min-width $nav-breakpoint )
         top $sm-nav-height-breakpoint
 
-    @media screen and ( min-width $screen-lg )
-        padding 30px 0
+    @media screen and ( min-width $container-adjust )
+        padding 12px 0
 
     /.sticky &
         top $sm-nav-height-sticky
@@ -24,21 +28,25 @@
     // Container
 
     &__container
+        align-items center
         display flex
         flex-wrap nowrap
-        height 70px
+        height $container-height
         position relative
-        align-items center
 
-
-        @media screen and ( min-width $screen-lg )
-            display block
+        // @media screen and ( min-width $container-adjust )
+        //     display block
+        //     height auto
 
         a
+            align-items center
             color $white
-            display block
-            padding 10px $nav-arrow-width
+            display flex
+            height $container-height
             text-decoration none
+
+            @media screen and ( min-width $container-adjust )
+                height auto
 
     // Nav
 
@@ -51,17 +59,30 @@
         font-size 2rem
         height 100%
         justify-content center
-        position absolute
-        top 50%
-        transform translateY( -50% )
+        position relative
         width $nav-arrow-width
         z-index 10
 
+        @media screen and ( min-width $screen-md )
+            width $nav-arrow-width-md
+
+        @media screen and ( min-width $container-adjust )
+            // position absolute
+            width $nav-arrow-width-lg
+
         &--prev
-            left 0
+            order 1
+
+            // @media screen and ( min-width $container-adjust )
+            //     left -100px
+            //     top 0
 
         &--next
-            right 0
+            order 3
+
+            // @media screen and ( min-width $container-adjust )
+            //     right 100px
+            //     top 0
 
         &--disabled
             opacity .5
@@ -70,20 +91,44 @@
 
     &__swiper
         &-container
-            @media screen and ( min-width $screen-md )
-                width 'calc( 100% - %s )' % $toggler-width-md
+            order 2
+            // align-items stretch
+            // display flex
+            // flex-wrap nowrap
+            // height 100%
+            // margin 0
 
-            @media screen and ( min-width $screen-lg )
-                padding-left 38px
-                padding-right 63px
+            @media screen and ( min-width $screen-md )
+                width 'calc( 100vw - %s )' % $toggler-width-md
+
+            @media screen and ( min-width $container-adjust )
+                //     display block
+                //     height 35px
+                //     left $nav-arrow-width-lg
+                //     position relative
+                //     top 0
                 width 100%
 
+        &-wrapper
+            align-items center
+            width 'calc( 100vw - %s )' % ( $nav-arrow-width * 2 )
+
+            @media screen and ( min-width $screen-md )
+                width 'calc( 100% - %s )' % ( $nav-arrow-width-md * 2 )
+
+            // @media screen and ( min-width $container-adjust )
+            //     left $nav-arrow-width-lg
+            //     position absolute
+            //     top 0
+            //     width 'calc( 100% - %s )' % ( $nav-arrow-width-lg * 2 )
 
     // Toggler
 
     &__toggler
         align-items center
+        background $white
         border 2px solid $dusky-blue
+        border-top none
         bottom - $toggler-height
         color $dusky-blue
         cursor pointer
@@ -93,7 +138,8 @@
         justify-content center
         position absolute
         right 0
-        top 42px
+        top $container-height
+        transition background-color $transition-default
         width $toggler-width
 
         @media screen and ( min-width $screen-md )
@@ -101,33 +147,43 @@
             background $denim-blue
             border-color $denim-blue
             color $white
+            flex 1 0 $toggler-width-md
             height auto
+            order 4
             position static
             width auto
-            flex-basis $toggler-width-md
 
-        @media screen and ( min-width $screen-lg )
+        @media screen and ( min-width $container-adjust )
             display none
 
         &--open
+            background transparent
             border none
             color $white
-            transform rotate( 180deg )
+
+            @media screen and ( min-width $screen-md )
+                background $denim-blue
+
+        i
+            transition color $transition-default, transform $transition-default
+
+            ^[0..-2]--open ^[2..-1] // @stylint ignore valid warning property is not valid
+                transform rotate( 180deg )
+
 
     // Item
 
     &__item
         font-weight normal
-        padding-bottom 10px
-        padding-top 10px
-        text-indent 38px
-        width auto
+        width 100%
 
-        @media screen and ( min-width $screen-lg )
+        @media screen and ( min-width $container-adjust )
             border-bottom 1px solid $white
             font-weight normal
+            padding-bottom 10px
             text-align center
             text-indent 0
+            width auto
 
         &--active
             border-color $tiffany
@@ -139,28 +195,37 @@
     // Select
 
     &__select
-        cursor pointer
-        display none
+        max-height 0
+        overflow hidden
+        transition max-height $transition-default
 
         @media screen and ( max-width $screen-md )
             width 100%
+
+        &--open
+            max-height 'calc( 100vh - %s )' % ( $sm-nav-height + $container-height )
+            overflow-y auto
+
+            @media screen and ( min-width $container-adjust )
+                display block
+                width 100%
+
+            .sticky &
+                max-height 'calc( 100vh - %s )' % ( $sm-nav-height-sticky + $container-height )
+
 
         &-item
             background $denim-blue
             border-bottom 1px solid $dusky-blue
             font-size 16px
 
-            @media screen and ( min-width $screen-sm )
-                a
-                    color $white
-                    font-size 18px
-                    font-weight normal
-                    text-decoration none
-
-        &--open
-            @media screen and ( max-width $screen-lg )
+            a
+                color $white
                 display block
-                width 100%
+                font-size 16px
+                font-weight normal
+                padding 10px $nav-arrow-width
+                text-decoration none
 
 .index-section
     margin-bottom 30px
