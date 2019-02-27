@@ -29,6 +29,14 @@ define( [], function () {
             }
 
             return false;
+        },
+
+        isGreaterThan: function( size ) {
+            var width = jQuery( window ).width();
+
+            if ( size.toLocaleUpperCase() === 'MD' ) {
+                return width >= 768;
+            }
         }
     };
 });

@@ -116,6 +116,54 @@ define( [ 'app/breakpoint', 'swiper/dist/js/swiper' ], function( breakpoint, Swi
         e.preventDefault();
     }
 
+    /**
+     * Fix index item width.
+     */
+    function fixIndexWidth() {
+        if ( breakpoint.isGreaterThan( 'MD' ) ) {
+            jQuery( '.indexes__item' ).each( function () {
+                jQuery( this ).css( 'width', 'auto' );
+            } );
+        }
+    }
+
+    /**
+     * Basic JavaScript debounce function taken from Underscore.js.
+     *
+     * @TODO: Move this function to a requirejs module.
+     * @param {Function} func
+     * @param {Number} wait
+     * @param {Boolean} immediate
+     */
+    function debounce( func, wait, immediate ) {
+        var timeout;
+
+        return function() {
+            var args = arguments;
+            var context = this;
+
+            var later = function() {
+                timeout = null;
+                if ( ! immediate ) {
+                    func.apply( context, args );
+                }
+            };
+
+            var callNow = immediate && ! timeout;
+            clearTimeout( timeout );
+            timeout = setTimeout( later, wait );
+
+            if ( callNow ) {
+                func.apply( context, args );
+            }
+        };
+    }
+
+    /**
+     * On window resize.
+     */
+    jQuery( window ).on( 'resize', debounce( fixIndexWidth, 150 ) );
+
     // Add index item event.
     jQuery( '.indexes__item' ).click( setIndex );
 
