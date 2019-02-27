@@ -45,7 +45,7 @@ button
         padding-left 10px
         padding-right 10px
 
-    @media screen and ( min-width ( $screen-lg + ( $container-padding * 2 ) ) )
+    @media screen and ( min-width $container-adjust )
         padding-left 0
         padding-right 0
         width $screen-lg
@@ -431,14 +431,7 @@ button
     &__container
         padding 0
 
-        @media screen and ( min-width $screen-md )
-            padding-left $container-padding
-            padding-right $container-padding
-
     &__swiper-container
-        @media screen and ( min-width $screen-sm )
-            width calc( 100% - 66px )
-
         @media screen and ( min-width $screen-lg )
             padding-left 38px
             padding-right 63px
@@ -446,5 +439,8 @@ button
 
     &__item
         display inline-block
-        font-size 18px
+        font-size 16px
         width auto
+
+        @media screen and ( min-width $screen-md )
+            font-size 18px

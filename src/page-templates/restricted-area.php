@@ -42,9 +42,9 @@ get_header();
 					</div>
 					<?php endforeach; ?>
 				</div>
-				<div class="indexes__nav indexes__nav--next"><i class="i-arrow-right"></i></div>
-				<div class="indexes__nav indexes__nav--prev"><i class="i-arrow-left"></i></div>
 			</div>
+			<div class="indexes__nav indexes__nav--prev"><i class="i-arrow-left"></i></div>
+			<div class="indexes__nav indexes__nav--next"><i class="i-arrow-right"></i></div>
 			<div class="indexes__toggler">
 				<i class="i-arrow-down"></i>
 			</div>
