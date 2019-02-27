@@ -1,7 +1,7 @@
 .indexes
     $toggler-width    = 46px
     $toggler-height   = 38px
-    $toggler-width-sm = 66px
+    $toggler-width-sm = 70px
 
     $nav-arrow-width = 38px
 
@@ -25,8 +25,11 @@
 
     &__container
         display flex
-        flex-wrap wrap
+        flex-wrap nowrap
+        height 70px
         position relative
+        align-items center
+
 
         @media screen and ( min-width $screen-lg )
             display block
@@ -81,6 +84,7 @@
         border 2px solid $dusky-blue
         bottom - $toggler-height
         color $dusky-blue
+        cursor pointer
         display flex
         font-size .625rem
         height $toggler-height
@@ -90,12 +94,14 @@
         width $toggler-width
 
         @media screen and ( min-width $screen-sm )
+            align-self stretch
             background $denim-blue
             border-color $denim-blue
             color $white
             height auto
             position static
-            width $toggler-width-sm
+            width auto
+            flex-basis $toggler-width-sm
 
         @media screen and ( min-width $screen-md )
             display none
@@ -103,6 +109,7 @@
     // Item
 
     &__item
+        font-weight normal
         padding-bottom 10px
         padding-top 10px
         text-indent 38px
@@ -110,6 +117,7 @@
 
         @media screen and ( min-width $screen-md )
             border-bottom 1px solid $white
+            font-weight normal
             text-align center
             text-indent 0
 
@@ -129,7 +137,15 @@
             background $denim-blue
             border-bottom 1px solid $dusky-blue
             font-size 16px
+            font-weight normal
             padding 10px $nav-arrow-width
+
+            @media screen and ( min-width $screen-sm )
+                a
+                    color $white
+                    font-size 18px
+                    font-weight normal
+                    text-decoration none
 
         @media screen and ( max-width $screen-md )
             &--open
