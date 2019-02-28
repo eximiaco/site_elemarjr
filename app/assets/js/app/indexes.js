@@ -18,7 +18,7 @@ define( [ 'app/breakpoint', 'swiper/dist/js/swiper' ], function( breakpoint, Swi
 
         // Breakpoints
         breakpoints: {
-            1189: {
+            1229: {
                 spaceBetween: 0,
                 slidesPerView: 1
             }
@@ -120,13 +120,13 @@ define( [ 'app/breakpoint', 'swiper/dist/js/swiper' ], function( breakpoint, Swi
     /**
      * Fix index item width.
      */
-    // function fixIndexWidth() {
-    //     if ( breakpoint.isGreaterThan( 'MD' ) ) {
-    //         jQuery( '.indexes__item' ).each( function () {
-    //             jQuery( this ).css( 'width', 'auto' );
-    //         } );
-    //     }
-    // }
+    function fixIndexWidth() {
+        if ( jQuery( window ).width() >= 1230 ) {
+            jQuery( '.indexes__item' ).each( function () {
+                jQuery( this ).css( 'width', 'auto' );
+            } );
+        }
+    }
 
     /**
      * Basic JavaScript debounce function taken from Underscore.js.
@@ -136,34 +136,34 @@ define( [ 'app/breakpoint', 'swiper/dist/js/swiper' ], function( breakpoint, Swi
      * @param {Number} wait
      * @param {Boolean} immediate
      */
-    // function debounce( func, wait, immediate ) {
-    //     var timeout;
+    function debounce( func, wait, immediate ) {
+        var timeout;
 
-    //     return function() {
-    //         var args = arguments;
-    //         var context = this;
+        return function() {
+            var args = arguments;
+            var context = this;
 
-    //         var later = function() {
-    //             timeout = null;
-    //             if ( ! immediate ) {
-    //                 func.apply( context, args );
-    //             }
-    //         };
+            var later = function() {
+                timeout = null;
+                if ( ! immediate ) {
+                    func.apply( context, args );
+                }
+            };
 
-    //         var callNow = immediate && ! timeout;
-    //         clearTimeout( timeout );
-    //         timeout = setTimeout( later, wait );
+            var callNow = immediate && ! timeout;
+            clearTimeout( timeout );
+            timeout = setTimeout( later, wait );
 
-    //         if ( callNow ) {
-    //             func.apply( context, args );
-    //         }
-    //     };
-    // }
+            if ( callNow ) {
+                func.apply( context, args );
+            }
+        };
+    }
 
     /**
      * On window resize.
      */
-    // jQuery( window ).on( 'resize', debounce( fixIndexWidth, 150 ) );
+    jQuery( window ).on( 'resize', debounce( fixIndexWidth, 150 ) );
 
     // Add index item event.
     jQuery( '.indexes__item' ).click( setIndex );
