@@ -18,7 +18,7 @@ define( [ 'app/breakpoint', 'swiper/dist/js/swiper' ], function( breakpoint, Swi
 
         // Breakpoints
         breakpoints: {
-            1189: {
+            1229: {
                 spaceBetween: 0,
                 slidesPerView: 1
             }
