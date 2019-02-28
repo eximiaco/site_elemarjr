@@ -34,10 +34,6 @@
         height $container-height
         position relative
 
-        // @media screen and ( min-width $container-adjust )
-        //     display block
-        //     height auto
-
         a
             align-items center
             color $white
@@ -73,16 +69,8 @@
         &--prev
             order 1
 
-            // @media screen and ( min-width $container-adjust )
-            //     left -100px
-            //     top 0
-
         &--next
             order 3
-
-            // @media screen and ( min-width $container-adjust )
-            //     right 100px
-            //     top 0
 
         &--disabled
             opacity .5
@@ -92,21 +80,11 @@
     &__swiper
         &-container
             order 2
-            // align-items stretch
-            // display flex
-            // flex-wrap nowrap
-            // height 100%
-            // margin 0
 
             @media screen and ( min-width $screen-md )
                 width 'calc( 100vw - %s )' % $toggler-width-md
 
             @media screen and ( min-width $container-adjust )
-                //     display block
-                //     height 35px
-                //     left $nav-arrow-width-lg
-                //     position relative
-                //     top 0
                 width 100%
 
         &-wrapper
@@ -115,12 +93,6 @@
 
             @media screen and ( min-width $screen-md )
                 width 'calc( 100% - %s )' % ( $nav-arrow-width-md * 2 )
-
-            // @media screen and ( min-width $container-adjust )
-            //     left $nav-arrow-width-lg
-            //     position absolute
-            //     top 0
-            //     width 'calc( 100% - %s )' % ( $nav-arrow-width-lg * 2 )
 
     // Toggler
 
@@ -232,7 +204,7 @@
     padding-bottom 30px
     position relative
 
-    &::after
+    &:after
         background $brown-grey
         bottom 0
         content ''
@@ -242,8 +214,22 @@
         transform translateX( -50% )
         width 245px
 
+        @media screen and ( min-width $screen-md )
+            width 570px
+
+        @media screen and ( min-width $screen-md )
+            width 870px
+
+    &:last-child
+        &:after
+            display none
+
     &__title
         color $tiffany
         font-size 18px
         font-weight normal
+        letter-spacing -.4px
         margin 0 0 30px
+
+        @media screen and ( min-width $screen-md )
+            font-size 24px
