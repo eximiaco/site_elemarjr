@@ -15,6 +15,18 @@ class RestrictedArea extends Base {
 	 */
 	public function init() {
 		add_action( 'after_setup_theme', array( $this, 'remove_admin_bar' ) );
+		add_action( 'wp', array( $this, 'redirect_if_user_is_not_logged_in' ) );
+	}
+
+	/**
+	 * Redirect to login page if user is not logged in.
+	 */
+	public function redirect_if_user_is_not_logged_in() {
+		if ( is_page_template( 'page-templates/restricted-area.php' ) ) {
+			if ( ! is_user_logged_in() ) {
+				auth_redirect();
+			}
+		}
 	}
 
 	/**
