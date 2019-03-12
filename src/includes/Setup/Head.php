@@ -30,6 +30,7 @@ class Head extends Base {
 		add_action( 'wp_head', $this->callback( 'profile' ), 1 );
 		add_action( 'wp_head', $this->callback( 'viewport' ), 1 );
 		add_action( 'wp_head', $this->callback( 'charset' ), 1 );
+		add_action( 'wp_head', $this->callback( 'favicons' ), 1 );
 	}
 
 	/**
@@ -86,5 +87,20 @@ class Head extends Base {
 	 */
 	public function charset() {
 		echo sprintf( '<meta charset="%s">', esc_attr( get_bloginfo( 'charset' ) ) ) . esc_html( PHP_EOL );
+	}
+
+	/**
+	 * Add multiples favicons
+	 */
+	public function favicons() {
+		$path = get_template_directory_uri() . '/assets/images/favicons';
+
+		echo sprintf( '<link rel="apple-touch-icon" sizes="180x180" href="%s">', esc_url( $path . '/apple-touch-icon.png' ) ) . esc_html( PHP_EOL );
+		echo sprintf( '<link rel="icon" type="image/png" sizes="32x32" href="%s">', esc_url( $path . '/favicon-32x32.png' ) ) . esc_html( PHP_EOL );
+		echo sprintf( '<link rel="icon" type="image/png" sizes="16x16" href="%s">', esc_url( $path . '/favicon-16x16.png' ) ) . esc_html( PHP_EOL );
+		echo sprintf( '<link rel="manifest" href="%s">', esc_url( $path . '/site.webmanifest' ) ) . esc_html( PHP_EOL );
+		echo sprintf( '<link rel="mask-icon" href="%s">', esc_url( $path . '/safari-pinned-tab.svg' ) ) . esc_html( PHP_EOL );
+		echo '<meta name="msapplication-TileColor" content="#da532c">' . esc_html( PHP_EOL );
+		echo '<meta name="theme-color" content="#ffffff">' . esc_html( PHP_EOL );
 	}
 }
