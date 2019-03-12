@@ -74,8 +74,6 @@ class Kernel {
 
             \Aztec\Performance\Css::class,
 
-            \Aztec\Query\Post::class,
-
 			\Aztec\PostType\Lab::class,
 			\Aztec\PostType\Event::class,
 			\Aztec\PostType\Service::class,
