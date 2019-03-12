@@ -11,9 +11,9 @@ require 'app/recipe/grunt.php';
 
 host('186.237.59.129')
 	->port(2201)
-	->stage('staging')
+	->stage('production')
 	->user('elemarjr')
-	->set('deploy_path', '/home/elemarjr')
+	->set('deploy_path', '/home/elemarjr/production')
 	->set('http_user', 'www-data');
 
 set('repository', 'git@greatcode.aztecweb.net:aztecwebteam/elemarjr.git');
