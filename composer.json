@@ -22,7 +22,7 @@
 		"vlucas/phpdotenv" : "^2.4",
 		"php-di/php-di" : "^5.4",
 		"aaemnnosttv/wp-cli-dotenv-command" : "^1.0",
-		"johnpbloch/wordpress" : "^4.8",
+		"johnpbloch/wordpress" : "^5.1",
 		"wp-cli/wp-cli" : "^1.5.1",
 		"worddrop/bookworm" : "dev-master",
 		"wpackagist-plugin/all-in-one-favicon" : "~4.6",
@@ -36,7 +36,10 @@
 		"wpackagist-plugin/wordpress-seo" : "^7.5",
 		"wpackagist-plugin/wp-github-sync" : "~2.0",
 		"wpackagist-plugin/wp-mail-smtp" : "^1.2",
-		"wpackagist-plugin/wp-session-manager" : "^3.0"
+		"wpackagist-plugin/wp-session-manager" : "^4.1",
+		"wpackagist-plugin/slideshare": "^1.9",
+		"wpackagist-plugin/wp-smushit": "^3.1",
+		"wpackagist-plugin/classic-editor": "^1.4"
 	},
 	"require-dev" : {
 		"deployer/deployer" : "^6.0",
