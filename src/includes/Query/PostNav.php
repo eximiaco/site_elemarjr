@@ -85,6 +85,6 @@ class PostNav extends Base {
 			return $sort;
 		}
 
-		return ' ORDER BY tm.meta_value ASC, p.menu_order ASC LIMIT 1';
+		return " ORDER BY tm.meta_value {$order}, p.menu_order {$order} LIMIT 1";
 	}
 }
