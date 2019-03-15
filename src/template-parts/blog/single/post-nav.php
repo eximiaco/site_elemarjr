@@ -13,7 +13,14 @@ global $container; ?>
 <div class="posts-nav-link">
 
 <?php
-$previous_post = get_adjacent_post( false, '', true );
+
+$taxonomy = 'category';
+if( 'private' === get_post_status() ) {
+	$taxonomy = 'index';
+}
+
+$previous_post = get_previous_post( false, '', $taxonomy );
+$next_post = get_next_post( false, '', $taxonomy );
 
 if ( $previous_post ) {
 	$image_url = get_the_post_thumbnail_url( $previous_post->ID, 'post-nav' );
@@ -46,8 +53,6 @@ if ( $previous_post ) {
 	<?php
 
 }
-
-$next_post = get_adjacent_post( false, '', false );
 
 if ( $next_post ) {
 	$image_url = get_the_post_thumbnail_url( $next_post->ID, 'post-nav' );

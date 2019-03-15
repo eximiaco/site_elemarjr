@@ -35,6 +35,8 @@ class Kernel {
 	 */
 	public function init() {
 		$init_classes = [
+			\Aztec\User\Capability::class,
+
 			\Aztec\Setup\Textdomain::class,
 
 			\Aztec\Customize\Newsletter::class,
@@ -77,6 +79,7 @@ class Kernel {
 			\Aztec\Performance\Css::class,
 
 			\Aztec\Query\Post::class,
+			\Aztec\Query\PostNav::class,
 
 			\Aztec\PostType\Lab::class,
 			\Aztec\PostType\Post::class,
