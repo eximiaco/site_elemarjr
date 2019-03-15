@@ -63,7 +63,7 @@ class Index extends Base {
 	 * @return array
 	 */
 	public function get_indexes() {
-		return get_terms( $this->slug );
+		return get_terms( $this->slug, array( 'hide_empty' => false ) );
 	}
 
 	/**
@@ -78,13 +78,13 @@ class Index extends Base {
 			$data[$index->slug]['term']  = $index;
 			$data[$index->slug]['query'] = new \WP_Query(
 				array(
-				'tax_query' => array(
-					array(
-						'taxonomy' => $this->slug,
-						'field'    => 'term_id',
-						'terms'    => $index->term_id,
+					'tax_query'   => array(
+						array(
+							'taxonomy' => $this->slug,
+							'field'    => 'term_id',
+							'terms'    => $index->term_id,
+						),
 					),
-				),
 				)
 			);
 		}
