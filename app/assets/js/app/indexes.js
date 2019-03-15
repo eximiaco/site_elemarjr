@@ -35,11 +35,11 @@ define( [ 'app/breakpoint', 'swiper/dist/js/swiper' ], function( breakpoint, Swi
      * Scroll to index ID.
      */
     function scrollToIndex() {
-        if ( breakpoint.isSmallerThan( 'MD' ) ) {
+        // if ( breakpoint.isSmallerThan( 'MD' ) ) {
             var item = jQuery( '.indexes__item' ).eq( this.snapIndex );
 
             scroolToElement( item.find( 'a' ).attr( 'href' ) );
-        }
+        // }
     }
 
     /**
@@ -68,10 +68,10 @@ define( [ 'app/breakpoint', 'swiper/dist/js/swiper' ], function( breakpoint, Swi
     function setIndex( e ) {
         var $this = jQuery( this );
 
-        if ( ! breakpoint.isSmallerThan( 'MD' ) ) {
+        // if ( ! breakpoint.isSmallerThan( 'MD' ) ) {
             setIndexAsActive( $this );
             scroolToElement( $this.find( 'a' ).attr( 'href' ) );
-        }
+        // }
 
         e.preventDefault();
     }
