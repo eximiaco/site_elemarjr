@@ -29,13 +29,19 @@ get_header();
 		<div class="container indexes__container">
 			<div class="swiper-container indexes__swiper-container">
 				<div class="swiper-wrapper indexes__swiper-wrapper">
-					<?php foreach ( $indexes as $slug => $index ) : ?>
+					<?php
+						foreach ( $indexes as $slug => $index ) :
+							if ( $index['query']->have_posts() ) :
+					?>
 					<div class="swiper-slide indexes__item">
 						<a href="#<?php echo esc_attr( $index['term']->slug ); ?>">
 							<?php echo esc_html( $index['term']->name ); ?>
 						</a>
 					</div>
-					<?php endforeach; ?>
+					<?php
+							endif;
+						endforeach;
+					?>
 				</div>
 			</div>
 			<div class="indexes__nav indexes__nav--prev"><i class="i-arrow-left"></i></div>

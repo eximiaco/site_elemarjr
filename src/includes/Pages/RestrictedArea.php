@@ -31,6 +31,8 @@ class RestrictedArea extends Base {
 
 	/**
 	 * Remove admin bar for users with "subscriber" role.
+	 *
+	 * @TODO: Passar código para escopo global, pois não funciona apenas na área restrita.
 	 */
 	public function remove_admin_bar() {
 		$user = wp_get_current_user();
