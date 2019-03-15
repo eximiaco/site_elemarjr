@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/src\n"
-"POT-Creation-Date: 2019-02-05 10:33:02+00:00\n"
-"PO-Revision-Date: 2019-02-05 08:34-0200\n"
+"POT-Creation-Date: 2019-03-15 13:36:54+00:00\n"
+"PO-Revision-Date: 2019-03-15 10:38-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -219,7 +219,7 @@ msgstr "Fundo Escuro e Título Branco"
 
 #: includes/Integration/ACF/Pages/About.php:84
 #: includes/Integration/ACF/PostType/Service.php:65
-#: includes/Integration/ACF/Taxonomy/Index.php:45
+#: includes/Integration/ACF/Taxonomy/Index.php:47
 msgid "Page sections"
 msgstr "Seções da página"
 
@@ -405,7 +405,7 @@ msgstr "Foto"
 msgid "Company Logo"
 msgstr "Logo da Empresa"
 
-#: includes/Integration/ACF/Taxonomy/Index.php:49
+#: includes/Integration/ACF/Taxonomy/Index.php:51
 msgid "Order"
 msgstr "Ordem"
 
@@ -695,11 +695,11 @@ msgstr "Séries Populares"
 msgid "No series found."
 msgstr "Nenhuma série encontrada."
 
-#: index.php:37
+#: index.php:33
 msgid "Previous Page"
 msgstr "Página Anterior"
 
-#: index.php:37
+#: index.php:33
 msgid "Next Page"
 msgstr "Próxima Página"
 
@@ -714,6 +714,10 @@ msgstr "Agenda"
 #: page-templates/home.php:51
 msgid "Last posts in English"
 msgstr "Últimos posts em Inglês"
+
+#: page-templates/restricted-area.php:53
+msgid "Logout"
+msgstr "Logout"
 
 #: searchform.php:14
 msgctxt "label"
@@ -810,7 +814,7 @@ msgstr "Selecione pelo menos um interesse"
 msgid "Subscribe"
 msgstr "Inscrever-se"
 
-#: template-parts/page/home/blog.php:52
+#: template-parts/page/home/blog.php:55
 msgid "See more"
 msgstr "Veja mais"
 
@@ -833,6 +837,10 @@ msgstr "Agenda de Eventos"
 #. Template Name of the plugin/theme
 msgid "Home"
 msgstr "Página Inicial"
+
+#. Template Name of the plugin/theme
+msgid "Restricted area"
+msgstr ""
 
 #~ msgid "Gallery"
 #~ msgstr "Galeria"

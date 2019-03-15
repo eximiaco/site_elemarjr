@@ -48,6 +48,11 @@ get_header();
 	</div>
 
 	<div class="container">
+		<div class="restricted-area__header">
+			<a href="<?php echo esc_url( wp_logout_url( home_url() ) ); ?>" class="button button__tiffany button__small button__icon">
+				<?php esc_html_e( 'Logout', 'elemarjr' ); ?><i class="i-logout"></i>
+			</a>
+		</div>
 		<?php
 		foreach ( $indexes as $slug => $index ) :
 			if ( $index['query']->have_posts() ) :
