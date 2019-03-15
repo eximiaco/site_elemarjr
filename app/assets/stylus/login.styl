@@ -1,16 +1,14 @@
 @import 'variables'
 
 #login
-    padding 0 0 0
+    max-width 323px
+    padding 0
 
     @media screen and ( min-width $screen-sm )
         padding 3.3% 0 0
 
 body
     font-family $body-font
-
-#login
-    max-width 323px
 
 .login
     background $white
@@ -63,20 +61,20 @@ body
             margin 50px auto 0
             width 125px
 
+    #login_error // @stylint ignore namingConvention warning preferred naming convention is BEM
+        border 2px solid $punch
+        border-bottom none
+        box-shadow none
+        margin 15px auto 0
+        padding 10px
+        width 247px
+
 #nav a,
 #backtoblog a
     color $tundora
 
     &:hover
         color $tiffany
-
-#login_error // @stylint ignore namingConvention warning preferred naming convention is BEM
-    border 2px solid $punch
-    border-bottom none
-    box-shadow none
-    margin 15px auto 0
-    padding 10px
-    width 247px
 
 .input
     background $white
