@@ -11,56 +11,58 @@
 global $container; ?>
 
 <div class="posts-nav-link">
-
-<?php
-
-$taxonomy = 'category';
-if( 'private' === get_post_status() ) {
-	$taxonomy = 'index';
-}
-
-$previous_post = get_previous_post( false, '', $taxonomy );
-$next_post = get_next_post( false, '', $taxonomy );
-
-if ( $previous_post ) {
-	$image_url = get_the_post_thumbnail_url( $previous_post->ID, 'post-nav' );
-	$title     = get_the_title( $previous_post->ID );
-	$post_link = get_permalink( $previous_post->ID );
-	?>
-	<div class="posts-nav-link--previous">
-		<div class="posts-nav-link--thumb">
-			<a class="link-previous" href="<?php echo esc_url( $post_link ); ?>">
-				<i class="i-arrow-left"></i>
-				<span><?php esc_html_e( 'Previous', 'elemarjr' ); ?></span>
-			</a>
-			<a href="<?php echo esc_url( $post_link ); ?>">
-				<img class="posts-nav-link--img" src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( $title ); ?>">
-			</a>
-		</div>
-		<div class="posts-nav-link--info">
-			<p class="posts-nav-link--cursor">
-				<a href="<?php echo esc_url( $post_link ); ?>">
-					<?php esc_html_e( 'Previous', 'elemarjr' ); ?></p>
-				</a>
-			<p class="posts-nav-link--title">
-				<a href="<?php echo esc_url( $post_link ); ?>">
-					<?php echo esc_html( $title ); ?>
-				</a>
-			</p>
-		</div>
-	</div>
-
 	<?php
 
-}
+	$taxonomy = 'category';
+	if( 'private' === get_post_status() ) {
+		$taxonomy = 'index';
+	}
 
-if ( $next_post ) {
-	$image_url = get_the_post_thumbnail_url( $next_post->ID, 'post-nav' );
-	$title     = get_the_title( $next_post->ID );
-	$post_link = get_permalink( $next_post->ID );
+	$previous_post = get_previous_post( false, '', $taxonomy );
+	$next_post = get_next_post( false, '', $taxonomy );
 	?>
+	<div class="posts-nav-link--previous">
+	<?php
 
+	if ( $previous_post ) {
+		$image_url = get_the_post_thumbnail_url( $previous_post->ID, 'post-nav' );
+		$title     = get_the_title( $previous_post->ID );
+		$post_link = get_permalink( $previous_post->ID );
+		?>
+			<div class="posts-nav-link--thumb">
+				<a class="link-previous" href="<?php echo esc_url( $post_link ); ?>">
+					<i class="i-arrow-left"></i>
+					<span><?php esc_html_e( 'Previous', 'elemarjr' ); ?></span>
+				</a>
+				<a href="<?php echo esc_url( $post_link ); ?>">
+					<img class="posts-nav-link--img" src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( $title ); ?>">
+				</a>
+			</div>
+			<div class="posts-nav-link--info">
+				<p class="posts-nav-link--cursor">
+					<a href="<?php echo esc_url( $post_link ); ?>">
+						<?php esc_html_e( 'Previous', 'elemarjr' ); ?></p>
+					</a>
+				<p class="posts-nav-link--title">
+					<a href="<?php echo esc_url( $post_link ); ?>">
+						<?php echo esc_html( $title ); ?>
+					</a>
+				</p>
+			</div>
+
+		<?php
+	}
+
+	?>
+	</div>
 	<div class="posts-nav-link--next">
+	<?php
+
+	if ( $next_post ) {
+		$image_url = get_the_post_thumbnail_url( $next_post->ID, 'post-nav' );
+		$title     = get_the_title( $next_post->ID );
+		$post_link = get_permalink( $next_post->ID );
+		?>
 		<div class="posts-nav-link--info">
 			<p class="posts-nav-link--cursor">
 				<a href="<?php echo esc_url( $post_link ); ?>">
@@ -82,10 +84,8 @@ if ( $next_post ) {
 				<i class="i-arrow-right"></i>
 			</a>
 		</div>
+		<?php
+	}
+	?>
 	</div>
-
-	<?php
-
-}
-?>
 </div>
