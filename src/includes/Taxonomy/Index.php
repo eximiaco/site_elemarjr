@@ -89,6 +89,8 @@ class Index extends Base {
 							'terms'    => $index->term_id,
 						),
 					),
+					'orderby'     => 'menu_order',
+					'order'       => 'ASC'
 				)
 			);
 		}
