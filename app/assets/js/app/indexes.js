@@ -49,7 +49,7 @@ define( [ 'app/breakpoint', 'swiper/dist/js/swiper' ], function( breakpoint, Swi
      */
     function scroolToElement( target, extraMargin ) {
         var elOffset = jQuery( target ).offset().top,
-            indexHeight = jQuery( '.indexes' ).outerHeight(),
+            indexHeight = jQuery( '.indexes__container' ).outerHeight(),
             marginBottom = 25,
             headerHeight = jQuery( '.top-header-wrapper' ).outerHeight();
 
