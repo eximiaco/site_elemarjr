@@ -9,14 +9,14 @@ require 'recipe/npm.php';
 require 'app/recipe/bower.php';
 require 'app/recipe/grunt.php';
 
-host('186.237.59.129')
+host('elemarjr.aztecweb.net')
 	->port(2201)
 	->stage('staging')
     ->user('elemarjr')
     ->set('branch', 'develop')
     ->set('deploy_path', '/home/elemarjr/staging');
 
-host('186.237.59.129')
+host('www.elemarjr.com')
 	->port(2201)
 	->stage('production')
     ->user('elemarjr')
