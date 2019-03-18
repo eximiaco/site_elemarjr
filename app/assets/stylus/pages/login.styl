@@ -1,0 +1,74 @@
+@import '../variables'
+
+.login
+    background $white
+
+    #nav a,
+    #backtoblog a
+        color $tundora
+
+        &:hover
+            color $tiffany
+
+    label
+        color $tundora
+
+    #login_error // @stylint ignore namingConvention warning preferred naming convention is BEM
+        border 2px solid $punch
+        border-bottom none
+        box-shadow none
+        margin 15px auto 0
+        padding 10px
+        width 247px
+
+    .message
+        border 2px solid $tiffany
+        border-bottom none
+        box-shadow none
+        color $brownish-grey
+        margin 50px auto 0
+        padding 10px
+        width 247px
+
+    form
+        box-shadow none
+        margin-top 44px
+
+        .input
+            background $white
+            border 1px solid $silver
+            box-shadow none
+
+        input[type='checkbox']
+            &:focus
+                border-color $tiffany
+                box-shadow none
+            &:checked
+                &:before
+                    color $tiffany
+
+    h1
+        a
+            background-image url( '/wp-content/themes/elemarjr/assets/images/logo-b.svg' )
+            background-size inherit
+            height 47px
+            margin 50px auto 0
+            width 125px
+
+.wp-core-ui
+    .button-primary
+        background $tiffany
+        border-color $tiffany
+        border-radius 0
+        box-shadow none
+        text-shadow none
+
+        &:hover
+        &:focus
+            background darken( $tiffany, 10% )
+            border-color darken( $tiffany, 10% )
+            box-shadow none
+
+        &:active
+            background darken( $tiffany, 20% )
+            border-color darken( $tiffany, 10% )

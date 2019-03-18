@@ -50,15 +50,14 @@ if ( '' === $url ) {
 	];
 } else {
 	$el = [
-		'tag'    => 'a',
-		'href'   => get_field( 'event_url' ),
-		'target' => '_blank',
+		'tag' => 'a',
+        'href' => get_field( 'event_url' ),
+        'target' => '_blank',
 	];
 }
 
 ?>
-<
-<?php
+<<?php
 
 	echo esc_html( $el['tag'] );
 

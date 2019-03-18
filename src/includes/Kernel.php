@@ -69,14 +69,13 @@ class Kernel {
 
 			\Aztec\Pages\Blog::class,
 			\Aztec\Pages\Login::class,
+			\Aztec\Pages\Contact::class,
+			\Aztec\Pages\NewsletterForm::class,
+			\Aztec\Pages\NotFound::class,
 			\Aztec\Pages\Search::class,
 			\Aztec\Pages\Single::class,
-			\Aztec\Pages\Contact::class,
-			\Aztec\Pages\NotFound::class,
-			\Aztec\Pages\RestrictedArea::class,
-			\Aztec\Pages\NewsletterForm::class,
 
-			\Aztec\Performance\Css::class,
+            \Aztec\Performance\Css::class,
 
 			\Aztec\Query\Post::class,
 			\Aztec\Query\PostNav::class,
