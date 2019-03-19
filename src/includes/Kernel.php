@@ -72,6 +72,7 @@ class Kernel {
 			\Aztec\Pages\Contact::class,
 			\Aztec\Pages\NewsletterForm::class,
 			\Aztec\Pages\NotFound::class,
+			\Aztec\Pages\RestrictedArea::class,
 			\Aztec\Pages\Search::class,
 			\Aztec\Pages\Single::class,
 
