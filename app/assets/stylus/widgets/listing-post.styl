@@ -56,17 +56,24 @@
         li
             display inline-block
 
-        a
-            background $tiffany
+        a,
+        p
             color $white
             display block
             font-size 12px
             font-weight bold
             padding 5px 20px
             position relative
-            text-decoration none
             text-transform uppercase
             z-index 20
+
+        p
+            background $dusky-blue
+
+
+        a
+            background $tiffany
+            text-decoration none
 
             &:hover
                 background darken( $tiffany, 10% )

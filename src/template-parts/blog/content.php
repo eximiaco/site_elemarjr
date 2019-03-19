@@ -7,7 +7,6 @@
  * @since 0.1.0
  * @version 0.1.0
  */
-
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'card listing-post' ); ?>>
 	<div class="card__wrapper">
