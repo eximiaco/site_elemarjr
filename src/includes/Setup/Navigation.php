@@ -21,7 +21,8 @@ class Navigation extends Base {
 		add_action( 'after_setup_theme', $this->callback( 'register_nav_menus' ) );
 
 		add_filter( 'walker_nav_menu_start_el', $this->callback( 'social_walker_nav_menu_start_el' ), 10, 4 );
-		add_filter( 'nav_menu_css_class', $this->callback( 'fix_services_custom_post_type_highlight' ), 10, 4 );
+		add_filter( 'nav_menu_css_class', $this->callback( 'fix_services_custom_post_type_highlight' ), 10, 2 );
+		add_filter( 'nav_menu_css_class', $this->callback( 'fix_restricted_area_link_hightlight' ), 10, 2 );
 	}
 
 	/**
@@ -95,6 +96,32 @@ class Navigation extends Base {
 	}
 
 	/**
+	 * Check if the current menu item is page for posts.
+	 *
+	 * @param  \WP_Post $item Current item.
+	 * @return boolean
+	 */
+	private function is_page_for_posts( $item ) {
+		return get_option( 'page_for_posts' ) == $item->object_id;
+	}
+
+	/**
+	 * Remove active class from blog item.
+	 *
+	 * @param  array $classes All classes from the current item.
+	 * @return array
+	 */
+	private function remove_blog_active_class( $classes ) {
+		$key = array_search( 'current-menu-item', $classes );
+
+		if ( false != $key ) {
+			unset( $classes[$key] );
+		}
+
+		return $classes;
+	}
+
+	/**
 	 * Fix menu hightlight on services custom post type listing.
 	 *
 	 * @param  array    $classes Current menu classes.
@@ -103,13 +130,28 @@ class Navigation extends Base {
 	 */
 	public function fix_services_custom_post_type_highlight( $classes, $item ) {
 		if ( 'service' == get_post_type() ) {
-			if ( get_option( 'page_for_posts' ) == $item->object_id ) {
-				$key = array_search( 'current-menu-item', $classes );
-
-				if ( false != $key ) {
-					unset( $classes[$key] );
-				}
+			if ( $this->is_page_for_posts( $item ) ) {
+				$classes = $this->remove_blog_active_class( $classes );
 			} elseif ( 'page-templates/services.php' == get_page_template_slug( $item->object_id ) ) {
+				$classes[] = 'current-menu-item';
+			}
+		}
+
+		return $classes;
+	}
+
+	/**
+	 * Fix menu hightlight on restricted area post.
+	 *
+	 * @param  array    $classes Current menu classes.
+	 * @param  \WP_Post $item    Current menu item.
+	 * @return array
+	 */
+	public function fix_restricted_area_link_hightlight( $classes, $item ) {
+		if ( is_single() && 'private' === get_post_status() ) {
+			if ( $this->is_page_for_posts( $item ) ) {
+				$classes = $this->remove_blog_active_class( $classes );
+			} elseif ( 'page-templates/restricted-area.php' == get_page_template_slug( $item->object_id ) ) {
 				$classes[] = 'current-menu-item';
 			}
 		}

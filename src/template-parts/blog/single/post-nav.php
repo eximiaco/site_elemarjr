@@ -14,12 +14,12 @@ global $container; ?>
 	<?php
 
 	$taxonomy = 'category';
-	if( 'private' === get_post_status() ) {
+	if ( 'private' === get_post_status() ) {
 		$taxonomy = 'index';
 	}
 
 	$previous_post = get_previous_post( false, '', $taxonomy );
-	$next_post = get_next_post( false, '', $taxonomy );
+	$next_post     = get_next_post( false, '', $taxonomy );
 	?>
 	<div class="posts-nav-link--previous">
 	<?php

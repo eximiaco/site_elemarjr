@@ -30,15 +30,15 @@ get_header();
 			<div class="swiper-container indexes__swiper-container">
 				<div class="swiper-wrapper indexes__swiper-wrapper">
 					<?php
-						foreach ( $indexes as $slug => $index ) :
-							if ( $index['query']->have_posts() ) :
-					?>
+					foreach ( $indexes as $slug => $index ) :
+						if ( $index['query']->have_posts() ) :
+							?>
 					<div class="swiper-slide indexes__item">
 						<a href="#<?php echo esc_attr( $index['term']->slug ); ?>">
 							<?php echo esc_html( $index['term']->name ); ?>
 						</a>
 					</div>
-					<?php
+							<?php
 							endif;
 						endforeach;
 					?>
@@ -62,7 +62,7 @@ get_header();
 		<?php
 		foreach ( $indexes as $slug => $index ) :
 			if ( $index['query']->have_posts() ) :
-		?>
+				?>
 		<section id="<?php echo esc_attr( $index['term']->slug ); ?>" class="index-section">
 			<h2 class="index-section__title">
 				<?php echo esc_html( $index['term']->name ); ?>
@@ -78,7 +78,7 @@ get_header();
 				</div>
 			</div>
 		</section>
-		<?php
+				<?php
 			endif;
 		endforeach;
 		?>
