@@ -76,7 +76,7 @@ class Kernel {
 			\Aztec\Pages\Search::class,
 			\Aztec\Pages\Single::class,
 
-            \Aztec\Performance\Css::class,
+			\Aztec\Performance\Css::class,
 
 			\Aztec\Query\Post::class,
 			\Aztec\Query\PostNav::class,

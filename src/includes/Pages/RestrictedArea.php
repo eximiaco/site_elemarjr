@@ -9,6 +9,9 @@ namespace Aztec\Pages;
 
 use Aztec\Base;
 
+/**
+ * Restricted Area page.
+ */
 class RestrictedArea extends Base {
 	/**
 	 * Init.

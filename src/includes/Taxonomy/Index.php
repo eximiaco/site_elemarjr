@@ -63,9 +63,11 @@ class Index extends Base {
 	 * @return array
 	 */
 	public function get_indexes() {
-		return get_terms( $this->slug, array(
+		return get_terms(
+			$this->slug, array(
 			'hide_empty' => false,
-		) );
+			)
+		);
 	}
 
 	/**
@@ -74,7 +76,7 @@ class Index extends Base {
 	 * @return array
 	 */
 	public function get_posts() {
-		$data = array();
+		$data    = array();
 		$indexes = $this->get_indexes();
 
 		foreach ($indexes as $index) {
