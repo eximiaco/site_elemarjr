@@ -65,7 +65,7 @@ services:
       dockerfile: wp-fpm-72.Dockerfile
     volumes:
       - .:/var/www/html
-    environment:
+    env_file:
       - ./app/env/xdebug.env
     depends_on:
       - db
