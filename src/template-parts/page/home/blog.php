@@ -16,6 +16,7 @@ $args         = $container->get( 'template.home.blog' );
 $blog_id      = get_option( 'page_for_posts' );
 $query_args   = [
 	'posts_per_page' => 4,
+	'post_status'    => 'publish',
 ];
 $url_helper   = new Url();
 $see_more_url = '';
