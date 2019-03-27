@@ -26,21 +26,21 @@ $page_section = $container->get( PageSection::class );
 		</div>
 
 		<!-- List -->
-		<?php if ( have_rows( 'section_items' ) ) : ?>
+		<?php if ( have_rows( 'items' ) ) : ?>
 		<ul class="page-section--list">
 			<?php
-			while ( have_rows( 'section_items' ) ) :
+			while ( have_rows( 'items' ) ) :
 				the_row();
 				?>
-				<li><?php the_sub_field( 'section_item_text' ); ?></li>
+				<li><?php the_sub_field( 'item_text' ); ?></li>
 			<?php endwhile; ?>
 		</ul>
 		<?php endif; ?>
 
 		<!-- Button -->
 		<?php
-		$url   = get_sub_field( 'section_button_url' );
-		$label = get_sub_field( 'section_button_label' );
+		$url   = get_sub_field( 'button_url' );
+		$label = get_sub_field( 'button_label' );
 
 		if ( $label && $url ) :
 			?>
