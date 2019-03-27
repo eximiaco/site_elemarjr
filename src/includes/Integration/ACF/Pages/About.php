@@ -113,9 +113,9 @@ class About extends Base {
 						$this->page_section->add_color_scheme_field(),
 						array (
 							'type'              => 'repeater',
-							'key'               => 'section_items',
+							'key'               => 'items',
 							'label'             => __( 'Items', 'elemarjr' ),
-							'name'              => 'section_items',
+							'name'              => 'items',
 							'conditional_logic' => array (
 								array (
 									$this->customers,
@@ -125,9 +125,9 @@ class About extends Base {
 							'sub_fields'        => array (
 								array (
 									'type'  => 'text',
-									'key'   => 'section_item_text',
+									'key'   => 'item_text',
 									'label' => __( 'Item', 'elemarjr' ),
-									'name'  => 'section_item_text',
+									'name'  => 'item_text',
 								),
 							),
 						),
