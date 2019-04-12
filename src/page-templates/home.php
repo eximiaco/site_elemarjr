@@ -133,7 +133,7 @@ get_header(); ?>
 							</div>
 							<div class="testimonial--footer">
 								<div class="testimonial--company">
-									<img src="<?php echo esc_html( wp_get_attachment_image_url( $photo['ID'], 'testimonial-logo' ) ); ?>" alt="">
+									<img src="<?php echo esc_html( wp_get_attachment_image_url( $logo['ID'], 'testimonial-logo' ) ); ?>" alt="">
 								</div>
 								<div class="testimonial--author">
 									<p><?php echo esc_html( get_field( 'testimonial_position' ) ); ?></p>
