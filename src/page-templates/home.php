@@ -39,7 +39,7 @@ get_header(); ?>
 			<?php
 				$container->set(
 					'template.home.blog', [
-						'description' => get_field( 'home_blog_text' ),
+						'description' => get_field( 'blog_text' ),
 					]
 				);
 				get_template_part( 'template-parts/page/home/blog' );
@@ -59,45 +59,46 @@ get_header(); ?>
 
 		<div class="front-page--purpose container">
 			<div class="front-page--purpose-image wow fadeIn">
-				<img src="<?php echo esc_url( get_field( 'home_purpose_image' )['url'] ); ?>" alt="Meu trabalho">
+				<?php $purpose_image = get_field( 'purpose_image' ); ?>
+				<img src="<?php echo esc_url( wp_get_attachment_image_url( $purpose_image['ID'], 'medium_large' ) ); ?>" alt="Meu trabalho">
 			</div>
 			<div class="front-page--purpose-content">
 				<div class="front-page--purpose-title wow fadeIn">
-				<?php echo wp_kses_post( get_field( 'home_purpose_title' ) ); ?>
+				<?php echo wp_kses_post( get_field( 'purpose_title' ) ); ?>
 				</div>
 				<div class="purpose wow fadeIn">
-				<?php $icon_class = get_field( 'home_purpose_icon_1' ); ?>
+				<?php $icon_class = get_field( 'purpose_icon_1' ); ?>
 					<div class="purpose--icon">
 						<i class="<?php echo esc_attr( $icon_class ); ?>"></i>
 					</div>
 					<div class="purpose--content">
 						<div class="purpose--title">
-						<?php echo wp_kses_post( get_field( 'home_purpose_title_1' ) ); ?>
+						<?php echo wp_kses_post( get_field( 'purpose_title_1' ) ); ?>
 						</div>
-					<?php echo wp_kses_post( get_field( 'home_purpose_text_1' ) ); ?>
+					<?php echo wp_kses_post( get_field( 'purpose_text_1' ) ); ?>
 					</div>
 				</div>
 				<div class="purpose wow fadeIn">
-				<?php $icon_class = get_field( 'home_purpose_icon_2' ); ?>
+				<?php $icon_class = get_field( 'purpose_icon_2' ); ?>
 					<div class="purpose--icon">
 						<i class="<?php echo esc_attr( $icon_class ); ?>"></i>
 					</div>
 					<div class="purpose--content">
 						<div class="purpose--title">
-						<?php echo wp_kses_post( get_field( 'home_purpose_title_2' ) ); ?>
+						<?php echo wp_kses_post( get_field( 'purpose_title_2' ) ); ?>
 						</div>
-					<?php echo wp_kses_post( get_field( 'home_purpose_text_2' ) ); ?>
+					<?php echo wp_kses_post( get_field( 'purpose_text_2' ) ); ?>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="front-page--quote" style="background-image: url(<?php echo esc_url( get_field( 'home_quote_image' )['url'] ); ?>);">
+		<div class="front-page--quote" style="background-image: url(<?php echo esc_url( get_field( 'quote_image' )['url'] ); ?>);">
 			<div class="container">
 				<div class="wow fadeIn">
 					<div class="front-page--quote-content">
 						<span class="front-page--quote-icon"><i class="i-quote"></i></span>
-						<div><?php echo wp_kses_post( get_field( 'home_quote' ) ); ?></div>
+						<div><?php echo wp_kses_post( get_field( 'quote' ) ); ?></div>
 						<p class="front-page--quote-author">Elemar JR</p>
 					</div>
 				</div>
@@ -120,20 +121,20 @@ get_header(); ?>
 				<?php
 				foreach ( $posts as $post ) :
 					setup_postdata( $post );
-					$photo_id = get_field( 'testimonial_photo' );
-					$logo_id  = get_field( 'testimonial_logo' );
+					$photo = get_field( 'testimonial_photo' );
+					$logo  = get_field( 'testimonial_logo' );
 					?>
 					<div class="swiper-slide">
 						<div class="testimonial">
 							<div class="testimonial--image">
-								<img src="<?php echo esc_html( wp_get_attachment_image_url( $photo_id ) ); ?>" alt="">
+								<img src="<?php echo esc_html( wp_get_attachment_image_url( $photo['ID'] ) ); ?>" alt="">
 							</div>
 							<div class="testimonial--content">
 								&quot;<?php echo wp_kses_post( get_the_content() ); ?>&quot;
 							</div>
 							<div class="testimonial--footer">
 								<div class="testimonial--company">
-									<img src="<?php echo esc_html( wp_get_attachment_image_url( $logo_id, 'testimonial-logo' ) ); ?>" alt="">
+									<img src="<?php echo esc_html( wp_get_attachment_image_url( $logo['ID'], 'testimonial-logo' ) ); ?>" alt="">
 								</div>
 								<div class="testimonial--author">
 									<p><?php echo esc_html( get_field( 'testimonial_position' ) ); ?></p>
