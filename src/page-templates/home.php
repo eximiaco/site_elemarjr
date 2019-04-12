@@ -59,7 +59,8 @@ get_header(); ?>
 
 		<div class="front-page--purpose container">
 			<div class="front-page--purpose-image wow fadeIn">
-				<img src="<?php echo esc_url( get_field( 'purpose_image' )['url'] ); ?>" alt="Meu trabalho">
+				<?php $purpose_image = get_field( 'purpose_image' ); ?>
+				<img src="<?php echo esc_url( wp_get_attachment_image_url( $purpose_image['ID'], 'medium_large' ) ); ?>" alt="Meu trabalho">
 			</div>
 			<div class="front-page--purpose-content">
 				<div class="front-page--purpose-title wow fadeIn">
