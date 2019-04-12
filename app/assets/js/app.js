@@ -19,7 +19,8 @@ require([
     'app/site-footer',
     'app/site-header',
     'app/site-navigation',
-    'app/site-search'
+    'app/site-search',
+    'app/testimonial'
 ], function() {
     setTimeout(function() {
         jQuery( window ).trigger('resize');
