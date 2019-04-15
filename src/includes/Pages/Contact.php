@@ -113,6 +113,6 @@ class Contact extends Base {
 	public function title() {
 		$text_helper = $this->container->get( Text::class );
 
-		return $text_helper->asterisk_to_strong( get_field( 'contact_title' ) );
+		return $text_helper->asterisk_to_strong( get_field( 'title' ) );
 	}
 }

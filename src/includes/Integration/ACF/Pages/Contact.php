@@ -54,21 +54,21 @@ class Contact extends Base {
 			'fields' => array(
 				array(
 					'type' => 'text',
-					'key' => 'contact_title',
-					'name' => 'contact_title',
+					'key' => 'title',
+					'name' => 'title',
 					'label' => __( 'Title', 'elemarjr' ),
 					'instructions' => __( 'Use * to bold', 'elemarjr' ),
 				),
 				array(
 					'type' => 'text',
-					'key' => 'contact_subtitle',
-					'name' => 'contact_subtitle',
+					'key' => 'subtitle',
+					'name' => 'subtitle',
 					'label' => __( 'Subtitle', 'elemarjr' ),
 				),
 				array(
 					'type' => 'wysiwyg',
-					'key' => 'contact_description',
-					'name' => 'contact_description',
+					'key' => 'description',
+					'name' => 'description',
 					'label' => __( 'Description', 'elemarjr' ),
 				),
 			 ),
