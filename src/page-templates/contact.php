@@ -53,11 +53,11 @@ get_header(); ?>
 			</div>
 
 			<p class="contact--subtitle">
-			<?php echo wp_kses_post( get_field( 'contact_subtitle' ) ); ?>
+			<?php echo wp_kses_post( get_field( 'subtitle' ) ); ?>
 			</p>
 
 			<p class="contact--description">
-			<?php echo wp_kses_post( get_field( 'contact_description' ) ); ?>
+			<?php echo wp_kses_post( get_field( 'description' ) ); ?>
 			</p>
 
 		<?php
