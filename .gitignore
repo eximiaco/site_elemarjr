@@ -1,22 +1,3 @@
-# Project files
-/.assets/
-/.ssh/
-/app/template/assets
-/database/
-/src/assets
-/web/
-.salts
-deploy.log
-wp-cli.yml
-/.vscode/
-
-# Composer
-/vendor/
-/composer.phar
-
-# Deployment
-elemarjr.zip
-
-# Node
-bower_components/
-node_modules/
+.upgrade/
+build/
+xdebug/

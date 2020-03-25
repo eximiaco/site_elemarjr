@@ -1,110 +1,29 @@
-# Simple WordPress Environment
+<div align="center"><img src="https://aztecweb.net/wp-content/uploads/2019/02/Logo.svg" width="90"></div>
 
-A quick way to start a project with WordPress using Docker.
+[![Support Level](https://img.shields.io/badge/support-active-green.svg)](#support-level)
 
-## Installation
+## About Aztlan
+Aztlan was designed from the ground up to be easily installed and used to get your **WordPress** theme up and running quickly on **Docker**.
 
-### Docker
+<div align="center">WordPress ❤ Docker</div>
 
-The development environment is managed by [Docker](https://www.docker.com/) using [Docker Compose](https://docs.docker.com/compose/overview/). The _docker-compose.yml_`_ has the definiton of the tools used to run the project. You must have installed the Docker program. If you haven't, you can [get it here](https://www.docker.com/get-docker).
+## Docs
+Aztlan provides a documentation on [aztlan.aztecweb.net](https://aztlan.aztecweb.net).
 
-It is recommended maintain the images always updated. Execute the _pull_ and _build_ commands to get the updated images.
+## Contributing
+Thank you for considering contributing to the Aztlan! The contribution guide will be out soon.
 
-    $ docker-compose pull && docker-compose build
+## Team
+Thanks to the [Aztec](http://aztecweb.net) team who have been contributing hard to the project:
 
-### Database
+<img src="https://aztecweb.net/wp-content/uploads/2018/11/Pittol.png" width="64" title="Eduardo Pittol">
+<img src="https://aztecweb.net/wp-content/uploads/2019/04/Imagem_Nicolas.png" width="64" title="Nícolas Huber">
+<img src="https://aztecweb.net/wp-content/uploads/2019/05/Imagem_Gabriel.png" width="64" title="Gabriel Rempel">
+<img src="https://aztecweb.net/wp-content/uploads/2019/07/Imagem_Lucas.png" width="64" title="Lucas Hart">
 
-To install the application the database directory must be empty. Ensure that the database directory doesn't exist.
+## Support Level
 
-    $ sudo rm -rf database
+**Active:** Aztec is actively working on this, and we are continually working to improve the environment and experience a professional development flow with WordPress and Docker. Bug reports, feature requests, questions, and pull requests are welcome.
 
-To create the database, it only need up the database container.
-
-    $ docker-compose up db
-
-Keep this process running. To test if the database was created, open a new terminal tab and execute the below command. The database service can take a while to start. So this command will fail until the service be up.
-
-    $ docker-compose exec db mysql -u project -pproject project
-
-If after some seconds, the database could not be connected. Restart the installation process.
-
-### Dependencies
-
-Download PHP packages, including the WordPress.
-
-    $ docker-compose run --rm composer install
-
-Download Node packages
-
-    $ docker-compose run --rm node npm install
-
-### Theme
-
-Download Bower packages
-
-    $ docker-compose run --rm node bower install
-
-Build the theme
-
-    $ docker-compose run --rm node grunt
-
-### WordPress
-
-Install the WordPress
-
-    $ docker-compose run --rm php bin/install
-
-## Run the server
-
-### PHP 7.2
-
-#### Linux
-
-The website will be served in [http://localhost](http://localhost).
-
-Up the server and the watch task.
-
-    $ docker-compose up server watch
-
-#### Mac
-
-    $ docker-compose -f docker-compose.yml -f docker-compose.mac.yml up server watch
-
-### PHP 5.6
-
-The production server use the PHP 5.6. To up locally a server with this version is necessary uninstall dev PHP packages because Deployer doesn't work in PHP version minor than 7. The images must be built to change the PHP version.
-
-#### Build the images
-
-    $ docker-compose -f docker-compose.yml -f docker-compose.php56.yml build --pull
-
-#### Uninstall packages
-
-    $ composer install --no-dev
-
-#### Up the server
-
-##### Linux
-
-    $ docker-compose -f docker-compose.yml -f docker-compose.php56.yml up server watch
-
-##### Mac
-
-    $ docker-compose -f docker-compose.yml -f docker-compose.php56.yml -f docker-compose.mac.yml up server watch
-
-#### Back to PHP 7.2
-
-    $ composer install
-    $ docker-compose build --pull
-
-## PHP Code Standards
-
-The project is configured to validate the quality of the PHP code. It is used the [WordPress Coding Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/) as base to code validation.
-
-The validation isn't done by the _watch_ service. Because is a PHP execution and for now isn't wrappered by the _node_ image. Execute this command to run the code sniffer:
-
-    $ docker-compose run --rm php phpcs
-
-And to fix some warnings using the _PHP Code Beautifier and Fixer_, execute:
-
-    $ docker-compose run --rm php phpcbf
+## License
+Aztlan is open-source software licensed under the GPL-2.0 license.
