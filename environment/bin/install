@@ -1,0 +1,289 @@
+#!/bin/bash
+
+# Parse arguments
+# Adapted from Argbash (https://argbash.io/generate) generator
+print_help ()
+{
+    printf 'Usage: %s [-a|--arg]\n' "$0"
+    printf "\t%s\n" "-u|--update: Runs composer update instead composer install"
+    printf "\t%s\n" "-p|--prod: Changes environment stage from develop to production"
+}
+
+default_parameters_values ()
+{
+    UPDATE=false;
+    ENV_STAGE="develop"
+}
+
+parse_commandline ()
+{
+    while test $# -gt 0
+    do
+        _key="$1"
+        case "$_key" in
+            -u|--update)
+                UPDATE=true
+                ;;
+            -p|--prod)
+                ENV_STAGE="prod"
+                ;;
+            -h|--help)
+                print_help
+                exit 0
+                ;;
+            -h*)
+                print_help
+                exit 0
+        esac
+        shift
+    done
+}
+
+# Check requisites
+check_prerequisites()
+{
+	if [[ ${CHECK_PREREQUISITE} = false ]];
+	then
+		return 0
+	fi
+
+	EXIT_CODE=0
+	DOCKER_COMPOSE_VERSION="1.23"
+	DOCKER_COMPOSE_MAJOR=$(echo $DOCKER_COMPOSE_VERSION| cut -d'.' -f 1)
+	DOCKER_COMPOSE_MINOR=$(echo $DOCKER_COMPOSE_VERSION| cut -d'.' -f 2)
+
+	# Docker
+	# DOCKER=$(eval hash docker 2> /dev/null)
+	if ! hash docker 2>/dev/null
+	then
+		EXIT_CODE=1
+		echo "'docker' was not found"
+	fi
+
+	if ! hash docker-compose 2>/dev/null
+	then
+		EXIT_CODE=1
+		echo "'docker-compose' was not found"
+	else
+		DOCKER_COMPOSE_VERSION=$(eval docker-compose --version 2> /dev/null)
+		VERSION=$(echo $DOCKER_COMPOSE_VERSION| cut -d' ' -f 3)
+
+		VERSION_MAJOR=$(echo $VERSION| cut -d'.' -f 1)
+		VERSION_MINOR=$(echo $VERSION| cut -d'.' -f 2)
+
+		if [[ ${VERSION_MAJOR} < ${DOCKER_COMPOSE_MAJOR} ]]; then
+			EXIT_CODE=1
+			echo "The version of docker-compose has to be ${DOCKER_COMPOSE_VERSION} or above"
+		else
+			if [[ ${VERSION_MINOR} < ${DOCKER_COMPOSE_MINOR} ]]; then
+				EXIT_CODE=1
+				echo "The version of docker-compose has to be ${DOCKER_COMPOSE_VERSION} or above"
+			fi
+		fi
+	fi
+
+	[ ${EXIT_CODE} == 1 ] && exit
+}
+
+default_parameters_values
+parse_commandline "$@"
+
+# Install and configure the website in the public directory
+set -xe
+
+# Read and import dotenv variables to script
+dotenv () {
+  DOTENV_SHELL_LOADER_SAVED_OPTS=$(set +o)
+  set -o allexport
+  [ -f $1 ] && source $1
+  set +o allexport
+  eval "$DOTENV_SHELL_LOADER_SAVED_OPTS"
+  unset DOTENV_SHELL_LOADER_SAVED_OPTS
+}
+
+# Go to project root
+cd $( dirname $0 )/../..
+
+# General variables
+ENVIRONMENT_DIR=environment
+PROJECT=$(basename $(pwd))
+OS=$(uname -s)
+
+# Docker Compose base command
+#
+# It must be executed before load environment variables because can be used for
+# them.
+if [ $( command -v docker-compose ) ]; then
+    COMPOSE="VOLUME_PREFIX=${PROJECT}_ docker-compose -p ${PROJECT} -f ${ENVIRONMENT_DIR}/docker-compose.yml"
+    if [ 'Darwin' = ${OS} ]; then
+        COMPOSE+=" -f ${ENVIRONMENT_DIR}/docker-compose.mac.yml"
+    fi
+fi
+
+# Load project environment variables
+dotenv ${ENVIRONMENT_DIR}/env/app.env
+dotenv ${ENVIRONMENT_DIR}/env/install.env
+
+check_prerequisites
+
+# Xdebug
+XDEBUG_DATA_DIR=xdebug
+XDEBUG_PROFILER_DIR=${XDEBUG_DATA_DIR}/profiler
+XDEBUG_TRACE_DIR=${XDEBUG_DATA_DIR}/trace
+
+# WP core directory
+WP_ROOT=public/wp
+
+# WP packages public directory
+PUBLIC_PACKAGES_DIR=public/packages
+UPLOADS_DIR=${UPLOADS_DIR}
+THEMES_DIR=${PUBLIC_PACKAGES_DIR}/themes
+PLUGINS_DIR=${PUBLIC_PACKAGES_DIR}/plugins
+UPGRADE_DIR=${PUBLIC_PACKAGES_DIR}/upgrade
+MU_PLUGIN_DIR=${PUBLIC_PACKAGES_DIR}/mu-plugins
+LANGUAGES_DIR=${PUBLIC_PACKAGES_DIR}/languages
+THEME_LANGUAGES_DIR=${LANGUAGES_DIR}/themes
+PLUGINS_LANGUAGES_DIR=${LANGUAGES_DIR}/plugins
+
+# Local WP packages data
+PACKAGES_DIR=wp-packages
+PACKAGES_LANGUAGES_DIR=${PACKAGES_DIR}/languages
+PACKAGES_THEME_LANGUAGES_DIR=${PACKAGES_LANGUAGES_DIR}/themes
+PACKAGES_PLUGINS_LANGUAGES_DIR=${PACKAGES_LANGUAGES_DIR}/plugins
+PRIVATE_PACKAGES_DIR=${PACKAGES_DIR}/private
+PRIVATE_PLUGINS_PACKAGES=${PRIVATE_PACKAGES_DIR}/plugins/*.zip
+PRIVATE_THEMES_PACKAGES=${PRIVATE_PACKAGES_DIR}/themes/*.zip
+
+# Assets directory
+ASSETS_DIR=assets
+ASSETS_LANGUAGES_DIR=${ASSETS_DIR}/languages
+
+# Extra data
+START_UPLOADS=${ENVIRONMENT_DIR}/extra/uploads
+
+# Writable dirs
+WWW_DATA_DIRS=(
+    ${XDEBUG_PROFILER_DIR}
+    ${XDEBUG_TRACE_DIR}
+    ${UPLOADS_DIR}
+    ${THEMES_DIR}
+    ${LANGUAGES_DIR}
+    ${UPGRADE_DIR}
+    ${PLUGINS_DIR}
+    ${THEME_LANGUAGES_DIR}
+    ${PLUGINS_LANGUAGES_DIR}
+    ${ASSETS_LANGUAGES_DIR}
+)
+
+# Create wriables directories
+mkdir -p ${WWW_DATA_DIRS[@]}
+
+# Change writables directories user to www-data on Linux
+if [ 'Darwin' != ${OS} -a ${SET_PERMISSIONS} = "true" ]; then
+    WWW_DATA_OWNER=$( eval "${WP_BASH} -c 'echo \$(id -u):\$(id -g)' | tr -d '\r'")
+    sudo chown ${WWW_DATA_OWNER} ${WWW_DATA_DIRS[@]} && sudo setfacl -R -m u:`whoami`:rwx . && sudo setfacl -Rd -m u:`whoami`:rwx ${WWW_DATA_DIRS[@]}
+fi
+
+# Create symlink for `mu-plugins` directory if it dosen't exists
+[ -d ${MU_PLUGIN_DIR} ] || ln -fs ../../wp-packages/mu-plugins ${MU_PLUGIN_DIR}
+
+# Clear public/{themes, plugins} folder before install
+rm -R ${PUBLIC_PACKAGES_DIR}/{plugins,themes}/{*,.*}
+
+# Install themes languages
+ls -1 ${PACKAGES_THEME_LANGUAGES_DIR} | xargs -I % ln -sf ../../../../${PACKAGES_THEME_LANGUAGES_DIR}/% ${THEME_LANGUAGES_DIR}/
+
+# Install plugins languages
+ls -1 ${PACKAGES_PLUGINS_LANGUAGES_DIR} | xargs -I % ln -sf ../../../../${PACKAGES_PLUGINS_LANGUAGES_DIR}/% ${PLUGINS_LANGUAGES_DIR}/
+
+# Update Docker Compose images if command exists
+[ ${UPDATE} = true ] && bash -c "${COMPOSE} pull"
+[ -z ${COMPOSE+x} ] || bash -c "${COMPOSE} build"
+
+# To prevent connection problems, the db container will be initialized
+[ -z ${COMPOSE+x} ] || bash -c "${COMPOSE} up -d db"
+
+# Set subcomand for install or update
+[ ${UPDATE} = true ] && COMPOSER_SUBCOMAND="update" || COMPOSER_SUBCOMAND="install";
+
+[ ${UPDATE} = false -a ${ENV_STAGE} = "prod" ] && COMPOSER_SUBCOMAND_ARGS="--verbose --prefer-dist --no-progress --no-interaction --no-dev --optimize-autoloader --no-suggest" || COMPOSER_SUBCOMAND_ARGS=" ";
+
+[ ${UPDATE} = true -a ${ENV_STAGE} = "develop" ] && NPM_SUBCOMAND="update" || NPM_SUBCOMAND="ci";
+
+# Composer
+bash -c "${CLI_COMPOSER} ${COMPOSER_SUBCOMAND} ${COMPOSER_SUBCOMAND_ARGS}"
+bash -c "${INC_COMPOSER} ${COMPOSER_SUBCOMAND} ${COMPOSER_SUBCOMAND_ARGS}"
+bash -c "${WP_COMPOSER} ${COMPOSER_SUBCOMAND} ${COMPOSER_SUBCOMAND_ARGS}"
+
+# NPM
+bash -c "${NPM} ${NPM_SUBCOMAND}"
+[ ${ENV} = 'development' ] && WEBPACK_ENVIRONMENT="dev" || WEBPACK_ENVIRONMENT="build"
+
+[ ${UPDATE} = true ] || bash -c "${NPM} run ${WEBPACK_ENVIRONMENT}";
+
+# Install PHPQA packages
+bash -c "${PHPQA_COMPOSER} ${COMPOSER_SUBCOMAND}"
+
+# Get the version installed of the core to be used for download its language package
+CORE_VERSION=$(eval "${WP_BASH} -c 'wp --path=${WP_ROOT} core version'")
+
+set +x
+
+eval $( echo ${WP_BASH} -c "\"
+    set -x;
+
+    [ -e ${START_UPLOADS} -a ${COPY_START_UPLOADS} = "true" ] && cp -rT ${START_UPLOADS} ${UPLOADS_DIR};
+
+    # Install WordPress if not installed
+    wp --path=${WP_ROOT} core is-installed &> /dev/null || bash -c '
+        # Download the WordPress with the version set on composer.json to get the core language package
+        wp --path=${WP_ROOT} db create &> /dev/null || wp --path=${WP_ROOT} db reset --yes 2> /dev/null;
+        wp --path=${WP_ROOT} core install --url="${WP_HOME}" --title="${WP_TITLE}" --admin_user="${WP_USER}" --admin_password="${WP_PASSWORD}" --admin_email="${WP_EMAIL}" --skip-email
+    ';
+
+    # Install extra plugins
+    ls -1 ${PRIVATE_PLUGINS_PACKAGES} | xargs -I % wp --path=${WP_ROOT} plugin install % --force;
+
+    # Install extra themes
+	ls -1 ${PRIVATE_THEMES_PACKAGES} | xargs -I % wp --path=${WP_ROOT} theme install % --force;
+
+    # Activate theme
+    wp --path=${WP_ROOT} theme is-active ${THEME_ACTIVE} || wp --path=${WP_ROOT} theme activate ${THEME_ACTIVE};
+
+    # Activate all plugins
+    wp --path=${WP_ROOT} plugin activate --all;
+
+	# Generate JSON file for assets
+	wp i18n make-json assets/languages/${THEME_ACTIVE}_assets-${WP_LANG}.po --no-purge;
+
+    # Install or update core language package
+    wp --path=${WP_ROOT} language core is-installed ${WP_LANG} &&
+        wp --path=${WP_ROOT} language core update ||
+        wp --path=${WP_ROOT} language core install ${WP_LANG} --activate;
+
+	# Install or update public plugins language packages
+	wp --path=${WP_ROOT} language plugin list --all --language=${WP_LANG} --field=plugin | grep -v 'No plugins installed.' | xargs -r -n1 -I % bash -c '
+		wp --path=${WP_ROOT} language plugin is-installed % ${WP_LANG} &&
+			wp --path=${WP_ROOT} language plugin update % ${WP_LANG} ||
+			wp --path=${WP_ROOT} language plugin install % ${WP_LANG}
+	';
+
+    # Install or update public themes language packages
+	wp --path=${WP_ROOT} language theme list --all --language=${WP_LANG} --field=theme | grep -v 'No themes installed.' | xargs -r -n1 -I % bash -c '
+        wp --path=${WP_ROOT} language theme is-installed % ${WP_LANG} &&
+            wp --path=${WP_ROOT} language theme update % ${WP_LANG} ||
+            wp --path=${WP_ROOT} language theme install % ${WP_LANG}
+    ';
+
+	# Update permalink structure according to install.env
+	wp --path=${WP_ROOT} rewrite structure ${PERMALINK}
+
+\"" | sed -e '/^#/d;s/[^\/]#.*$//' ) # `sed` removes the comments to run the commands on eval
+
+# if there is a git folder in the project, create a symbolic link to the hooks.
+if ${SET_PRE_COMMIT} ; then
+	[ -d ".git" ] && bash -c "ln -fs ../../environment/bin/lint .git/hooks/pre-commit"
+else
+	[ -d ".git" ] && bash -c "rm .git/hooks/pre-commit"
+fi
+
