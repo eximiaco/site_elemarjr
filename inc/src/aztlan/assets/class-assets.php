@@ -118,7 +118,9 @@ class Assets extends Base {
 	 * Ensure that the vendor is registered too.
 	 */
 	public function register_script() {
-		$src = $this->assets_uri( $this->file . '.js' );
+		$src           = $this->assets_uri( $this->file . '.js' );
+		$vendor_handle = $this->handle( 'vendor' );
+
 		wp_register_script( $this->handle(), $src, [ $vendor_handle ], self::VERSION, true );
 	}
 
