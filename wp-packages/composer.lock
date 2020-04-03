@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "bb9df4b0bf7b079a40e38da829fbf86e",
-=======
-    "content-hash": "d6b2130ef30917f54cf54ce8610f832c",
->>>>>>> 92-integracao-com-o-elementorpro
+    "content-hash": "e3be5161137a54dae46a16360180d87a",
     "packages": [
         {
             "name": "composer/installers",
@@ -390,21 +386,39 @@
         },
         {
             "name": "wpackagist-plugin/ocean-extra",
-            "version": "1.6.1",
+            "version": "1.6.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ocean-extra/",
-                "reference": "tags/1.6.1"
+                "reference": "tags/1.6.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ocean-extra.1.6.1.zip"
+                "url": "https://downloads.wordpress.org/plugin/ocean-extra.1.6.2.zip"
             },
             "require": {
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/ocean-extra/"
+        },
+        {
+            "name": "wpackagist-plugin/ocean-social-sharing",
+            "version": "1.1.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/ocean-social-sharing/",
+                "reference": "tags/1.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/ocean-social-sharing.1.1.0.zip"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/ocean-social-sharing/"
         },
         {
             "name": "wpackagist-plugin/polylang",

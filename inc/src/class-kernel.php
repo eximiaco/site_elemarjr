@@ -44,6 +44,9 @@ class Kernel {
 
 			// Languages.
 			\Aztec\Setup\Textdomain::class,
+
+			// Integration.
+			\Aztec\Aztlan\Integration\Ocean_Wp::class,
 		);
 
 		foreach ( $init_classes as $class ) {
