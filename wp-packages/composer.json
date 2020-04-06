@@ -5,9 +5,10 @@
 		"url": "https://wpackagist.org"
 	}],
 	"require": {
-		"johnpbloch/wordpress": "^5.3.2",
+		"johnpbloch/wordpress": "~5.3.2",
 		"wpackagist-plugin/elementor": "~2.9.7",
-		"wpackagist-plugin/ocean-extra": "~1.6.1",
+		"wpackagist-plugin/ocean-social-sharing": "~1.1.0",
+		"wpackagist-plugin/ocean-extra": "~1.6.2",
 		"wpackagist-plugin/wpforms-lite": "~1.5.9",
 		"wpackagist-plugin/akismet" : "~4.1.4",
 		"wpackagist-plugin/all-in-one-favicon" : "~4.7",
