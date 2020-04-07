@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Ocean Theme 1.0.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
 "POT-Creation-Date: 2020-03-18 16:39+0100\n"
-"PO-Revision-Date: 2020-04-06 14:52-0300\n"
+"PO-Revision-Date: 2020-04-07 12:01-0300\n"
 "Last-Translator: elementor <cidade.ws@gmail.com>\n"
 "Language-Team: Portuguese (Brazil)\n"
 "Language: pt_BR\n"
@@ -6042,16 +6042,12 @@ msgid "Type your text and hit enter to search"
 msgstr "Digite o texto e pressione enter"
 
 #: partials/header/search-overlay.php:22
-#, fuzzy
-#| msgid "Type your text and hit enter to search"
 msgid "Type text and hit enter to search"
 msgstr "Digite o texto e pressione enter"
 
 #: partials/header/search-replace.php:19
-#, fuzzy
-#| msgid "Type your text and hit enter to search"
 msgid "Type then hit enter to search..."
-msgstr "Digite o texto e pressione enter"
+msgstr "Digite o texto e pressione enter..."
 
 #: partials/header/social.php:106 partials/topbar/social.php:88
 #, fuzzy
