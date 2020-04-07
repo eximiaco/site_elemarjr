@@ -37,7 +37,6 @@ class Kernel {
 		$init_classes = array(
 			// Aztlan.
 			\Aztec\Aztlan\Integration\Mail::class,
-			\Aztec\Aztlan\Integration\Livereload::class,
 
 			// Assets.
 			\Aztec\Aztlan\Assets\App::class,
@@ -45,6 +44,9 @@ class Kernel {
 
 			// Languages.
 			\Aztec\Setup\Textdomain::class,
+
+			// Integration.
+			\Aztec\Aztlan\Integration\Ocean_Wp::class,
 		);
 
 		foreach ( $init_classes as $class ) {

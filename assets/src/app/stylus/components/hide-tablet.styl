@@ -1,0 +1,7 @@
+.hide-tablet
+  var-declare( top-bar_display, none )
+
+  @media screen and ( min-width 960px )
+    var-declare( top-bar_display, block )
+
+  display var-use( top-bar_display )

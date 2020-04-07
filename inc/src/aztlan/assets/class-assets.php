@@ -121,7 +121,6 @@ class Assets extends Base {
 		$src           = $this->assets_uri( $this->file . '.js' );
 		$vendor_handle = $this->handle( 'vendor' );
 
-		wp_register_script( $vendor_handle, $this->assets_uri( 'vendor.js' ), [ 'jquery' ], self::VERSION, true );
 		wp_register_script( $this->handle(), $src, [ $vendor_handle ], self::VERSION, true );
 	}
 
