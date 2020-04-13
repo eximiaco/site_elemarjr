@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-04-09T17:37:47+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.2.0\n"
+"X-Domain: elemar-jr_inc\n"
+
+#: taxonomy/class-archive-category.php:36
+msgctxt "taxonomy general name"
+msgid "Archive Categories"
+msgstr ""
+
+#: taxonomy/class-archive-category.php:37
+msgctxt "taxonomy singular name"
+msgid "Archive Category"
+msgstr ""
+
+#: taxonomy/class-archive-category.php:38
+msgid "Search Archive Categories"
+msgstr ""
+
+#: taxonomy/class-archive-category.php:39
+msgid "All Archive Categories"
+msgstr ""
+
+#: taxonomy/class-archive-category.php:40
+msgid "Parent Archive Category"
+msgstr ""
+
+#: taxonomy/class-archive-category.php:41
+msgid "Parent Archive Category:"
+msgstr ""
+
+#: taxonomy/class-archive-category.php:42
+msgid "Edit Archive Category"
+msgstr ""
+
+#: taxonomy/class-archive-category.php:43
+msgid "Update Archive Category"
+msgstr ""
+
+#: taxonomy/class-archive-category.php:44
+msgid "Add New Archive Category"
+msgstr ""
+
+#: taxonomy/class-archive-category.php:45
+msgid "New Archive Category Name"
+msgstr ""
+
+#: taxonomy/class-archive-category.php:46
+msgid "Archive Category"
+msgstr ""
+
+#: posttype/class-archive.php:41
+msgctxt "Post Type General Name"
+msgid "Archive"
+msgstr ""
+
+#: posttype/class-archive.php:42
+msgctxt "Post Type Singular Name"
+msgid "Archive"
+msgstr ""
+
+#: posttype/class-archive.php:43
+#: posttype/class-archive.php:44
+#: posttype/class-archive.php:69
+#: posttype/class-archive.php:136
+msgid "Archive"
+msgstr ""
