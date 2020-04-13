@@ -46,7 +46,14 @@ class Kernel {
 			\Aztec\Setup\Textdomain::class,
 
 			// Integration.
-			\Aztec\Aztlan\Integration\Ocean_Wp::class,
+			\Aztec\Integration\Ocean_Wp::class,
+			\Aztec\Integration\Polylang\Polylang::class,
+
+			// Post-type.
+			\Aztec\Posttype\Archive::class,
+
+			// Taxonomy.
+			\Aztec\Taxonomy\Archive_Category::class,
 		);
 
 		foreach ( $init_classes as $class ) {
